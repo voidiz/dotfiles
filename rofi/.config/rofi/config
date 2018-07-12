@@ -1,0 +1,21 @@
+rofi.combi-modi: window,drun,run
+rofi.modi: combi
+
+#rofi.color-enabled: true
+#rofi.color-window: #272827, #8abeb7, #8abeb7
+#rofi.color-normal: #272827, #657b83, #272827, #272827, #8abeb7
+#rofi.color-active: #272827, #657b83, #272827, #272827, #8abeb7
+#rofi.color-urgent: #272827, #657b83, #272827, #272827, #8abeb7
+
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+
+rofi.separator-style: solid
+rofi.sidebar-mode: false
+rofi.lines: 10
+rofi.font: ypn envypn 11
+rofi.bw: 1
+rofi.columns: 1
+rofi.padding: 5
+rofi.fixed-num-lines: true
+rofi.hide-scrollbar: true
+

@@ -1,0 +1,201 @@
+[colors]
+background = ${xrdb:color1:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color2:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+
+[bar/i3wmthemer_bar]
+width = 100%
+height = 27
+radius = 0
+fixed-center = false
+monitor = eDP1
+
+background = #071a10
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "ypn envypn:pixelsize=8;1"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-2 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-3 = "Material Icons:pixelsize=12;3"
+
+modules-left = i3
+modules-center = 
+modules-right = battery volume wlan eth date powermenu
+
+tray-position = center
+;tray-padding =
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume>
+label-volume =  %percentage%%
+label-volume-padding = 2
+label-volume-background = ${colors.background}
+label-volume-foreground = ${colors.foreground}
+
+format-muted-foreground = ${colors.foreground}
+label-muted-padding = 2
+label-muted =  muted
+label-muted-background = ${colors.background}
+label-muted-foreground = ${colors.foreground}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = %{T3}{T-}
+ramp-volume-3 = 
+ramp-volume-foreground = ${colors.foreground}
+
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+ramp-headphones-foreground = ${colors.foreground}
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+format-charging-padding = 2
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.background}
+format-charging =  <label-charging>
+
+format-discharging-padding = 2
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
+format-discharging =  <label-discharging>
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = $(colors.foreground}
+label-mode-background = ${colors.background}
+
+label-focused = %index%
+label-focused-background = ${colors.primary}
+label-focused-foreground = ${colors.foreground}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = ${colors.background}
+label-visible-foreground = ${colors.foreground}
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-background = #BA2922
+label-urgent-padding = 2
+
+[module/wlan]
+type = internal/network
+interface = wlp1s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+format-connected-padding = 2
+; label-connected = %essid%
+label-connected = %local_ip%
+label-connected-foreground = ${colors.foreground}
+
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground}
+
+[module/eth]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+
+format-connected-padding = 2
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %local_ip%
+
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 2
+
+label = %date% %time%
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.foreground}
+label-close =  cancel
+label-close-foreground = ${colors.foreground}
+label-separator = |
+label-separator-foreground = ${colors.foreground}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = shutdown 0
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0

@@ -1,0 +1,44 @@
+*foreground:        #aec3c0
+*background:        #071A1D
+*.foreground:       #aec3c0
+*.background:       #071A1D
+URxvt*foreground:   #aec3c0
+URxvt*background:   [100]#071A1D
+URxvt*cursorColor:  #aec3c0
+URxvt*borderColor:  [100]#071A1D
+
+! Colors 0-15.
+*color0:  #071A1D
+*color1:  #43445A
+*color2:  #982C33
+*color3:  #A4304F
+*color4:  #C14658
+*color5:  #455B90
+*color6:  #B7609B
+*color7:  #aec3c0
+*color8:  #798886
+*color9:  #43445A
+*color10:  #982C33
+*color11:  #A4304F
+*color12:  #C14658
+*color13:  #455B90
+*color14:  #B7609B
+*color15:  #aec3c0
+
+! Fonts
+Xft.dpi: 96
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+! URxvt
+URxvt.font:         xft:ypn envypn:size=13
+!URxvt.depth:			          32
+URxvt*scrollBar:                  false
+URxvt*mouseWheelScrollPage:       false
+URxvt*cursorBlink:                true
+URxvt*saveLines:                  5000
+URxvt*internalBorder:             25
+URxvt*geometry:                   75x23
