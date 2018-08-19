@@ -9,11 +9,11 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+" Fuzzy finder CtrlP
+Plugin 'ctrlpvim/ctrlp.vim'
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
 
 " PyWal vim plugin
 Plugin 'dylanaraps/wal.vim'
@@ -26,6 +26,12 @@ Plugin 'itmammoth/doorboy.vim'
 
 " Auto close HTML tags
 Plugin 'alvan/vim-closetag'
+"
+" YCM-Generator
+Plugin 'rdnetto/YCM-Generator'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -75,3 +81,8 @@ au BufNewFile,BufRead *.js,*.html,*.css:
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix 
+
+" ctrlp.vim settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'rwa'
