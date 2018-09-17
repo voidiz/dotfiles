@@ -44,9 +44,9 @@ Xft.lcdfilter: lcddefault
 
 ! URxvt
 !URxvt.font:         xft:ypn envypn:size=13
-URxvt.font:         xft:Inconsolata:size=10
+URxvt*font:         xft:Inconsolata:size=10
 !URxvt.depth:			          32
-URxvt.depth:                      24
+URxvt*depth:                      24
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true

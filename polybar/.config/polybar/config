@@ -131,9 +131,10 @@ ws-icon-7 = 8;八
 ws-icon-8 = 9;九
 ws-icon-9 = 10;十
 
+label-mode = %mode%
 label-mode-padding = 2
 label-mode-background = ${colors.background}
-label-mode-foreground = $(colors.foreground}
+label-mode-foreground = ${colors.foreground}
 
 label-focused = %icon%
 

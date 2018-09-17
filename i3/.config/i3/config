@@ -249,5 +249,5 @@ client.background       $bg
 # Key-mappings
 
 # Prtscr
-bindsym Print exec maim | xclip -selection clipboard -t image/png
-bindsym Control+Print exec maim -s | xclip -selection clipboard -t image/png 
+bindsym Print exec maim -u | xclip -selection clipboard -t image/png
+bindsym Control+Print exec maim -s -u | xclip -selection clipboard -t image/png 
