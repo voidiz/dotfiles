@@ -228,12 +228,12 @@ for_window [class="^.*"] border pixel 2
 # colors
 
 # Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
 set_from_resource $fg i3wm.color1 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $bg i3wm.color9 #f0f0f0
 set_from_resource $tx i3wm.color7 #ffffff
 
 # class                 border  backgr. text indicator child_border
@@ -250,4 +250,4 @@ client.background       $bg
 
 # Prtscr
 bindsym Print exec maim -u | xclip -selection clipboard -t image/png
-bindsym Control+Print exec maim -s -u | xclip -selection clipboard -t image/png 
+bindsym Control+Print exec maim -s -u | xclip -selection clipboard -t image/png

@@ -31,7 +31,7 @@ Plugin 'itmammoth/doorboy.vim'
 " Auto close HTML tags
 Plugin 'alvan/vim-closetag'
 
-" Emmet 
+" Emmet
 Plugin 'mattn/emmet-vim'
 
 " PHP
@@ -67,7 +67,7 @@ syntax on
 " colorscheme nord
 " colorscheme darkblue
 colorscheme default
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'wombat'
 
 " Formatting
 set number
@@ -85,17 +85,20 @@ au Filetype python
     \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
-    \ set fileformat=unix 
+    \ set fileformat=unix
 
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
-au Filetype js,html,css,php 
+au Filetype js,html,css,php
     \ setl tabstop=2 |
     \ setl softtabstop=2 |
     \ setl shiftwidth=2 |
     \ setl expandtab |
     \ setl autoindent |
-    \ setl fileformat=unix 
+    \ setl fileformat=unix
+
+" Macro to insert php echo
+let @e = 'a<?php echo ?>hi$'
 
 " ctrlp.vim settings
 let g:ctrlp_map = '<c-p>'
@@ -107,7 +110,7 @@ let g:ctrlp_working_path_mode = 'rwa'
 let g:php_cs_fixer_level = "symfony"
 let g:php_cs_fixer_config = "default"
 let g:php_cs_fixer_rules = "@PSR2"
-let g:php_cs_fixer_php_path = "php"               
-let g:php_cs_fixer_enable_default_mapping = 1     
-let g:php_cs_fixer_dry_run = 0                    
-let g:php_cs_fixer_verbose = 0                    
+let g:php_cs_fixer_php_path = "php"
+let g:php_cs_fixer_enable_default_mapping = 1
+let g:php_cs_fixer_dry_run = 0
+let g:php_cs_fixer_verbose = 0

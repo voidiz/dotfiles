@@ -1,20 +1,20 @@
 [colors]
 
 ;; Colored module background
-; background = ${xrdb:color1:#222}
+;background = ${xrdb:color1:#222}
 
 ;; Black module background
 background = #020f1c
 
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color2:#222}
-secondary = ${xrdb:color2:#222}
+primary = ${xrdb:color9:#222}
+secondary = ${xrdb:color9:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/bigbar]
 width = 100%
-height = 35 
+height = 35
 radius = 0
 fixed-center = false
 monitor = eDP1
@@ -29,19 +29,22 @@ border-size = 0
 border-color =
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
-module-margin-left = 1
-module-margin-right = 2
+;module-margin-left = 1
+;module-margin-right = 2
 
-font-0 = "ypn envypn:pixelsize=8;1"
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;2"
+;; Bitmap font:
+;font-0 = "ypn envypn:pixelsize=8;1"
+
+font-0 = "Inconsolata:pixelsize=9;1"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1.5"
 font-2 = "Material Icons:pixelsize=12;3"
 font-3 = "Unifont:pixelsize=9;1"
-font-4 = "Noto Sans Symbols2:pixelsize=14;5"
+font-4 = "Noto Sans Symbols2:pixelsize=14;4"
 
 modules-left = i3
-modules-center = 
+modules-center =
 modules-right = battery volume wlan eth date powermenu
 
 tray-position = center
@@ -54,7 +57,13 @@ cursor-scroll = ns-resize
 type = internal/volume
 
 ; format-volume =  <label-volume>
-format-volume = <ramp-volume> <label-volume>
+
+;; With icon:
+;format-volume = <ramp-volume> <label-volume>
+
+;; Without icon:
+format-volume = vol <label-volume>
+
 format-volume-padding = 2
 label-volume = %percentage%%
 
@@ -66,7 +75,12 @@ label-volume-foreground = ${colors.foreground}
 format-volume-foreground = ${colors.primary}
 format-volume-background = ${colors.background}
 
-format-muted = 🔇 <label-muted>
+;; With icon
+;format-muted = 🔇 <label-muted>
+
+;; Without icon
+format-muted = vol <label-muted>
+
 format-muted-padding = 2
 label-muted = muted
 label-muted-background = ${colors.background}
@@ -100,7 +114,12 @@ format-charging-foreground = ${colors.primary}
 label-charging-foreground = ${colors.foreground}
 
 format-charging-background = ${colors.background}
-format-charging =  <label-charging>
+
+;; With icon
+;format-charging =  <label-charging>
+
+;; Without icon
+format-charging = chg <label-charging>
 
 format-discharging-padding = 2
 
@@ -112,7 +131,12 @@ format-discharging-foreground = ${colors.primary}
 label-discharging-foreground = ${colors.foreground}
 
 format-discharging-background = ${colors.background}
-format-discharging =  <label-discharging>
+
+;; Without icon
+format-discharging = bat <label-discharging>
+
+;; With icon
+;format-discharging =  <label-discharging>
 
 [module/i3]
 type = internal/i3
@@ -168,8 +192,13 @@ type = internal/network
 interface = wlp1s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
+;; With icon
+; format-connected = <ramp-signal> <label-connected>
+
+;; Without icon
+format-connected = wlan <label-connected>
+
+format-connected-foreground = ${colors.primary}
 format-connected-background = ${colors.background}
 format-connected-padding = 2
 ; label-connected = %essid%
@@ -198,7 +227,12 @@ interval = 3.0
 format-connected-padding = 2
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
-format-connected-prefix = " "
+
+;; With icon
+;format-connected-prefix = " "
+
+;; Without icon
+format-connected-prefix = "eth"
 
 ;; Colored icon
 format-connected-prefix-foreground = ${colors.primary}
@@ -220,7 +254,8 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+;; With icon
+;format-prefix = 
 
 ;; Colored icon
 format-prefix-foreground = ${colors.primary}
@@ -230,7 +265,7 @@ format-prefix-foreground = ${colors.primary}
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-padding = 2
+;format-padding = 2
 
 label = %date% %time%
 
@@ -240,6 +275,7 @@ type = custom/menu
 expand-right = true
 
 format-spacing = 1
+format-padding = 2
 
 label-open = 
 
