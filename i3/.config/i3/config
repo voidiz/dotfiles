@@ -53,7 +53,7 @@ font pango:Noto Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym Control+Mod1+T exec i3-sensible-terminal
+bindsym Control+Mod1+T exec termite 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -232,9 +232,9 @@ for_window [class="^.*"] border pixel 2
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color1 #f0f0f0
-set_from_resource $bg i3wm.color9 #f0f0f0
-set_from_resource $tx i3wm.color7 #ffffff
+set_from_resource $fg i3wm.color12 #f0f0f0
+set_from_resource $bg i3wm.color4 #f0f0f0
+set_from_resource $tx i3wm.color8 #ffffff
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $tx  $bg       $bg

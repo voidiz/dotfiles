@@ -18,8 +18,10 @@ Plugin 'VundleVim/Vundle.vim'
 " PyWal vim plugin
 Plugin 'dylanaraps/wal.vim'
 
-" Nord colorscheme
+" Various colorschemes
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'pixelmuerto/vim-pixelmuerto'
 
 " Airline
 Plugin 'vim-airline/vim-airline'
@@ -64,10 +66,10 @@ set t_Co=256
 syntax on
 " colorscheme molokai
 " colorscheme wal
-" colorscheme nord
+colorscheme ron 
 " colorscheme darkblue
-colorscheme default
-let g:airline_theme = 'wombat'
+" colorscheme default
+let g:airline_theme = 'nord'
 
 " Formatting
 set number

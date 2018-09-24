@@ -1,50 +1,46 @@
-*.foreground:  #c2b790
-*.background:  #020f1c
-*.cursorColor: #c2b790
-!
-! Black
-*.color0:      #020f1c
-*.color8:      #020f1c
-!
-! Red
-*.color1:      #8c3432
-*.color9:      #b55242
-!
-! Green
-*.color2:      #728271
-*.color10:     #869985
-!
-! Yellow
-*.color3:      #e8bf6a
-*.color11:     #ebeb91
-!
-! Blue
-*.color4:      #69819e
-*.color12:     #60827e
-!
-! Magenta
-*.color5:      #896492
-*.color13:     #de4974
-!
-! Cyan
-*.color6:      #5b8390
-*.color14:     #38add8
-!
-! White
-*.color7:      #b9aa99
-*.color15:     #d6bfb8
-!
-! Bold, Italic, Underline
-*.colorBD:     #ebeb91
-!*.colorIT:
-!*.colorUL:
+! special
+*.foreground:   #c5c8c6
+*.background:   #071523
+*.cursorColor:  #c5c8c6
 
+! black
+*.color0:       #16181b
+*.color8:       #232932
+
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
+
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #d79f78
+*.color11:      #dfb460
+
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #82b68f
+*.color14:      #a0c0b1
+
+! white
+*.color7:       #c0c8d0
+*.color15:      #c5c8c6
 
 Xft.lcdfilter: lcddefault
 
 ! URxvt
 !URxvt.font:         xft:ypn envypn:size=13
-URxvt*font:         xft:Inconsolata:size=10
+!URxvt*font:         xft:Inconsolata:size=10
+URxvt*font:          xft:Source Code Pro:size=10
 !URxvt.depth:			          32
 URxvt*depth:                      24
 URxvt*scrollBar:                  false

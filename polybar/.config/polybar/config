@@ -4,28 +4,29 @@
 ;background = ${xrdb:color1:#222}
 
 ;; Black module background
-background = #020f1c
+background = ${xrdb:background:#020f1c}
 
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color9:#222}
-secondary = ${xrdb:color9:#222}
+primary = ${xrdb:color12:#222}
+secondary = ${xrdb:color4:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/bigbar]
 width = 100%
+bottom = true
 height = 35
 radius = 0
 fixed-center = false
 monitor = eDP1
 
-background = #020f1c
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
 line-color =
 
-border-size = 0
+border-size = 0 
 border-color =
 
 padding-left = 0
@@ -37,7 +38,8 @@ padding-right = 1
 ;; Bitmap font:
 ;font-0 = "ypn envypn:pixelsize=8;1"
 
-font-0 = "Inconsolata:pixelsize=9;1"
+;font-0 = "Inconsolata:pixelsize=9;1"
+font-0 = "Source Code Pro:pixelsize=9;1"
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1.5"
 font-2 = "Material Icons:pixelsize=12;3"
 font-3 = "Unifont:pixelsize=9;1"
@@ -169,7 +171,7 @@ label-focused = %icon%
 ;; Colored number
 label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.primary}
-label-focused-underline = ${colors.primary}
+label-focused-underline = ${colors.secondary}
 
 label-focused-padding = 2
 
@@ -309,5 +311,5 @@ menu-2-1-exec = menu-open-0
 screenchange-reload = true
 
 [global/wm]
-margin-top = 0
+margin-top = 0 
 margin-bottom = 0
