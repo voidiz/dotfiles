@@ -39,6 +39,8 @@ Plugin 'mattn/emmet-vim'
 " PHP
 "Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'stephpy/vim-php-cs-fixer'
+" Debugging PHP, requires xdebug
+Plugin 'vim-vdebug/vdebug'
 
 " YCM-Generator
 Plugin 'rdnetto/YCM-Generator'
@@ -73,6 +75,8 @@ let g:airline_theme = 'nord'
 
 " Formatting
 set number
+set relativenumber
+set nowrap
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -91,7 +95,7 @@ au Filetype python
 
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
-au Filetype js,html,css,php
+au Filetype javascript,html,htmldjango,css,php
     \ setl tabstop=2 |
     \ setl softtabstop=2 |
     \ setl shiftwidth=2 |

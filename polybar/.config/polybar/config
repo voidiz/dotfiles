@@ -234,7 +234,7 @@ format-connected-background = ${colors.background}
 ;format-connected-prefix = " "
 
 ;; Without icon
-format-connected-prefix = "eth"
+format-connected-prefix = "eth "
 
 ;; Colored icon
 format-connected-prefix-foreground = ${colors.primary}
