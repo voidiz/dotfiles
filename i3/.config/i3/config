@@ -16,7 +16,7 @@ exec --no-startup-id "setxkbmap -layout se"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Compton
-exec --no-startup-id compton --config $HOME/.config/compton.conf -b
+exec_always --no-startup-id compton --config $HOME/.config/compton.conf -b
 
 # Start wal
 #exec --no-startup-id wal -R
@@ -53,7 +53,7 @@ font pango:Noto Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym Control+Mod1+T exec termite 
+bindsym Control+Mod1+T exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -213,7 +213,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 # i3-gaps settings
 gaps inner 10
 gaps outer 15
-smart_gaps on
+# Uncomment to disable gaps for one window
+# smart_gaps on
 smart_borders on
 
 bindsym $mod+Control+Shift+z gaps outer all set 15; gaps inner all set 10

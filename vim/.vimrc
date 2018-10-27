@@ -64,14 +64,14 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " Colors
-set t_Co=256
+set t_Co=255
 syntax on
 " colorscheme molokai
 " colorscheme wal
-colorscheme ron 
+" colorscheme ron
 " colorscheme darkblue
-" colorscheme default
-let g:airline_theme = 'nord'
+colorscheme default
+let g:airline_theme = 'hybridline'
 
 " Formatting
 set number

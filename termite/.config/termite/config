@@ -3,7 +3,7 @@
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Source Code Pro 10 
+font = Source Code Pro 10
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal
@@ -41,83 +41,42 @@ scrollback_lines = 10000
 [colors]
 
 # special
-foreground      = #c5c8c6
-foreground_bold = #c5c8c6
-cursor          = #c5c8c6
-#background      = #071523
-
-#transparent
-background = rgba(7, 21, 35, 0.5)
+foreground      = #ffffff
+foreground_bold = #ffffff
+cursor          = #ffffff
+background      = #071523
 
 # black
-color0  = #16181b
-color8  = #232932
+color0  = #252525
+color8  = #7781c9
 
 # red
-color1  = #a54242
-color9  = #cc6666
+color1  = #ce1b4a
+color9  = #f989a7
 
 # green
-color2  = #8c9440
-color10 = #b5bd68
+color2  = #80c2ff
+color10 = #80c2ff
 
 # yellow
-color3  = #d79f78
-color11 = #dfb460
+color3  = #d5a5dc
+color11 = #036aca
 
 # blue
-color4  = #5f819d
-color12 = #81a2be
+color4  = #606060
+color12 = #606060
 
 # magenta
-color5  = #85678f
-color13 = #b294bb
+color5  = #0084ff
+color13 = #036aca
 
 # cyan
-color6  = #82b68f
-color14 = #a0c0b1
+color6  = #9591da
+color14 = #9591da
 
 # white
-color7  = #c0c8d0
-color15 = #c5c8c6
-
-## special
-#foreground      = #c2b790
-#foreground_bold = #c2b790
-#cursor          = #c2b790
-#background      = #071523
-#
-## black
-#color0  = #071523
-#color8  = #071523
-#
-## red
-#color1  = #8c3432
-#color9  = #b55242
-#
-## green
-#color2  = #728271
-#color10 = #869985
-#
-## yellow
-#color3  = #e8bf6a
-#color11 = #ebeb91
-#
-## blue
-#color4  = #69819e
-#color12 = #60827e
-#
-## magenta
-#color5  = #896492
-#color13 = #de4974
-#
-## cyan
-#color6  = #5b8390
-#color14 = #38add8
-#
-## white
-#color7  = #b9aa99
-#color15 = #d6bfb8
+color7  = #aeaeae
+color15 = #ffffff
 
 [hints]
 #font = Monospace 12
