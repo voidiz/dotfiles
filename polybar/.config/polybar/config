@@ -8,13 +8,13 @@ background = ${xrdb:background:#020f1c}
 
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color12:#222}
-secondary = ${xrdb:color4:#222}
+primary = ${xrdb:color2:#222}
+secondary = ${xrdb:color5:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/bigbar]
 width = 100%
-bottom = true
+bottom = false
 height = 35
 radius = 0
 fixed-center = false
@@ -26,7 +26,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color =
 
-border-size = 0 
+border-size = 0
 border-color =
 
 padding-left = 0
@@ -311,5 +311,5 @@ menu-2-1-exec = menu-open-0
 screenchange-reload = true
 
 [global/wm]
-margin-top = 0 
+margin-top = 0
 margin-bottom = 0
