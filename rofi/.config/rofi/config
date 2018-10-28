@@ -13,10 +13,9 @@ rofi.separator-style: solid
 rofi.sidebar-mode: false
 rofi.lines: 10
 #rofi.font: ypn envypn 11
-rofi.font: Noto Sans 11 
+rofi.font: Noto Sans 11
 rofi.bw: 1
 rofi.columns: 1
 rofi.padding: 5
 rofi.fixed-num-lines: true
 rofi.hide-scrollbar: true
-
