@@ -71,6 +71,7 @@ syntax on
 " colorscheme ron
 " colorscheme darkblue
 colorscheme default
+hi VertSplit ctermbg=0 ctermfg=0
 let g:airline_theme = 'hybridline'
 
 " Formatting

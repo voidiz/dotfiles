@@ -40,6 +40,8 @@ scrollback_lines = 10000
 
 [colors]
 
+[colors]
+
 # special
 foreground      = #ffffff
 foreground_bold = #ffffff
@@ -63,8 +65,8 @@ color3  = #d5a5dc
 color11 = #036aca
 
 # blue
-color4  = #606060
-color12 = #606060
+color4  = #51eaff
+color12 = #51eaff
 
 # magenta
 color5  = #0084ff
