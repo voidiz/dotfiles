@@ -18,7 +18,7 @@ bottom = false
 height = 35
 radius = 0
 fixed-center = false
-monitor = eDP1
+monitor = DVI-I-1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -47,7 +47,7 @@ font-4 = "Noto Sans Symbols2:pixelsize=14;4"
 
 modules-left = i3
 modules-center =
-modules-right = battery volume wlan eth date powermenu
+modules-right = volume wlan eth date powermenu
 
 tray-position = center
 ; tray-padding = 2
