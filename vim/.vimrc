@@ -42,6 +42,9 @@ Plugin 'stephpy/vim-php-cs-fixer'
 " Debugging PHP, requires xdebug
 Plugin 'vim-vdebug/vdebug'
 
+" Go
+Plugin 'fatih/vim-go'
+
 " YCM-Generator
 Plugin 'rdnetto/YCM-Generator'
 
@@ -121,3 +124,5 @@ let g:php_cs_fixer_php_path = "php"
 let g:php_cs_fixer_enable_default_mapping = 1
 let g:php_cs_fixer_dry_run = 0
 let g:php_cs_fixer_verbose = 0
+
+let g:deoplete#enable_at_startup = 1
