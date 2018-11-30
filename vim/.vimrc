@@ -9,11 +9,11 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" Fuzzy finder CtrlP
-Plugin 'ctrlpvim/ctrlp.vim'
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" Fuzzy finder CtrlP
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " PyWal vim plugin
 Plugin 'dylanaraps/wal.vim'
@@ -37,13 +37,23 @@ Plugin 'alvan/vim-closetag'
 Plugin 'mattn/emmet-vim'
 
 " PHP
-"Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'stephpy/vim-php-cs-fixer'
+" Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'stephpy/vim-php-cs-fixer'
 " Debugging PHP, requires xdebug
-Plugin 'vim-vdebug/vdebug'
+" Plugin 'vim-vdebug/vdebug'
 
 " Go
 Plugin 'fatih/vim-go'
+
+" React/JS
+" Indentation and syntax for JS
+Plugin 'pangloss/vim-javascript'
+
+" JSON highlighting etc.
+Plugin 'elzr/vim-json'
+
+" Indentation and syntax highlighting, React jsx
+Plugin 'mxw/vim-jsx'
 
 " YCM-Generator
 Plugin 'rdnetto/YCM-Generator'
