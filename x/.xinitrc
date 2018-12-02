@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xset r rate 200 30
+xset r rate 175 50
 
 # fix display environment variable
 systemctl --user import-environment DISPLAY
