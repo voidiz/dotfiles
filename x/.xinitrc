@@ -26,10 +26,7 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # # start some nice programs
-<<<<<<< HEAD
-=======
 
->>>>>>> 36068a9f089bc2ed7f15fb701b0dc9e56a083560
 # if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 #  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
 #   [ -x "$f" ] && . "$f"
