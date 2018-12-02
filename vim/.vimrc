@@ -9,11 +9,11 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" Fuzzy finder CtrlP
-Plugin 'ctrlpvim/ctrlp.vim'
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" Fuzzy finder CtrlP
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " PyWal vim plugin
 Plugin 'dylanaraps/wal.vim'
@@ -37,13 +37,23 @@ Plugin 'alvan/vim-closetag'
 Plugin 'mattn/emmet-vim'
 
 " PHP
-"Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'stephpy/vim-php-cs-fixer'
+" Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'stephpy/vim-php-cs-fixer'
 " Debugging PHP, requires xdebug
-Plugin 'vim-vdebug/vdebug'
+" Plugin 'vim-vdebug/vdebug'
 
 " Go
 Plugin 'fatih/vim-go'
+
+" React/JS
+" Indentation and syntax for JS
+Plugin 'pangloss/vim-javascript'
+
+" JSON highlighting etc.
+Plugin 'elzr/vim-json'
+
+" Indentation and syntax highlighting, React jsx
+Plugin 'mxw/vim-jsx'
 
 " YCM-Generator
 Plugin 'rdnetto/YCM-Generator'
@@ -114,6 +124,7 @@ let @e = 'a<?php echo ?>hi$'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rwa'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
 " php_cs_fixer settings
 "let g:php_cs_fixer_path = "~/php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
