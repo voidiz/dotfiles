@@ -2,6 +2,8 @@
 
 xset r rate 175 50
 
+systemctl --user import-environment DISPLAY
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
