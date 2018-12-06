@@ -8,7 +8,7 @@
 *.color8:       #7781c9
 
 ! red
-*.color1:       #ce1b4a
+*.color1:       #f75882
 *.color9:       #f989a7
 
 ! green
@@ -17,15 +17,15 @@
 
 ! yellow
 *.color3:       #d5a5dc
-*.color11:      #036aca
+*.color11:      #c67ffe
 
 ! blue
 *.color4:       #51eaff
 *.color12:      #51eaff
 
 ! magenta
-*.color5:       #0084ff
-*.color13:      #036aca
+*.color5:       #64acef
+*.color13:      #459df0
 
 ! cyan
 *.color6:       #9591da
