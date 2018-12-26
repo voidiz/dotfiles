@@ -244,12 +244,13 @@ for_window [class="^.*"] border pixel 2
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
 set_from_resource $fg i3wm.color4 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $bg i3wm.color14 #f0f0f0
+set_from_resource $bg2 i3wm.color6 #f0f0f0
 set_from_resource $tx i3wm.color0 #ffffff
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $tx  $bg       $bg
-# client.focused_inactive $bg     $fg     $tx  $bg       $fg
+client.focused_inactive $bg2    $bg2    $tx  $bg2      $bg2
 # Uncomment for border on unfocused window
 # client.unfocused        $bg     $fg     $tx  $bg       $fg
 client.urgent           $bg     $bg     $fg  $bg       $bg
