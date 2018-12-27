@@ -17,8 +17,8 @@ width = 100%
 bottom = false
 height = 45
 radius = 0
-fixed-center = false
-monitor = eDP1
+fixed-center = true
+; monitor = eDP1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -39,17 +39,17 @@ padding-right = 1
 ;font-0 = "ypn envypn:pixelsize=8;1"
 
 ;font-0 = "Inconsolata:pixelsize=9;1"
-font-0 = "Source Code Pro:pixelsize=9;1"
+font-0 = "SF Mono:pixelsize=9;1"
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1.5"
 font-2 = "Material Icons:pixelsize=12;3"
 font-3 = "Unifont:pixelsize=9;1"
 font-4 = "Noto Sans Symbols2:pixelsize=14;4"
 
-modules-left = i3
-modules-center =
+modules-left = spotify
+modules-center = i3
 modules-right = battery volume wlan eth date powermenu
 
-tray-position = center
+tray-position = left
 ; tray-padding = 2
 
 cursor-click = pointer
@@ -171,7 +171,7 @@ label-focused = %icon%
 ;; Colored number
 label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.primary}
-label-focused-underline = ${colors.secondary}
+; label-focused-underline = ${colors.secondary}
 
 label-focused-padding = 2
 
@@ -306,6 +306,19 @@ menu-2-0 = power off
 menu-2-0-exec = shutdown 0
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+; module/spotfy uses https://gist.github.com/vorbeiei/565f29975b8fb2299d0f3451a589ff00
+[module/spotify]
+type = custom/script
+
+exec = echo "$(sp current | grep -oP "^Artist\s+\K.+$")" "- $(sp current | grep -oP "^Title\s+\K.+$")"
+exec-if = pgrep -l spotify
+tail = true
+interval = 2
+
+format = <label>
+format-padding = 2
+label = %output%
 
 [settings]
 screenchange-reload = true

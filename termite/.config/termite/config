@@ -3,7 +3,7 @@
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Source Code Pro 10
+font = SF Mono 10
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal
@@ -45,6 +45,7 @@ foreground      = #ffffff
 foreground_bold = #ffffff
 cursor          = #ffffff
 background      = #071523
+# background      = rgba(7, 21, 35, .75)
 
 # black
 color0  = #252525
