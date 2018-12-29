@@ -15,22 +15,27 @@
 
     selected-active-background: #18324F;
     selected-active-foreground: @foreground;
-    selected-normal-background: #113551;
-    selected-normal-foreground: #f5f5f5;
+    selected-normal-background: @background;
+    selected-normal-foreground: @main2;
     selected-urgent-background: #194C5E;
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
     background: #071523;
-    foreground: #c5c8c6;
+    foreground: #ffffff;
+    main: #726cda;
+    main2: #9591da;
     border-color: @background;
     spacing: 2;
 }
 
 #window {
     background-color: @background;
-    border: 0;
-    padding: 2.5ch;
+    border: 2;
+    border-color: @main2;
+    height: 400px;
+    padding: 25px;
+    width: 350px;
 }
 
 #mainbox {
@@ -61,11 +66,11 @@ textbox-prompt-colon {
 
 #listview {
     fixed-height: 0;
-    border: 2px 0px 0px;
-    border-color: @border-color;
-    spacing: 2px;
+    border: 0px 0px 0px;
+    border-color: @main2;
+    spacing: 5px;
     scrollbar: true;
-    padding: 2px 0px 0px;
+    padding: 10px 0px 0px;
 }
 
 #element {
