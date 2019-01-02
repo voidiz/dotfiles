@@ -138,12 +138,12 @@ label-mode-foreground = ${colors.foreground}
 label-focused = %icon%
 
 ;; Colored background
-; label-focused-background = ${colors.primary}
-; label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.primary}
+label-focused-foreground = ${colors.foreground}
 
 ;; Colored number
-label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.primary}
+; label-focused-background = ${colors.background}
+; label-focused-foreground = ${colors.primary}
 ; label-focused-underline = ${colors.secondary}
 
 label-focused-padding = 2
