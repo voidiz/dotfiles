@@ -23,9 +23,8 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'pixelmuerto/vim-pixelmuerto'
 
-" Airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Lightline
+Plugin 'itchyny/lightline.vim'
 
 " Auto close plugin
 Plugin 'itmammoth/doorboy.vim'
@@ -88,7 +87,13 @@ syntax on
 " colorscheme darkblue
 colorscheme default
 hi VertSplit ctermbg=0 ctermfg=0
-let g:airline_theme = 'hybridline'
+
+" Lightline
+set laststatus=2
+set noshowmode
+let g:lightline = {
+    \ 'colorscheme': 'jellybeans',
+    \ }
 
 " Formatting
 set number
@@ -120,9 +125,6 @@ au Filetype javascript,html,htmldjango,css,php
     \ setl autoindent |
     \ setl fileformat=unix
 
-" Macro to insert php echo
-let @e = 'a<?php echo ?>hi$'
-
 " ctrlp.vim settings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -138,5 +140,3 @@ let g:php_cs_fixer_php_path = "php"
 let g:php_cs_fixer_enable_default_mapping = 1
 let g:php_cs_fixer_dry_run = 0
 let g:php_cs_fixer_verbose = 0
-
-let g:deoplete#enable_at_startup = 1
