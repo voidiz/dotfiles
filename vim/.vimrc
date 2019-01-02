@@ -36,6 +36,9 @@ Plugin 'alvan/vim-closetag'
 " Emmet
 Plugin 'mattn/emmet-vim'
 
+" Comment stuff plugin
+Plugin 'tpope/vim-commentary'
+
 " PHP
 " Plugin 'shawncplus/phpcomplete.vim'
 " Plugin 'stephpy/vim-php-cs-fixer'

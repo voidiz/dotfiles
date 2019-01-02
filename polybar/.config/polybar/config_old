@@ -1,9 +1,15 @@
 [colors]
+
+;; Colored module background
+;background = ${xrdb:color1:#222}
+
+;; Black module background
 background = ${xrdb:background:#020f1c}
+
 foreground = ${xrdb:color15:#222}
 foreground-alt = ${xrdb:color15:#222}
-primary = ${xrdb:color6:#222}
-secondary = ${xrdb:color14:#222}
+primary = ${xrdb:color14:#222}
+secondary = ${xrdb:color6:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/bigbar]
@@ -14,22 +20,20 @@ radius = 0
 fixed-center = true
 ; monitor = eDP1
 
-background =
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
 line-color =
 
-border-top-size = 10
-border-left-size = 25
-border-right-size = 25
-border-color = rgba(255, 255, 255, 0)
+border-size = 0
+border-color =
 
 padding-left = 0
-padding-right = 0
+padding-right = 1
 
-module-margin-left = 0
-module-margin-right = 0
+;module-margin-left = 1
+;module-margin-right = 2
 
 ;; Bitmap font:
 ;font-0 = "ypn envypn:pixelsize=8;1"
@@ -41,47 +45,54 @@ font-2 = "Material Icons:pixelsize=12;3"
 font-3 = "Unifont:pixelsize=9;1"
 font-4 = "Noto Sans Symbols2:pixelsize=14;4"
 
-modules-left = i3 spotify
-modules-center =
-modules-right = keyboard battery volume wlan eth date
+modules-left = spotify
+modules-center = i3
+modules-right = battery volume wlan eth date powermenu
 
-tray-position = center
-tray-offset-y = -60
-tray-background = ${colors.background}
-tray-padding = 2
+tray-position = left
+; tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/keyboard]
-type = internal/xkeyboard
-
-blacklist-0 = num lock
-blacklist-1 = scroll lock
-
-format = <label-layout> <label-indicator>
-format-padding = 2
-format-background = ${colors.background}
-format-foreground = ${colors.foreground}
-
 [module/volume]
 type = internal/volume
 
-;format-volume =  <label-volume>
-format-volume = <ramp-volume> <label-volume>
+; format-volume =  <label-volume>
+
+;; With icon:
+;format-volume = <ramp-volume> <label-volume>
+
+;; Without icon:
+format-volume = vol <label-volume>
+
 format-volume-padding = 2
 label-volume = %percentage%%
-format-volume-background = ${colors.background}
-label-volume-foreground = ${colors.foreground}
-format-volume-foreground = ${colors.foreground}
 
+;; Plain icon
+; format-volume-foreground = ${colors.foreground}
+
+;; Colored icon
+label-volume-foreground = ${colors.foreground}
+format-volume-foreground = ${colors.primary}
+format-volume-background = ${colors.background}
+
+;; With icon
 ;format-muted = 🔇 <label-muted>
-format-muted = 🔈 <label-muted>
+
+;; Without icon
+format-muted = vol <label-muted>
+
 format-muted-padding = 2
 label-muted = muted
-format-muted-background = ${colors.background}
+label-muted-background = ${colors.background}
+
+;; Plain icon
+; format-muted-foreground = ${colors.foreground}
+
+;; Colored icon
 label-muted-foreground = ${colors.foreground}
-format-muted-foreground = ${colors.foreground}
+format-muted-foreground = ${colors.primary}
 
 ramp-volume-0 = 🔈
 ramp-volume-1 = 🔉
@@ -96,22 +107,38 @@ type = internal/battery
 full-at = 98
 
 format-charging-padding = 2
-format-charging-foreground = ${colors.foreground}
+
+;; Plain icon
+; format-charging-foreground = ${colors.foreground}
+
+;; Colored icon
+format-charging-foreground = ${colors.primary}
 label-charging-foreground = ${colors.foreground}
-format-charging-background = ${colors.primary}
-format-charging =  <label-charging>
+
+format-charging-background = ${colors.background}
+
+;; With icon
+;format-charging =  <label-charging>
+
+;; Without icon
+format-charging = chg <label-charging>
 
 format-discharging-padding = 2
-format-discharging-foreground = ${colors.foreground}
-label-discharging-foreground = ${colors.foreground}
-format-discharging-background = ${colors.primary}
-format-discharging =  <label-discharging>
 
-format-full-padding = 2
-format-full-foreground = ${colors.foreground}
-label-full-foreground = ${colors.foreground}
-format-full-background = ${colors.primary}
-format-full = <label-full>
+;; Plain icon
+; format-discharging-foreground = ${colors.foreground}
+
+;; Colored icon
+format-discharging-foreground = ${colors.primary}
+label-discharging-foreground = ${colors.foreground}
+
+format-discharging-background = ${colors.background}
+
+;; Without icon
+format-discharging = bat <label-discharging>
+
+;; With icon
+;format-discharging =  <label-discharging>
 
 [module/i3]
 type = internal/i3
@@ -167,9 +194,14 @@ type = internal/network
 interface = wlp1s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.primary}
+;; With icon
+; format-connected = <ramp-signal> <label-connected>
+
+;; Without icon
+format-connected = wlan <label-connected>
+
+format-connected-foreground = ${colors.primary}
+format-connected-background = ${colors.background}
 format-connected-padding = 2
 ; label-connected = %essid%
 label-connected = %local_ip%
@@ -183,7 +215,11 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 
-ramp-signal-foreground = ${colors.foreground}
+;; Colored icon
+ramp-signal-foreground = ${colors.primary}
+
+;; Plain icon
+; ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
@@ -194,29 +230,46 @@ format-connected-padding = 2
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 
-format-connected-prefix = " "
+;; With icon
+;format-connected-prefix = " "
+
+;; Without icon
+format-connected-prefix = "eth "
+
+;; Colored icon
 format-connected-prefix-foreground = ${colors.primary}
+
+;; Plain icon
+; format-connected-prefix-foreground = ${colors.foreground}
+
 label-connected = %local_ip%
+
 format-disconnected =
 
 [module/date]
 type = internal/date
 interval = 5
 
-date = %Y-%m-%d
-date-alt = %Y-%m-%d
+date =
+date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
+;; With icon
+;format-prefix = 
+
+;; Colored icon
 format-prefix-foreground = ${colors.primary}
+
+;; Plain icon
+; format-prefix-foreground = ${colors.foreground}
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-padding = 2
+;format-padding = 2
 
-; Right-click time label to toggle tray window
-label = %{A3:$HOME/.config/polybar/hide_tray.sh:} %date% %time% %{A}
+label = %date% %time%
 
 [module/powermenu]
 type = custom/menu
@@ -265,7 +318,6 @@ interval = 2
 
 format = <label>
 format-padding = 2
-format-background = ${colors.primary}
 label = %output%
 
 [settings]
