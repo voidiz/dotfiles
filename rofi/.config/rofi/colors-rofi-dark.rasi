@@ -35,6 +35,9 @@
     border-color: @main2;
     height: 400px;
     padding: 25px;
+    location: south west;
+    x-offset: 50px;
+    y-offset: -50px;
     width: 350px;
 }
 
