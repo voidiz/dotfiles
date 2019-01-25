@@ -22,6 +22,7 @@ Plugin 'dylanaraps/wal.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'pixelmuerto/vim-pixelmuerto'
+Plugin 'w0ng/vim-hybrid'
 
 " Lightline
 Plugin 'itchyny/lightline.vim'
@@ -81,12 +82,16 @@ filetype plugin indent on    " required
 " Colors
 set t_Co=255
 syntax on
+let g:hybrid_use_Xresources = 1
+let g:hybrid_custom_term_colors = 1
 " colorscheme molokai
 " colorscheme wal
 " colorscheme ron
 " colorscheme darkblue
-colorscheme default
+" colorscheme default
+colorscheme hybrid
 hi VertSplit ctermbg=0 ctermfg=0
+set background=dark
 
 " Lightline
 set laststatus=2

@@ -9,7 +9,7 @@ alert = ${xrdb:color3:#222}
 [bar/bigbar]
 width = 100%
 bottom = false
-height = 45
+height = 30
 radius = 0
 fixed-center = true
 ; monitor = eDP1
