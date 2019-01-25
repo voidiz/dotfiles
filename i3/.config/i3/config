@@ -53,7 +53,7 @@ font pango:Noto Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym Control+Mod1+T exec termite
+bindsym Control+Mod1+T exec kitty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -222,7 +222,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 
 # i3-gaps settings
 gaps inner 10
-gaps outer 15
+# gaps outer 15
+
 # Uncomment to disable gaps for one window
 # smart_gaps on
 smart_borders on

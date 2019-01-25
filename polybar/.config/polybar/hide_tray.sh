@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 pos=$(xdotool search --name --onlyvisible "Polybar tray window" \
     getwindowgeometry | grep "\-50")

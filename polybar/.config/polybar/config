@@ -21,8 +21,8 @@ line-size = 3
 line-color =
 
 border-top-size = 10
-border-left-size = 25
-border-right-size = 25
+border-left-size = 10
+border-right-size = 10
 border-color = rgba(255, 255, 255, 0)
 
 padding-left = 0
@@ -58,6 +58,7 @@ type = internal/xkeyboard
 
 blacklist-0 = num lock
 blacklist-1 = scroll lock
+blacklist-2 = caps lock
 
 format = <label-layout> <label-indicator>
 format-padding = 2
@@ -258,15 +259,18 @@ menu-2-1-exec = menu-open-0
 [module/spotify]
 type = custom/script
 
-exec = echo "$(sp current | grep -oP "^Artist\s+\K.+$")" "- $(sp current | grep -oP "^Title\s+\K.+$")"
+exec = $HOME/.config/polybar/spotify_module.sh 1
 exec-if = pgrep -l spotify
 tail = true
 interval = 2
 
+; uncomment format line to add a separator between workspaces and song name
+; hardcoded color values since variables wont work inside format tags
+; format = %{B#071523}%{F#071523}l%{B- F-}<label>
 format = <label>
-format-padding = 2
-format-background = ${colors.primary}
+label-padding = 2
 label = %output%
+label-background = ${colors.primary}
 
 [settings]
 screenchange-reload = true
