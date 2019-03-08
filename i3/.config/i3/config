@@ -16,8 +16,8 @@ exec_always --no-startup-id "setxkbmap -layout se"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Compton
-exec_always --no-startup-id compton --config $HOME/.config/compton.conf -b
-# exec_always --no-startup-id compton -CGb
+# exec_always --no-startup-id compton --config $HOME/.config/compton.conf -b
+exec_always --no-startup-id compton -CGb
 
 # Start wal
 #exec --no-startup-id wal -R
@@ -30,7 +30,10 @@ exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/bar_launch.sh
 
 # Start the power manager
-exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id xfce4-power-manager
+
+# Touchpad gestures
+exec --no-startup-id fusuma -d
 
 set $mod Mod4
 
@@ -208,14 +211,14 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # Spotify controls (using https://gist.github.com/vorbeiei/565f29975b8fb2299d0f3451a589ff00)
-bindsym $mod+o exec sp play
-bindsym $mod+p exec sp next
-bindsym $mod+i exec sp prev
+bindsym $mod+o exec "sp play"
+bindsym $mod+p exec "sp next"
+bindsym $mod+i exec "sp prev"
 
 # Spotify controls for bluetooth headset/keyboard media keys
-bindsym XF86AudioPlay exec sp play
-bindsym XF86AudioNext exec sp next
-bindsym XF86AudioPrev exec sp prev
+bindsym XF86AudioPlay exec "sp play"
+bindsym XF86AudioNext exec "sp next"
+bindsym XF86AudioPrev exec "sp prev"
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -265,3 +268,5 @@ client.background       $bg
 # Prtscr
 bindsym Print exec maim -u | xclip -selection clipboard -t image/png
 bindsym Control+Print exec maim -s -u | xclip -selection clipboard -t image/png
+bindsym Control+Shift+Print exec "maim -s -u /tmp/screenshot.png; \
+curl -F'file=@/tmp/screenshot.png' http://0x0.st | xclip -selection clipboard; rm -f /tmp/screenshot.png"
