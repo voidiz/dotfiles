@@ -12,3 +12,6 @@ run compton -CGb
 
 # Touchpad gestures
 run fusuma -d
+
+# Keyboard layout
+setxkbmap se
