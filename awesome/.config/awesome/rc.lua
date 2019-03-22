@@ -443,6 +443,20 @@ globalkeys = my_table.join(
     --     end,
     --     {description = "volume 0%", group = "hotkeys"}),
 
+    -- Spotify control
+    awful.key({ modkey }, "o",             function () os.execute("sp play") end,
+        {description = "spotify play/pause", group = "hotkeys"}),
+    awful.key({        }, "XF86AudioPlay", function () os.execute("sp play") end,
+        {description = "spotify play/pause", group = "hotkeys"}),
+    awful.key({ modkey }, "i",             function () os.execute("sp prev") end,
+        {description = "spotify prev", group = "hotkeys"}),
+    awful.key({        }, "XF86AudioPrev", function () os.execute("sp prev") end,
+        {description = "spotify prev", group = "hotkeys"}),
+    awful.key({ modkey }, "p",             function () os.execute("sp next") end,
+        {description = "spotify next", group = "hotkeys"}),
+    awful.key({        }, "XF86AudioNext", function () os.execute("sp next") end,
+        {description = "spotify next", group = "hotkeys"}),
+
     -- MPD control
     awful.key({ altkey, "Control" }, "Up",
         function ()
@@ -554,7 +568,7 @@ clientkeys = my_table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
+    awful.key({ modkey, "Shift"   }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
