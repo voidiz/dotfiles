@@ -40,8 +40,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 
 " PHP
-" Plugin 'shawncplus/phpcomplete.vim'
-" Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'stephpy/vim-php-cs-fixer'
 " Debugging PHP, requires xdebug
 " Plugin 'vim-vdebug/vdebug'
 

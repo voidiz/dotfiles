@@ -120,6 +120,7 @@ local volicon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume.bar.paddings = 0
 theme.volume.bar.margins = 5
 
+
 -- MPD
 local musicplr = awful.util.terminal .. " -title Music -g 130x34-320+16 -e ncmpcpp"
 local mpdicon = wibox.widget.imagebox(theme.widget_music)
