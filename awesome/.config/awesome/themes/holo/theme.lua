@@ -229,6 +229,8 @@ theme.volume = lain.widget.alsabar({
         mute       = "#FF9F9F"
     },
 })
+
+
 theme.volume.bar.paddings = 0
 theme.volume.bar.margins = 5
 local volumewidget = wibox.container.background(theme.volume.bar, theme.bg_focus, gears.shape.rectangle)

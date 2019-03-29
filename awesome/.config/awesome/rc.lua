@@ -14,6 +14,7 @@ local awful         = require("awful")
                       require("awful.autofocus")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
+local cairo         = require("lgi").cairo
 local naughty       = require("naughty")
 local lain          = require("lain")
 --local menubar       = require("menubar")
@@ -56,8 +57,6 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "urxvtd", "unclutter -root" }) -- entries must be separated by commas
-
 -- This function implements the XDG autostart specification
 --[[
 awful.spawn.with_shell(
@@ -83,9 +82,10 @@ local themes = {
     "rainbow",         -- 8
     "steamburn",       -- 9
     "vertex",          -- 10
+    "pillow",          -- 11
 }
 
-local chosen_theme = themes[6]
+local chosen_theme = themes[11]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "kitty"
@@ -414,34 +414,42 @@ globalkeys = my_table.join(
     -- ALSA volume control (use volume.notify for notifications, volume.update for bar indicator)
     awful.key({ }, "XF86AudioRaiseVolume",
         function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-            beautiful.volume.notify()
+            os.execute(string.format("amixer -q set %s 5%%+", beautiful.volume.channel))
+            beautiful.volume.update()
         end,
         {description = "volume up", group = "hotkeys"}),
     awful.key({ }, "XF86AudioLowerVolume",
         function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-            beautiful.volume.notify()
+            os.execute(string.format("amixer -q set %s 5%%-", beautiful.volume.channel))
+            beautiful.volume.update()
         end,
         {description = "volume down", group = "hotkeys"}),
     awful.key({ }, "XF86AudioMute",
         function ()
             os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-            beautiful.volume.notify()
+            beautiful.volume.update()
         end,
         {description = "toggle mute", group = "hotkeys"}),
-    -- awful.key({ altkey, "Control" }, "m",
+
+    -- Pulse volume control
+    -- awful.key({ }, "XF86AudioRaiseVolume",
     --     function ()
-    --         os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-    --         beautiful.volume.update()
+    --         os.execute(string.format("pactl set-sink-volume @DEFAULT_SINK@ +5%%", beautiful.volume.channel))
+    --         beautiful.volume.notify()
     --     end,
-    --     {description = "volume 100%", group = "hotkeys"}),
-    -- awful.key({ altkey, "Control" }, "0",
+    --     {description = "volume up", group = "hotkeys"}),
+    -- awful.key({ }, "XF86AudioLowerVolume",
     --     function ()
-    --         os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-    --         beautiful.volume.update()
+    --         os.execute(string.format("pactl set-sink-volume @DEFAULT_SINK@ -5%%", beautiful.volume.channel))
+    --         beautiful.volume.notify()
     --     end,
-    --     {description = "volume 0%", group = "hotkeys"}),
+    --     {description = "volume down", group = "hotkeys"}),
+    -- awful.key({ }, "XF86AudioMute",
+    --     function ()
+    --         os.execute(string.format("pactl set-sink-volume @DEFAULT_SINK@ toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+    --         beautiful.volume.notify()
+    --     end,
+    --     {description = "toggle mute", group = "hotkeys"}),
 
     -- Spotify control
     awful.key({ modkey }, "o",             function () os.execute("sp play") end,
@@ -706,6 +714,14 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+
+    -- Draw rounded borders
+    -- apply_shape(c, gears.shape.rounded_rect, 0.75, 0.75)
+
+    -- Rounded corners
+    c.shape = function(cr, w, h)
+        gears.shape.rounded_rect(cr, w, h, 10)
+    end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
@@ -730,9 +746,9 @@ client.connect_signal("request::titlebars", function(c)
         end)
     )
 
-    awful.titlebar(c, {size = 16}) : setup {
+    awful.titlebar(c, {size = 30}) : setup {
         { -- Left
-            awful.titlebar.widget.iconwidget(c),
+            -- awful.titlebar.widget.iconwidget(c),
             buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },
@@ -777,6 +793,49 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- possible workaround for tag preservation when switching back to default screen:
 -- https://github.com/lcpz/awesome-copycats/issues/251
+-- }}}
+
+-- {{{ Window shape
+function apply_shape(draw, shape, outer_shape_args, inner_shape_args)
+
+  local geo = draw:geometry()
+
+  local border = beautiful.base_border_width
+  local titlebar_height = border
+  --local titlebar_height = titlebar.is_enabled(draw) and beautiful.titlebar_height or border
+
+  local img = cairo.ImageSurface(cairo.Format.A1, geo.width, geo.height)
+  local cr = cairo.Context(img)
+
+  cr:set_operator(cairo.Operator.CLEAR)
+  cr:set_source_rgba(0,0,0,1)
+  cr:paint()
+  cr:set_operator(cairo.Operator.SOURCE)
+  cr:set_source_rgba(1,1,1,1)
+
+  shape(cr, geo.width, geo.height, outer_shape_args)
+  cr:fill()
+  draw.shape_bounding = img._native
+
+  cr:set_operator(cairo.Operator.CLEAR)
+  cr:set_source_rgba(0,0,0,1)
+  cr:paint()
+  cr:set_operator(cairo.Operator.SOURCE)
+  cr:set_source_rgba(1,1,1,1)
+
+  gears.shape.transform(shape):translate(
+    border, titlebar_height
+  )(
+    cr,
+    geo.width-border*2,
+    geo.height-titlebar_height-border,
+    inner_shape_args
+  )
+  cr:fill()
+  draw.shape_clip = img._native
+
+  img:finish()
+end
 -- }}}
 
 -- Autostart
