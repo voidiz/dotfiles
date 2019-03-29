@@ -15,26 +15,19 @@ theme.taglist_font                              = "Unifont 9"
 
 theme.colors                                    = beautiful.xresources.get_current_theme()
 theme.fg_normal                                 = "#FEFEFE"
-theme.fg_focus                                  = theme.colors.color14
+theme.fg_focus                                  = theme.colors.color3
 theme.fg_urgent                                 = "#C83F11"
 theme.bg_normal                                 = theme.colors.background
 theme.bg_focus                                  = "#1E2320"
 theme.bg_urgent                                 = "#3F3F3F"
 theme.taglist_bg_focus                          = theme.colors.background
-theme.taglist_fg_focus                          = theme.colors.color14
+theme.taglist_fg_focus                          = theme.fg_focus
 theme.tasklist_bg_focus                         = theme.colors.background
-theme.tasklist_fg_focus                         = theme.colors.color14
+theme.tasklist_fg_focus                         = theme.fg_focus
 theme.border_width                              = 1
 theme.border_normal                             = "#3F3F3F"
-theme.border_focus                              = theme.colors.color14
+theme.border_focus                              = theme.fg_focus
 theme.border_marked                             = "#CC9393"
-theme.arrow1                                    = theme.colors.color6
-theme.arrow2                                    = theme.colors.color8
-theme.arrow3                                    = theme.colors.color5
-theme.arrow4                                    = theme.colors.color13
-theme.arrow5                                    = theme.colors.color14
-theme.arrow6                                    = theme.colors.color8
-theme.arrow7                                    = theme.colors.color7
 theme.titlebar_bg_focus                         = theme.bg_normal
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
@@ -67,10 +60,10 @@ theme.widget_music                              = theme.dir .. "/icons/note.png"
 theme.widget_music_on                           = theme.dir .. "/icons/note_on.png"
 theme.widget_music_pause                        = theme.dir .. "/icons/pause.png"
 theme.widget_music_stop                         = theme.dir .. "/icons/stop.png"
-theme.widget_vol                                = theme.dir .. "/icons/vol.png"
-theme.widget_vol_low                            = theme.dir .. "/icons/vol_low.png"
-theme.widget_vol_no                             = theme.dir .. "/icons/vol_no.png"
-theme.widget_vol_mute                           = theme.dir .. "/icons/vol_mute.png"
+theme.widget_vol                                = theme.dir .. "/icons/volume.png"
+theme.widget_vol_low                            = theme.dir .. "/icons/volume.png"
+theme.widget_vol_no                             = theme.dir .. "/icons/volume.png"
+theme.widget_vol_mute                           = theme.dir .. "/icons/volume_muted.png"
 theme.widget_mail                               = theme.dir .. "/icons/mail.png"
 theme.widget_mail_on                            = theme.dir .. "/icons/mail_on.png"
 theme.widget_task                               = theme.dir .. "/icons/task.png"
@@ -118,11 +111,11 @@ theme.volume = lain.widget.alsabar({
     width = 80, height = 10, border_width = 0,
     colors = {
         background = "#383838",
-        unmute     = "#80CCE6",
+        unmute     = theme.colors.color3,
         mute       = "#FF9F9F"
     },
 })
-
+local volicon = wibox.widget.imagebox(theme.widget_vol)
 
 theme.volume.bar.paddings = 0
 theme.volume.bar.margins = 5
@@ -165,7 +158,7 @@ theme.mpd = lain.widget.mpd({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local mem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.font(theme.font, " " .. mem_now.used .. "MB "))
+        widget:set_markup(markup.font(theme.font, "   " .. mem_now.used .. "MB "))
     end
 })
 
@@ -173,7 +166,7 @@ local mem = lain.widget.mem({
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.font(theme.font, " " .. cpu_now.usage .. "% "))
+        widget:set_markup(markup.font(theme.font, "   " .. cpu_now.usage .. "% "))
     end
 })
 
@@ -193,7 +186,7 @@ local bat = lain.widget.bat({
             else
                 baticon:set_image(theme.widget_battery)
             end
-            widget:set_markup(markup.font(theme.font, " " .. bat_now.perc .. "% "))
+            widget:set_markup(markup.font(theme.font, "   " .. bat_now.perc .. "% "))
         else
             widget:set_markup()
             baticon:set_image(theme.widget_ac)
@@ -205,7 +198,7 @@ local bat = lain.widget.bat({
 local neticon = wibox.widget.imagebox(theme.widget_net)
 local net = lain.widget.net({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#FEFEFE", " " .. net_now.received .. " ↓↑ " .. net_now.sent .. " "))
+        widget:set_markup(markup.fontfg(theme.font, "#FEFEFE", "   " .. net_now.received .. " ↓↑ " .. net_now.sent .. " "))
     end
 })
 
@@ -264,11 +257,11 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
 
             wibox.container.margin(wibox.widget.systray(), 10, 10, 5, 5),
-            wibox.container.background(wibox.container.margin(wibox.widget { volicon,  theme.volume.bar, layout = wibox.layout.align.horizontal }, 0, 0, 5, 5), theme.bg_color),
-            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, 3, 3), theme.bg_color),
-            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, 3, 3), theme.bg_color),
-            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), theme.bg_color),
-            wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, 3, 3), theme.bg_color),
+            wibox.container.background(wibox.container.margin(wibox.widget { volicon,  theme.volume.bar, layout = wibox.layout.align.horizontal }, 5, 5, 7, 7), theme.bg_color),
+            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, 5, 10, 7, 7), theme.bg_color),
+            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, 5, 10, 7, 7), theme.bg_color),
+            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 5, 10, 7, 7), theme.bg_color),
+            wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, 5, 10, 7, 7), theme.bg_color),
             wibox.container.background(wibox.container.margin(mytextclock, 3, 3), theme.bg_color),
             s.mylayoutbox,
         },
