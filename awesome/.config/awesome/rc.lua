@@ -747,28 +747,32 @@ client.connect_signal("request::titlebars", function(c)
     )
 
     awful.titlebar(c, {size = 30}) : setup {
-        { -- Left
-            -- awful.titlebar.widget.iconwidget(c),
-            buttons = buttons,
-            layout  = wibox.layout.fixed.horizontal
-        },
-        { -- Middle
-            { -- Title
-                align  = "center",
-                widget = awful.titlebar.widget.titlewidget(c)
+        {
+            { -- Left
+                -- awful.titlebar.widget.iconwidget(c),
+                buttons = buttons,
+                layout  = wibox.layout.fixed.horizontal
             },
-            buttons = buttons,
-            layout  = wibox.layout.flex.horizontal
+            { -- Middle
+                { -- Title
+                    align  = "center",
+                    widget = awful.titlebar.widget.titlewidget(c)
+                },
+                buttons = buttons,
+                layout  = wibox.layout.flex.horizontal
+            },
+            { -- Right
+                wibox.container.margin(awful.titlebar.widget.floatingbutton (c), 0, 0, 5, 5),
+                wibox.container.margin(awful.titlebar.widget.maximizedbutton(c), 0, 0, 5, 5),
+                wibox.container.margin(awful.titlebar.widget.stickybutton   (c), 0, 0, 5, 5),
+                wibox.container.margin(awful.titlebar.widget.ontopbutton    (c), 0, 0, 5, 5),
+                wibox.container.margin(awful.titlebar.widget.closebutton    (c), 0, 0, 5, 5),
+                layout = wibox.layout.fixed.horizontal
+            },
+            layout = wibox.layout.align.horizontal
         },
-        { -- Right
-            awful.titlebar.widget.floatingbutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
-            awful.titlebar.widget.closebutton    (c),
-            layout = wibox.layout.fixed.horizontal()
-        },
-        layout = wibox.layout.align.horizontal
+        left = 5, right = 5,
+        widget = wibox.container.margin
     }
 end)
 
