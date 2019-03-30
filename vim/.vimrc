@@ -97,7 +97,7 @@ set background=dark
 set laststatus=2
 set noshowmode
 let g:lightline = {
-    \ 'colorscheme': 'jellybeans',
+    \ 'colorscheme': 'pillow',
     \ }
 
 " Formatting
