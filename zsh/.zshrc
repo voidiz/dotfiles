@@ -12,4 +12,6 @@ fi
 
 # Customize to your needs...
 # Set up Node Version Manager
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
+
+alias vim="nvim"
