@@ -42,6 +42,7 @@ Plugin 'tpope/vim-commentary'
 " PHP
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'jwalton512/vim-blade'
 " Debugging PHP, requires xdebug
 " Plugin 'vim-vdebug/vdebug'
 
@@ -123,7 +124,7 @@ au Filetype python
 
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
-au Filetype javascript,html,htmldjango,css,php
+au Filetype javascript,html,htmldjango,css
     \ setl tabstop=2 |
     \ setl softtabstop=2 |
     \ setl shiftwidth=2 |
