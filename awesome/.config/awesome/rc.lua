@@ -719,10 +719,26 @@ client.connect_signal("manage", function (c)
 
     -- Draw rounded borders
     -- apply_shape(c, gears.shape.rounded_rect, 0.75, 0.75)
-
+    
     -- Rounded corners
     c.shape = function(cr, w, h)
         gears.shape.rounded_rect(cr, w, h, 10)
+    end
+end)
+
+-- Only show titlebars when floating
+client.connect_signal("property::floating", function (c)
+    if c.floating then
+        awful.titlebar.show(c)
+    else
+        awful.titlebar.hide(c)
+    end
+end)
+
+awful.tag.attached_connect_signal(s, "property::layout", function (t)
+    local float = t.layout.name == "floating"
+    for _,c in pairs(t:clients()) do
+        c.floating = float
     end
 end)
 
@@ -776,6 +792,12 @@ client.connect_signal("request::titlebars", function(c)
         left = 5, right = 5,
         widget = wibox.container.margin
     }
+
+    -- Hide the titlebar on non floating windows by default
+    local l = awful.layout.get(c.screen)
+    if not (l.name == "floating" or c.floating) then
+        awful.titlebar.hide(c)
+    end
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.

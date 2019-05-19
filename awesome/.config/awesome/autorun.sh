@@ -11,7 +11,7 @@ function run {
 run compton -CGb
 
 # Touchpad gestures
-run fusuma -d
+# run fusuma -d
 
 # Keyboard layout
 setxkbmap se
