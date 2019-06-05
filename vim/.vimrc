@@ -93,7 +93,8 @@ let g:hybrid_custom_term_colors = 1
 " colorscheme ron
 " colorscheme darkblue
 " colorscheme default
-colorscheme hybrid
+" colorscheme hybrid
+colorscheme dracula
 hi VertSplit ctermbg=0 ctermfg=0
 set background=dark
 

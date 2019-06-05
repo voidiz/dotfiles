@@ -9,7 +9,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/pillow"
-theme.wallpaper                                 = theme.dir .. "/wall5.jpg"
+theme.wallpaper                                 = theme.dir .. "/wall6.png"
 -- theme.wallpaper                                 = gears.wallpaper.set("#2f2f2f")
 theme.font                                      = "SF Pro Text 9"
 theme.taglist_font                              = "Unifont 9"
@@ -106,6 +106,7 @@ theme.cal = lain.widget.cal({
     }
 })
 
+-- Volume
 theme.volume = lain.widget.alsabar({
     notification_preset = { font = "SF Mono 10"},
     --togglechannel = "IEC958,3",
@@ -120,7 +121,6 @@ local volicon = wibox.widget.imagebox(theme.widget_vol)
 
 theme.volume.bar.paddings = 0
 theme.volume.bar.margins = 5
-
 
 -- MPD
 local musicplr = awful.util.terminal .. " -title Music -g 130x34-320+16 -e ncmpcpp"
