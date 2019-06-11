@@ -100,6 +100,7 @@ theme.notification_shape                        = gears.shape.rounded_rect
 theme.notification_margin                       = 15
 theme.notification_icon_size                    = 50
 theme.notification_width                        = 300
+theme.notification_height                       = 80
 naughty.config.defaults.margin                  = theme.notification_margin
 naughty.config.spacing                          = 5
 
