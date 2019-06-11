@@ -1,6 +1,7 @@
 local gears = require("gears")
 local lain  = require("lain")
 local awful = require("awful")
+local naughty = require("naughty")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
@@ -91,6 +92,16 @@ theme.titlebar_maximized_button_focus_active    = theme.dir .. "/icons/titlebar/
 theme.titlebar_maximized_button_normal_active   = theme.dir .. "/icons/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/generic_inactive.png"
 theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/generic_inactive.png"
+theme.notification_bg                           = theme.colors.background
+theme.notification_font                         = "SF Pro Text 9"
+theme.notification_border_width                 = 1
+theme.notification_border_color                 = theme.colors.color3
+theme.notification_shape                        = gears.shape.rounded_rect
+theme.notification_margin                       = 15
+theme.notification_icon_size                    = 50
+theme.notification_width                        = 300
+naughty.config.defaults.margin                  = theme.notification_margin
+naughty.config.spacing                          = 5
 
 local markup = lain.util.markup
 
