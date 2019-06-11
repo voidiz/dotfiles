@@ -17,6 +17,7 @@ local beautiful     = require("beautiful")
 local cairo         = require("lgi").cairo
 local naughty       = require("naughty")
 local lain          = require("lain")
+local modules       = require("modules")
 --local menubar       = require("menubar")
 local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
@@ -90,10 +91,10 @@ awful.util.tagnames = { "一", "二", "三", "四", "五", "六", "七", "八", 
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.floating,
+    --awful.layout.suit.fair,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
-    --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
@@ -398,28 +399,39 @@ globalkeys = my_table.join(
               {description = "show weather", group = "widgets"}),
 
     -- Brightness
-    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 10") end,
-              {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
-              {description = "-10%", group = "hotkeys"}),
+    awful.key({ }, "XF86MonBrightnessUp",
+        function ()
+            os.execute("xbacklight -inc 10")
+            modules.popup.update_bl()
+        end,
+        {description = "+10%", group = "hotkeys"}),
+    awful.key({ }, "XF86MonBrightnessDown",
+        function ()
+            os.execute("xbacklight -dec 10")
+            modules.popup.update_bl()
+        end,
+        {description = "-10%", group = "hotkeys"}),
 
     -- ALSA volume control (use volume.notify for notifications, volume.update for bar indicator)
     awful.key({ }, "XF86AudioRaiseVolume",
         function ()
             os.execute(string.format("amixer -q set %s 5%%+", beautiful.volume.channel))
             beautiful.volume.update()
+            modules.popup.update_vol()
         end,
         {description = "volume up", group = "hotkeys"}),
     awful.key({ }, "XF86AudioLowerVolume",
         function ()
             os.execute(string.format("amixer -q set %s 5%%-", beautiful.volume.channel))
             beautiful.volume.update()
+            modules.popup.update_vol()
         end,
         {description = "volume down", group = "hotkeys"}),
     awful.key({ }, "XF86AudioMute",
         function ()
             os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
             beautiful.volume.update()
+            modules.popup.update_vol()
         end,
         {description = "toggle mute", group = "hotkeys"}),
 

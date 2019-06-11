@@ -40,7 +40,8 @@ theme.layout_tile                               = theme.dir .. "/icons/tile.png"
 theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
 theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
 theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
-theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
+-- theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
+theme.layout_fairv                              = theme.dir .. "/icons/tile.png"
 theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
 theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
 theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
@@ -259,7 +260,7 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
 
             wibox.container.margin(wibox.widget.systray(), 10, 10, 5, 5),
-            wibox.container.background(wibox.container.margin(wibox.widget { volicon,  theme.volume.bar, layout = wibox.layout.align.horizontal }, 5, 5, 7, 7), theme.bg_color),
+            -- wibox.container.background(wibox.container.margin(wibox.widget { volicon,  theme.volume.bar, layout = wibox.layout.align.horizontal }, 5, 5, 7, 7), theme.bg_color),
             wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, 5, 10, 7, 7), theme.bg_color),
             wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, 5, 10, 7, 7), theme.bg_color),
             wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 5, 10, 7, 7), theme.bg_color),
