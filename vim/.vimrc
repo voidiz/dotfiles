@@ -23,6 +23,7 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'pixelmuerto/vim-pixelmuerto'
 Plugin 'w0ng/vim-hybrid'
+Plugin 'challenger-deep-theme/vim'
 
 " Lightline
 Plugin 'itchyny/lightline.vim'

@@ -235,7 +235,7 @@ globalkeys = my_table.join(
     -- https://github.com/lcpz/dots/blob/master/bin/screenshot
     -- awful.key({ altkey }, "p", function() os.execute("screenshot") end,
     --           {description = "take a screenshot", group = "hotkeys"}),
-    awful.key({}, "Print", function() awful.util.spawn("flameshot gui") end,
+    awful.key({}, "Print", function() os.execute("flameshot gui") end,
               {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker
@@ -401,13 +401,13 @@ globalkeys = my_table.join(
     -- Brightness
     awful.key({ }, "XF86MonBrightnessUp",
         function ()
-            os.execute("xbacklight -inc 10")
+            os.execute("xbacklight -inc 5")
             modules.popup.update_bl()
         end,
         {description = "+10%", group = "hotkeys"}),
     awful.key({ }, "XF86MonBrightnessDown",
         function ()
-            os.execute("xbacklight -dec 10")
+            os.execute("xbacklight -dec 5")
             modules.popup.update_bl()
         end,
         {description = "-10%", group = "hotkeys"}),
