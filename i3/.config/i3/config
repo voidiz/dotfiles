@@ -206,9 +206,13 @@ bindsym $mod+r mode "resize"
 #}
 
 # PulseAudio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 
 # Spotify controls (using https://gist.github.com/vorbeiei/565f29975b8fb2299d0f3451a589ff00)
 bindsym $mod+o exec "sp play"
@@ -232,7 +236,7 @@ gaps inner 10
 # smart_gaps on
 smart_borders on
 
-bindsym $mod+Control+Shift+z gaps outer all set 15; gaps inner all set 10
+bindsym $mod+Control+Shift+z gaps inner all set 10
 bindsym $mod+z gaps outer all plus 5
 bindsym $mod+shift+z gaps outer all minus 5
 bindsym $mod+x gaps inner all plus 5

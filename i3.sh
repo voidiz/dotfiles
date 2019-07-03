@@ -2,7 +2,7 @@
 
 set -e
 
-dots=(compton dunst i3 polybar rofi themes vim x xresources zsh)
+dots=(compton dunst i3 kitty polybar rofi themes vim x xresources zsh)
 
 for dot in ${dots[@]}; do
     stow $dot
