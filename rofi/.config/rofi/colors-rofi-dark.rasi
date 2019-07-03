@@ -23,16 +23,17 @@
     background-color: @background;
     background: #071523;
     foreground: #ffffff;
-    main: #726cda;
-    main2: #9591da;
+    main: #f7ea98;
+    main2: #e5d468;
     border-color: @background;
     spacing: 2;
 }
 
 #window {
     background-color: @background;
-    border: 2;
+    border: 1;
     border-color: @main2;
+    border-radius: 10px;
     height: 400px;
     padding: 25px;
     location: south west;

@@ -8,44 +8,31 @@
 *.color8:       #7781c9
 
 ! red
-*.color1:       #f75882
-*.color9:       #f989a7
+*.color1:       #fa83a2
+*.color9:       #ea698a
 
 ! green
-*.color2:       #80c2ff
-*.color10:      #80c2ff
+*.color2:       #a5fad8
+*.color10:      #60d9a8
 
 ! yellow
-*.color3:       #d5a5dc
-*.color11:      #c67ffe
+*.color3:       #f7ea98
+*.color11:      #e5d468
 
 ! blue
-*.color4:       #51eaff
-*.color12:      #51eaff
+*.color4:       #98e4f0
+*.color12:      #68d4e5
 
 ! magenta
-*.color5:       #64acef
-*.color13:      #459df0
+*.color5:       #feaeea
+*.color13:      #ea7dcf
 
 ! cyan
-*.color6:       #726cda
-*.color14:      #9591da
+*.color6:       #70fbfc
+*.color14:      #45dbdc
 
 ! white
 *.color7:       #aeaeae
 *.color15:      #ffffff
 
 Xft.lcdfilter: lcddefault
-
-! URxvt
-!URxvt.font:         xft:ypn envypn:size=13
-!URxvt*font:         xft:Inconsolata:size=10
-URxvt*font:          xft:Source Code Pro:size=10
-!URxvt.depth:			          32
-URxvt*depth:                      24
-URxvt*scrollBar:                  false
-URxvt*mouseWheelScrollPage:       false
-URxvt*cursorBlink:                true
-URxvt*saveLines:                  5000
-URxvt*internalBorder:             25
-URxvt*geometry:                   75x23

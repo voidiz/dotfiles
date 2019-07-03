@@ -2,7 +2,7 @@
 
 set -e
 
-dots=(awesome compton kitty-pillow rofi-pillow themes vim x xresources-pillow zsh)
+dots=(awesome compton kitty rofi themes vim x xresources zsh)
 
 for dot in ${dots[@]}; do
     stow $dot

@@ -36,4 +36,4 @@ fi
 #  unset f
 # fi
 
-exec awesome
+exec i3
