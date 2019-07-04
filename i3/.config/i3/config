@@ -240,7 +240,7 @@ gaps inner 10
 # smart_gaps on
 smart_borders on
 
-bindsym $mod+Control+Shift+z gaps inner all set 10
+bindsym $mod+Control+Shift+z gaps outer all set 0; gaps inner all set 10
 bindsym $mod+z gaps outer all plus 5
 bindsym $mod+shift+z gaps outer all minus 5
 bindsym $mod+x gaps inner all plus 5
