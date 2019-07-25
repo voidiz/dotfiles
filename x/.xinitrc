@@ -2,7 +2,8 @@
 
 xset r rate 175 50
 systemctl --user import-environment DISPLAY
-ibus-daemon -drx
+# ibus-daemon -drx
+fcitx -d
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
