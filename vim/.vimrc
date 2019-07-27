@@ -1,88 +1,77 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
 set shell=/bin/bash
 set encoding=utf-8
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Automatically install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Fuzzy finder CtrlP
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " PyWal vim plugin
-Plugin 'dylanaraps/wal.vim'
+Plug 'dylanaraps/wal.vim'
 
 " Various colorschemes
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'pixelmuerto/vim-pixelmuerto'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'challenger-deep-theme/vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'pixelmuerto/vim-pixelmuerto'
+Plug 'w0ng/vim-hybrid'
+Plug 'challenger-deep-theme/vim'
 
 " Lightline
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 
 " NERDTree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " Auto close plugin
-Plugin 'itmammoth/doorboy.vim'
+Plug 'itmammoth/doorboy.vim'
 
 " Auto close HTML tags
-Plugin 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag'
 
 " Emmet
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 " Comment stuff plugin
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
+
+" Code completion with lsp plugin
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-path'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " PHP
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'jwalton512/vim-blade'
+" Plug 'shawncplus/phpcomplete.vim'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'jwalton512/vim-blade'
 " Debugging PHP, requires xdebug
-" Plugin 'vim-vdebug/vdebug'
+" Plug 'vim-vdebug/vdebug'
 
 " Go
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " React/JS
-" Indentation and syntax for JS
-Plugin 'pangloss/vim-javascript'
+" Indentation and syntax highlighting for JS
+Plug 'pangloss/vim-javascript'
 
 " JSON highlighting etc.
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 
 " Indentation and syntax highlighting, React jsx
-Plugin 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 
-" YCM-Generator
-Plugin 'rdnetto/YCM-Generator'
-
-" YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()
 
 " Colors
 set t_Co=255
@@ -147,6 +136,32 @@ let g:ctrlp_follow_symlinks = 2
 " nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"""""""""""""""""""""""""""""""""""""""""""
+" ncm2 settings
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
+" suppress annoying messages
+set shortmess+=c
+
+" allow tabbing between results in the popup
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""
+" languageclient-neovim settings
+set hidden
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+let g:LanguageClient_serverCommands= {
+    \ 'javascript': ['$HOME/.npm-global/bin/typescript-language-server', '--stdio'],
+    \ 'javascript.jsx': ['$HOME/.npm-global/bin/typescript-language-server', '--stdio'],
+    \ 'python': ['pyls'],
+    \ 'go': ['gopls'],
+    \ 'php': ['$HOME/.npm-global/bin/intelephense', '--stdio']}
+"""""""""""""""""""""""""""""""""""""""""""
 
 " php_cs_fixer settings
 "let g:php_cs_fixer_path = "~/php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
