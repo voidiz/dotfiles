@@ -26,19 +26,22 @@
     main: #f7ea98;
     main2: #e5d468;
     border-color: @background;
-    spacing: 2;
+    spacing: 10;
 }
 
 #window {
     background-color: @background;
-    border: 1;
-    border-color: @main2;
-    border-radius: 10px;
-    height: 400px;
+    /* border: 1; */
+    /* border-color: @main2; */
+    /* border-radius: 10px; */
+    border: 5;
+    border-color: #071f29;
+    height: 250px;
     padding: 25px;
-    location: south west;
-    x-offset: 50px;
-    y-offset: -50px;
+    /* location: south west; */
+    location: center;
+    /* x-offset: 50px; */
+    /* y-offset: -50px; */
     width: 350px;
 }
 
@@ -72,7 +75,7 @@ textbox-prompt-colon {
     fixed-height: 0;
     border: 0px 0px 0px;
     border-color: @main2;
-    spacing: 5px;
+    spacing: 10px;
     scrollbar: true;
     padding: 10px 0px 0px;
 }

@@ -62,6 +62,9 @@ floating_modifier $mod
 # start a terminal
 bindsym Control+Mod1+T exec xst
 
+# open a new window in the cwd
+bindsym Control+Mod1+Return exec $HOME/.config/i3/xst-cwd.sh
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
