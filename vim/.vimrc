@@ -160,7 +160,9 @@ let g:LanguageClient_serverCommands= {
     \ 'javascript.jsx': ['$HOME/.npm-global/bin/typescript-language-server', '--stdio'],
     \ 'python': ['pyls'],
     \ 'go': ['gopls'],
-    \ 'php': ['$HOME/.npm-global/bin/intelephense', '--stdio']}
+    \ 'php': ['$HOME/.npm-global/bin/intelephense', '--stdio'],
+    \ 'c': ['clangd'],
+    \ 'cpp': ['clangd']}
 """""""""""""""""""""""""""""""""""""""""""
 
 " php_cs_fixer settings
