@@ -146,7 +146,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Noto Sans Mono"
-                               :size 13
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -333,6 +333,10 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq-default scroll-margin 3
+                tab-width 4
+                indent-tabs-mode nil
+                c-basic-offset 4
+                python-indent-offset 4
                 javascript-indent-level 2
                 js-indent-level 2
                 js2-basic-offset 2
@@ -341,6 +345,11 @@ you should place your code here."
                 web-mode-css-indent-offset 2
                 web-mode-code-indent-offset 2
                 web-mode-attr-indent-offset 2)
+
+  (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
+  (add-hook 'go-mode-hook
+    		(lambda ()
+    		  (setq tab-width 2)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

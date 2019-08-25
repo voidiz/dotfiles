@@ -55,8 +55,10 @@ st.color14:     #9AEDFE
 st.color7:      #BFBFBF
 st.color15:     #E6E6E6
 
+st.termname:    st-256color
 st.shell:       /usr/bin/zsh
 st.font:        Noto Sans Mono:pixelsize=14:antialias=true:autohint=true;
 st.borderpx:    15
+st.cursorshape: 6
 
 Xft.lcdfilter: lcddefault
