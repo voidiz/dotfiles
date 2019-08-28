@@ -1,3 +1,7 @@
+" .vimrc
+" Requires vim8/neovim and python3 with python module
+" pynvim or neovim
+
 set nocompatible
 set shell=/bin/bash
 set encoding=utf-8
@@ -12,6 +16,9 @@ endif
 """""""""""""""""""""""""""""""""""""""""""
 " Plugins
 call plug#begin('~/.vim/plugged')
+
+" vim8 support for neovim plugins
+Plug 'roxma/vim-hug-neovim-rpc'
 
 " Fuzzy finder CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
@@ -103,8 +110,16 @@ colorscheme dracula
 hi VertSplit ctermbg=0 ctermfg=0
 set background=dark
 
+" Set cursor to block when starting vim
+:au VimEnter * set guicursor=a:block-Cursor
+
 " Restore cursor to bar on exit
 :au VimLeave * set guicursor=a:ver100-blinkon0
+
+" Cursors
+let &t_SI = "\<Esc>[6 q" " insert mode vertical bar
+let &t_SR = "\<Esc>[4 q" " replace mode horizontal bar
+let &t_EI = "\<Esc>[2 q" " normal mode block
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""

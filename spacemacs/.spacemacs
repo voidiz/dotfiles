@@ -348,8 +348,8 @@ you should place your code here."
 
   (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   (add-hook 'go-mode-hook
-    		(lambda ()
-    		  (setq tab-width 2)))
+            (lambda ()
+              (setq tab-width 2)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
