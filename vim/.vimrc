@@ -71,13 +71,6 @@ Plug 'ncm2/ncm2-ultisnips'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" PHP
-" Plug 'shawncplus/phpcomplete.vim'
-Plug 'stephpy/vim-php-cs-fixer'
-Plug 'jwalton512/vim-blade'
-" Debugging PHP, requires xdebug
-" Plug 'vim-vdebug/vdebug'
-
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -90,6 +83,9 @@ Plug 'elzr/vim-json'
 
 " Indentation and syntax highlighting, React jsx
 Plug 'mxw/vim-jsx'
+
+" Live markdown preview
+Plug 'shime/vim-livedown'
 
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""
@@ -216,19 +212,6 @@ let g:LanguageClient_serverCommands= {
     " \ 'javascript': ['$HOME/.npm-global/bin/typescript-language-server', '--stdio'],
     " \ 'python': ['pyls'],
     " \ 'go': ['gopls'],
-    " \ 'php': ['$HOME/.npm-global/bin/intelephense', '--stdio'],
     " \ 'c': ['clangd'],
     " \ 'cpp': ['clangd']}
-"""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""
-" php_cs_fixer settings
-"let g:php_cs_fixer_path = "~/php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
-let g:php_cs_fixer_level = "symfony"
-let g:php_cs_fixer_config = "default"
-let g:php_cs_fixer_rules = "@PSR2"
-let g:php_cs_fixer_php_path = "php"
-let g:php_cs_fixer_enable_default_mapping = 1
-let g:php_cs_fixer_dry_run = 0
-let g:php_cs_fixer_verbose = 0
 """""""""""""""""""""""""""""""""""""""""""
