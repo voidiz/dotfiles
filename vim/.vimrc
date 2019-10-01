@@ -58,7 +58,6 @@ Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-bufword'
 Plug 'Shougo/neco-syntax'
 Plug 'ncm2/ncm2-syntax'
-Plug 'ncm2/ncm2-cssomni'
 Plug 'ncm2/ncm2-tern', {'do': 'npm install'}
 Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-pyclang'
@@ -151,9 +150,11 @@ au Filetype python
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set textwidth=79 |
+    \ set colorcolumn=79 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+highlight ColorColumn ctermbg=Yellow
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -166,6 +167,18 @@ au Filetype javascript,html,htmldjango,css
     \ setl expandtab |
     \ setl autoindent |
     \ setl fileformat=unix
+
+" Omni completion for css/scss/less/sass
+au User Ncm2Plugin call ncm2#register_source({
+    \ 'name' : 'css',
+    \ 'priority': 9,
+    \ 'subscope_enable': 1,
+    \ 'scope': ['css','scss', 'less', 'sass'],
+    \ 'mark': 'css',
+    \ 'word_pattern': '[\w\-]+',
+    \ 'complete_pattern': ':\s*',
+    \ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+    \ })
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
