@@ -15,3 +15,4 @@ fi
 # source /usr/share/nvm/init-nvm.sh
 
 alias vim="nvim"
+alias n="nnn"

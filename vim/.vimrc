@@ -86,6 +86,9 @@ Plug 'mxw/vim-jsx'
 " Live markdown preview
 Plug 'shime/vim-livedown'
 
+" LaTeX
+Plug 'lervag/vimtex'
+
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""
 
@@ -231,4 +234,23 @@ let g:LanguageClient_serverCommands= {
     " \ 'go': ['gopls'],
     " \ 'c': ['clangd'],
     " \ 'cpp': ['clangd']}
+"""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""
+" latex settings
+let g:text_flavor = 'latex'
+let g:vimtex_view_method = "zathura"
+let g:vimtex_latexmk_continuous = 1
+let g:vimtex_compiler_progname = 'nvr'
+
+" ncm2 omnicompletion for latex
+autocmd Filetype tex call ncm2#register_source({
+    \ 'name': 'vimtex',
+    \ 'priority': 8,
+    \ 'scope': ['tex'],
+    \ 'mark': 'tex',
+    \ 'word_pattern': '\w+',
+    \ 'complete_pattern': g:vimtex#re#ncm2,
+    \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+    \ })
 """""""""""""""""""""""""""""""""""""""""""
