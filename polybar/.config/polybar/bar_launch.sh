@@ -4,4 +4,4 @@ killall polybar
 
 sleep 2;
 
-polybar bigbar &
+polybar -c $HOME/.config/polybar/config.ini bigbar &
