@@ -7,7 +7,8 @@ rofi.modi: combi
 #rofi.color-active: #272827, #657b83, #272827, #272827, #8abeb7
 #rofi.color-urgent: #272827, #657b83, #272827, #272827, #8abeb7
 
-rofi.theme: ~/.config/rofi/colors-rofi-dark.rasi
+# rofi.theme: ~/.config/rofi/colors-rofi-dark.rasi
+rofi.theme: ~/.config/rofi/colors-rofi-light.rasi
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false

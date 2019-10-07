@@ -27,11 +27,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dylanaraps/wal.vim'
 
 " Various colorschemes
-Plug 'arcticicestudio/nord-vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'pixelmuerto/vim-pixelmuerto'
 Plug 'w0ng/vim-hybrid'
-Plug 'challenger-deep-theme/vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -94,19 +92,20 @@ call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""
 " Colors
-set t_Co=255
+set t_Co=256
 syntax on
-let g:hybrid_use_Xresources = 1
-let g:hybrid_custom_term_colors = 1
-" colorscheme molokai
-" colorscheme wal
-" colorscheme ron
-" colorscheme darkblue
-" colorscheme default
-" colorscheme hybrid
-colorscheme dracula
 hi VertSplit ctermbg=0 ctermfg=0
-set background=dark
+
+" Light theme
+set background=light
+colorscheme PaperColor
+
+" Dark theme
+" let g:hybrid_use_Xresources = 1
+" let g:hybrid_custom_term_colors = 1
+" colorscheme hybrid
+" colorscheme dracula
+" set background=dark
 
 " Set cursor to block when starting vim
 :au VimEnter * set guicursor=a:block-Cursor
@@ -124,8 +123,11 @@ let &t_EI = "\<Esc>[2 q" " normal mode block
 " Lightline
 set laststatus=2
 set noshowmode
+" let g:lightline = {
+"     \ 'colorscheme': 'pillow',
+"     \ }
 let g:lightline = {
-    \ 'colorscheme': 'pillow',
+    \ 'colorscheme': 'PaperColor',
     \ }
 """""""""""""""""""""""""""""""""""""""""""
 
