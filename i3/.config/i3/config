@@ -19,7 +19,7 @@ exec_always --no-startup-id compton --config $HOME/.config/compton.conf -b
 # --detect-client-opacity --opacity-rule "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
 
 # Flashfocus (focus border replacement)
-exec_always --no-startup-id flashfocus
+# exec_always --no-startup-id flashfocus
 
 # Start wal
 #exec --no-startup-id wal -R
