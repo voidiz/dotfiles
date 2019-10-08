@@ -19,6 +19,10 @@
 *.color7:			    #444444
 *.color15:			    #005f87
 
+i3wm.bg:                #1f1f1f
+i3wm.bg2:               #828282
+i3wm.tx:                #eeeeee
+
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
 st.font:        Noto Sans Mono:pixelsize=16:antialias=true:autohint=true;
