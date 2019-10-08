@@ -33,9 +33,9 @@
     background-color: @background;
     /* border: 1; */
     /* border-color: @main2; */
-    /* border-radius: 10px; */
-    border: 5;
-    border-color: #071f29;
+    /* borde1-radius: 10px; */
+    border: 1;
+    border-color: @main;
     height: 250px;
     padding: 25px;
     /* location: south west; */

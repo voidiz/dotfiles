@@ -14,5 +14,5 @@ fi
 # Set up Node Version Manager
 # source /usr/share/nvm/init-nvm.sh
 
-alias vim="nvim"
+alias vim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 alias n="nnn"
