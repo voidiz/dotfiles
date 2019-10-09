@@ -34,6 +34,8 @@ apply_xresoures() {
     pgrep xst | xargs -L1 kill -USR1
     echo "Reloaded all xst terminals"
 
+    killall dunst
+
     # Requires python module neovim-remote
     if [[ -x "$(command -v nvr)" ]] && [[ -n $(pgrep nvim) ]]; then
         nvr --remote-send ":set bg=$1<CR>"
