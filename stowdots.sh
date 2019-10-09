@@ -3,20 +3,22 @@
 set -eu
 
 pillow=(awesome compton kitty rofi themes
-    systemd vim x xresources zsh
+    systemd vim-base x xresources zsh
 )
 
 i3=(
     compton i3 polybar-base rofi-base
-    themes systemd vim x zsh
+    themes systemd vim-base x zsh
 )
 
 dark=(
    dunst-dark polybar-dark rofi-dark xresources-dark 
+   vim-dark
 )
 
 light=(
    dunst-light polybar-light rofi-light xresources-light 
+   vim-light
 )
 
 name=$1[@]
@@ -28,13 +30,19 @@ for dot in ${wow[@]}; do
 done
 
 apply_xresoures() {
+    if [[ ! -d "$HOME/.vim/bg" ]]; then
+        mkdir "$HOME/.vim/bg"
+    fi
+
     xrdb $HOME/.Xresources
     echo "Applied Xresources"
 
     pgrep xst | xargs -L1 kill -USR1
     echo "Reloaded all xst terminals"
 
-    killall dunst
+    if [[ -n $(pgrep dunst) ]]; then
+        killall dunst
+    fi
 
     # Requires python module neovim-remote
     if [[ -x "$(command -v nvr)" ]] && [[ -n $(pgrep nvim) ]]; then

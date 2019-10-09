@@ -95,10 +95,10 @@ call plug#end()
 set t_Co=256
 syntax on
 hi VertSplit ctermbg=0 ctermfg=0
-
-" Light theme
-set background=light
 colorscheme PaperColor
+
+" Set background
+runtime bg/bg.vim
 
 " Dark theme
 " let g:hybrid_use_Xresources = 1
