@@ -28,10 +28,13 @@ exec_always --no-startup-id compton --config $HOME/.config/compton.conf -b
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/pink-mountain.jpg
 # exec --no-startup-id nitrogen --restore
 
-# Dark gradient
+# Purple/pink gradient
 # exec --no-startup-id hsetroot -add "#30082d" -add "#080a30" -gradient 270
 
-# Light
+# Dark gradient
+# exec --no-startup-id hsetroot -add "#161405" -add "#1f1f1f" -gradient 130
+
+# Light gradient
 # exec --no-startup-id hsetroot -solid "#ffd4d4"
 
 # Start polybar
