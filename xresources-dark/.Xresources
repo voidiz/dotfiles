@@ -1,5 +1,6 @@
-*.foreground:   #ffffff
-*.background:   #071523
+*.foreground:   #FFFFFF
+/* *.background:   #071523 */
+*.background:   #1C1C1C
 *.color0:       #000000
 *.color8:       #4D4D4D
 *.color1:       #FF5555
@@ -17,9 +18,9 @@
 *.color7:       #BFBFBF
 *.color15:      #E6E6E6
 
-i3wm.bg:        #f7ea98
-i3wm.bg2:       #aeaeae
-i3wm.tx:        #1f1f1f
+i3wm.bg:        #F7EA98
+i3wm.bg2:       #AEAEAE
+i3wm.tx:        #1F1F1F
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
