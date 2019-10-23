@@ -21,6 +21,7 @@
 i3wm.bg:        #F7EA98
 i3wm.bg2:       #AEAEAE
 i3wm.tx:        #1F1F1F
+i3wm.wall:      $HOME/.config/i3/dark-pink-mountain.jpg 
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh

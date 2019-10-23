@@ -63,7 +63,7 @@ if [[ "$1" == "dark" ]]; then
     apply_xresoures $1
 
     if [[ -x "$(command -v hsetroot)" ]]; then
-        hsetroot -add "#161405" -add "#1f1f1f" -gradient 130
+        feh --bg-scale $HOME/.config/i3/dark-pink-mountain.jpg
         echo "Set background"
     fi
 elif [[ "$1" == "light" ]]; then
