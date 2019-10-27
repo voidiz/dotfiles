@@ -28,8 +28,7 @@ if [[ ! -x "$scriptdir/stow-build/bin/stow" ]]; then
     echo "Installing stow..."
     cd stow && git init && autoreconf -i 
     ./configure --prefix=$scriptdir/stow-build
-    GIT_DIR=$scriptdir/.git make install && cd ..
-    echo -e "\nSuccessfully installed stow!\n"
+    make install && make clean && rm -rf .git && cd ..
 fi
 
 name=$1[@]
