@@ -26,7 +26,7 @@ scriptdir=$(dirname "$(readlink -f "$0")")
 # Install stow if it doesn't exist
 if [[ ! -x "$scriptdir/stow-build/bin/stow" ]]; then
     echo "Installing stow..."
-    cd stow && git init && autoreconf -i 
+    cd stow && rm -rf .git && git init && autoreconf -i 
     ./configure --prefix=$scriptdir/stow-build
     make install && make clean && rm -rf .git && cd ..
 fi
