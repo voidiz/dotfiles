@@ -87,7 +87,7 @@ apply_xresources() {
 apply_xresources $1
 
 if [[ "$1" == "dark" ]]; then
-    feh_change_bg $HOME/.config/i3/dark-pink-mountain.jpg
+    feh_change_bg $HOME/.config/i3/dark-flower.jpg
 elif [[ "$1" == "light" ]]; then
     feh_change_bg $HOME/.config/i3/pink-mountain.jpg
 fi
