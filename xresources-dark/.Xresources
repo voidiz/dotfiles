@@ -25,7 +25,7 @@
 /* -- Pink -- */
 i3wm.bg:        #DCA6D3
 i3wm.bg2:       #E8DFEA
-i3wm.tx:        #1F1F1F
+i3wm.tx:        #1C1C1C
 i3wm.wall:      $HOME/.config/i3/dark-flower.jpg 
 
 st.termname:    st-256color

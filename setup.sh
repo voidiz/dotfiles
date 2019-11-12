@@ -67,7 +67,7 @@ apply_xresources() {
 
     # Requires python module neovim-remote
     if [[ -x "$(command -v nvr)" ]] && [[ -n $(pgrep nvim) ]]; then
-        nvr --remote-send ":set bg=$1<CR>"
+        nvr --nostart --remote-send ":set bg=$1<CR>"
         echo "Changed background of all nvim processes"
     else
         echo "Neovim-remote and/or nvim process not found, won't change bg"
