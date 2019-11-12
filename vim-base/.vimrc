@@ -159,7 +159,7 @@ au Filetype python
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
-highlight ColorColumn ctermbg=Yellow
+highlight ColorColumn ctermbg=176
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
