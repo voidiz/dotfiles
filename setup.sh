@@ -50,7 +50,7 @@ aur="
 
 stow_dots() {
     for dot in ${list_contents[@]}; do
-        stow $dot --override=.+
+        stow $dot --override=.+ --no-folding
         echo "Symlinking $dot"
     done
 }
@@ -113,17 +113,23 @@ if [[ $1 != "packages" ]] && [[ $1 != "aur" ]]; then
     list_name=$1[@]
     list_contents=${!list_name}
     stow_dots "$list_contents"
+
+    if ! xset q &>/dev/null; then
+        echo "Done!"
+        exit
+    fi
+
     apply_xresources $1
+
+    if [[ $1 == "dark" ]]; then
+        feh_change_bg $HOME/.config/i3/dark-flower.jpg
+    elif [[ $1 == "light" ]]; then
+        feh_change_bg $HOME/.config/i3/pink-mountain.jpg
+    fi
 else
     str_name=$1
     str_content=${!str_name}
     install_packages "$str_name" "$str_content"
-fi
-
-if [[ $1 == "dark" ]]; then
-    feh_change_bg $HOME/.config/i3/dark-flower.jpg
-elif [[ $1 == "light" ]]; then
-    feh_change_bg $HOME/.config/i3/pink-mountain.jpg
 fi
 
 echo "Done!"
