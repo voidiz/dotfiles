@@ -39,7 +39,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 
 " Auto close plugin
-Plug 'itmammoth/doorboy.vim'
+" Plug 'itmammoth/doorboy.vim'
 
 " Auto close HTML tags
 Plug 'alvan/vim-closetag'
@@ -49,6 +49,9 @@ Plug 'mattn/emmet-vim'
 
 " Comment stuff plugin
 Plug 'tpope/vim-commentary'
+
+" Pairs (parens, brackets, quotes, etc.)
+Plug 'jiangmiao/auto-pairs'
 
 " Code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -121,14 +124,11 @@ let g:lightline = {
 set number
 set relativenumber
 set nowrap
-set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set scrolloff=3
 set autoindent
-set smartindent
-set cindent
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""
 
@@ -136,14 +136,14 @@ filetype plugin indent on
 " Python settings
 " au BufNewFile,BufRead *.py:
 au Filetype python
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set colorcolumn=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+    \ setl tabstop=4 |
+    \ setl softtabstop=4 |
+    \ setl shiftwidth=4 |
+    \ setl textwidth=79 |
+    \ setl colorcolumn=79 |
+    \ setl expandtab |
+    \ setl autoindent |
+    \ setl fileformat=unix
 highlight ColorColumn ctermbg=176
 """""""""""""""""""""""""""""""""""""""""""
 
@@ -226,12 +226,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Navigate completion list with <Tab> and <S-Tab>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
