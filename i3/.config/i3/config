@@ -179,7 +179,7 @@ bindsym $mod+Shift+a move scratchpad
 bindsym $mod+Shift+s scratchpad show
 
 # lock i3
-bindsym Control+Mod1+L exec $HOME/.xlock/lock.sh
+bindsym Control+Mod1+L exec $HOME/.config/i3/lock.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
