@@ -32,8 +32,9 @@ packages="
 
     bluez bluez-utils netctl ifplugd wpa_supplicant
 
-    curl ffmpeg go nodejs npm python imagemagick neovim
-    python-pynvim stow wget youtube-dl xdotool xsel zsh
+    curl ffmpeg go nodejs npm python imagemagick
+    man-db man-pages neovim python-pynvim python-jedi
+    stow wget youtube-dl xdotool xsel zsh
 
     deluge firefox discord telegram-desktop fcitx
     fcitx-mozc fcitx-im fcitx-configtool feh flameshot
