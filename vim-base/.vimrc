@@ -182,11 +182,24 @@ let g:coc_global_extensions = [
     \ 'coc-json', 'coc-tsserver', 'coc-html',
     \ 'coc-css', 'coc-python', 'coc-highlight',
     \ 'coc-emmet', 'coc-go', 'coc-eslint',
-    \ 'coc-prettier',
+    \ 'coc-prettier'
     \]
 
 " configurations
-" let g:coc_user_config = {}
+let g:coc_user_config = {
+    \ "languageserver": {
+    \     "ccls": {
+    \         "command": "ccls",
+    \         "filetypes": ["c", "cpp", "objc", "objcpp"],
+    \         "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+    \         "initializationOptions": {
+    \             "cache": {
+    \                 "directory": "/tmp/ccls"
+    \             }
+    \         }
+    \     }
+    \ }
+    \}
 
 " if hidden is not set, TextEdit might fail.
 set hidden
