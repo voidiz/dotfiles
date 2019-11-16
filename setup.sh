@@ -2,13 +2,14 @@
 
 set -eu
 
-pillow=(awesome compton kitty rofi themes
-    systemd vim-base x xresources zsh
+pillow=(
+    awesome compton kitty rofi themes
+    systemd nvim vim-base x xresources zsh
 )
 
 i3=(
     compton i3 polybar-base rofi-base
-    themes systemd vim-base x zsh
+    themes systemd nvim vim-base x zsh
 )
 
 dark=(
@@ -23,14 +24,14 @@ light=(
 
 packages="
     xorg-server xorg-xinit i3-gaps compton dunst i3lock-color
-    noto-fonts rofi
+    noto-fonts rofi htop
 
     pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol
 
     bluez bluez-utils netctl ifplugd wpa_supplicant
 
     curl ffmpeg go nodejs npm python imagemagick neovim 
-    python-pynvim stow wget youtube-dl zsh
+    python-pynvim stow wget youtube-dl xsel zsh
 
     deluge firefox discord telegram-desktop fcitx
     fcitx-mozc fcitx-im feh flameshot kdeconnect keepassxc
