@@ -107,6 +107,12 @@ install_packages() {
         fi
         yay -S $2 --noconfirm
     fi
+
+    # Install prezto for zsh
+    if [[ ! -d "$HOME/.zprezto" ]]; then
+        git clone --recursive https://github.com/sorin-ionescu/prezto.git \
+            "${ZDOTDIR:-$HOME}/.zprezto"
+    fi
 }
 
 if [[ $1 != "packages" ]] && [[ $1 != "aur" ]]; then
