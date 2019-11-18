@@ -172,7 +172,7 @@ bindsym Control+$mod+Shift+6 exec $HOME/.config/i3/move-all-workspace.sh 6
 bindsym Control+$mod+Shift+7 exec $HOME/.config/i3/move-all-workspace.sh 7
 bindsym Control+$mod+Shift+8 exec $HOME/.config/i3/move-all-workspace.sh 8
 bindsym Control+$mod+Shift+9 exec $HOME/.config/i3/move-all-workspace.sh 9
-bindsym Control+$mod+Shift+0 exec $HOME/.config/i3/move-all-workspace.sh 0
+bindsym Control+$mod+Shift+0 exec $HOME/.config/i3/move-all-workspace.sh 10
 
 # scratchpad
 bindsym $mod+Shift+a move scratchpad
