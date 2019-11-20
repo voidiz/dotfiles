@@ -23,12 +23,13 @@ light=(
 )
 
 packages="
-    xorg-server xorg-xinit xorg-xrandr i3-gaps compton dunst
-    i3lock-color noto-fonts adobe-source-han-sans-jp-fonts
-    rofi htop
+    xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo
+    xorg-xev i3-gaps compton dunst i3lock-color
+    noto-fonts adobe-source-han-sans-jp-fonts rofi
+    htop
 
-    pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol
-    alsa-utils
+    pulseaudio pulseaudio-alsa pulseaudio-bluetooth 
+    pavucontrol alsa-utils
 
     bluez bluez-utils netctl ifplugd wpa_supplicant
 
@@ -49,7 +50,7 @@ aur="
     ttf-material-design-icons ttf-unifont
 
     chatterino2-git plex-media-player spicetify-cli spotify
-    ffmpeg-compat-57 dropbox indicator-kdeconnect-git
+    ffmpeg-compat-57 dropbox indicator-kdeconnect-git mpv-mpris
 "
 
 stow_dots() {
@@ -110,6 +111,10 @@ install_packages() {
             rm -rf $HOME/yay
         fi
         yay -S $2 --noconfirm
+
+        # mpv mpris
+        mkdir -p $HOME/.config/mpv/scripts
+        ln -s /usr/lib/mpv/mpris.so $HOME/.config/mpv/scripts/mpris.so
     fi
 
     # Install prezto for zsh
