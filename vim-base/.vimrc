@@ -95,16 +95,8 @@ runtime bg/bg.vim
 " colorscheme dracula
 " set background=dark
 
-" Set cursor to block when starting vim
-:au VimEnter * set guicursor=a:block-Cursor
-
 " Restore cursor to bar on exit
 :au VimLeave * set guicursor=a:ver100-blinkon0
-
-" Cursors
-let &t_SI = "\<Esc>[6 q" " insert mode vertical bar
-let &t_SR = "\<Esc>[4 q" " replace mode horizontal bar
-let &t_EI = "\<Esc>[2 q" " normal mode block
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
