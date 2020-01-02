@@ -23,14 +23,12 @@ Plug 'roxma/vim-hug-neovim-rpc'
 " Fuzzy finder CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
-" PyWal vim plugin
-Plug 'dylanaraps/wal.vim'
-
 " Various colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'w0ng/vim-hybrid'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rakr/vim-two-firewatch'
+Plug 'fenetikm/falcon'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -80,10 +78,14 @@ call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""
 " Colors
+if (has("termguicolors"))
+    set termguicolors
+endif
+
 set t_Co=256
 syntax on
 hi VertSplit ctermbg=0 ctermfg=0
-colorscheme PaperColor
+colorscheme falcon
 
 " Set background
 runtime bg/bg.vim
@@ -103,11 +105,9 @@ runtime bg/bg.vim
 " Lightline
 set laststatus=2
 set noshowmode
-" let g:lightline = {
-"     \ 'colorscheme': 'pillow',
-"     \ }
+let g:falcon_lightline = 1
 let g:lightline = {
-    \ 'colorscheme': 'PaperColor',
+    \ 'colorscheme': 'falcon',
     \ }
 """""""""""""""""""""""""""""""""""""""""""
 
@@ -128,13 +128,8 @@ filetype plugin indent on
 " Python settings
 " au BufNewFile,BufRead *.py:
 au Filetype python
-    \ setl tabstop=4 |
-    \ setl softtabstop=4 |
-    \ setl shiftwidth=4 |
     \ setl textwidth=79 |
     \ setl colorcolumn=79 |
-    \ setl expandtab |
-    \ setl autoindent |
     \ setl fileformat=unix
 highlight ColorColumn ctermbg=176
 """""""""""""""""""""""""""""""""""""""""""
@@ -146,8 +141,6 @@ au Filetype javascript,html,htmldjango,css,javascript.jsx
     \ setl tabstop=2 |
     \ setl softtabstop=2 |
     \ setl shiftwidth=2 |
-    \ setl expandtab |
-    \ setl autoindent |
     \ setl fileformat=unix
 """""""""""""""""""""""""""""""""""""""""""
 

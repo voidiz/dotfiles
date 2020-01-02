@@ -33,7 +33,7 @@ packages="
 
     bluez bluez-utils netctl ifplugd wpa_supplicant
 
-    curl ffmpeg go nodejs npm python imagemagick jq
+    curl exa ffmpeg go nodejs npm python imagemagick jq
     man-db man-pages neovim python-pynvim python-jedi
     stow wget youtube-dl xdotool xsel zsh
 
