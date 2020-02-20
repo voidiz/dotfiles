@@ -135,6 +135,14 @@ highlight ColorColumn ctermbg=176
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
+" asm settings
+au Filetype asm
+    \ setl noexpandtab |
+    \ setl softtabstop=8 |
+    \ setl tabstop=8
+""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
 au Filetype javascript,html,htmldjango,css,javascript.jsx

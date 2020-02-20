@@ -1,6 +1,7 @@
 # Environment variables
 export ZDOTDIR="$HOME/.zsh"
 export FPATH="$FPATH:$HOME/.zsh/pure"
+export EDITOR=nvim
 
 # Set prompt
 autoload -U promptinit; promptinit
@@ -31,3 +32,5 @@ bindkey -v
 # Extended completion
 zstyle :compinstall filename "$HOME/.zsh/.zshrc"
 autoload -Uz compinit; compinit
+# Ignore case matching
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
