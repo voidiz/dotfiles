@@ -13,9 +13,9 @@ exec_always --no-startup-id "setxkbmap -layout se"
 # Start polkit agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-# Compton
-exec_always --no-startup-id compton --config $HOME/.config/compton.conf -b
-# exec_always --no-startup-id compton -CGb \
+# Picom
+exec_always --no-startup-id picom --config $HOME/.config/picom.conf -b
+# exec_always --no-startup-id picom -CGb \
 # --detect-client-opacity --opacity-rule "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
 
 # Flashfocus (focus border replacement)

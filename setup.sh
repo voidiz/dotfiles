@@ -3,12 +3,12 @@
 set -eu
 
 pillow=(
-    awesome compton kitty rofi themes
+    awesome picom kitty rofi themes
     systemd nvim vim-base x xresources zsh
 )
 
 i3=(
-    compton i3 polybar-base rofi-base
+    picom i3 polybar-base rofi-base
     themes systemd nvim vim-base x zsh
 )
 
@@ -24,7 +24,7 @@ light=(
 
 packages="
     xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo
-    xorg-xev i3-gaps compton dunst i3lock-color
+    xorg-xev i3-gaps picom dunst i3lock-color
     noto-fonts adobe-source-han-sans-jp-fonts rofi
     htop
 

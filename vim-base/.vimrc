@@ -135,11 +135,12 @@ highlight ColorColumn ctermbg=176
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
-" asm settings
-au Filetype asm
+" asm/go settings
+au Filetype asm,go
     \ setl noexpandtab |
     \ setl softtabstop=8 |
-    \ setl tabstop=8
+    \ setl tabstop=8 |
+    \ setl shiftwidth=8
 """"""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
