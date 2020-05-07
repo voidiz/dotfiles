@@ -58,6 +58,11 @@ stow_dots() {
         stow $dot --override=.+ --no-folding
         echo "Symlinking $dot"
     done
+
+    # Symlink ~/.zsh/.zshrc to .zshrc
+    if [[ ! -f "$HOME/.zshrc" ]]; then
+        ln -s $HOME/.zsh/.zshrc $HOME/.zshrc
+    fi
 }
 
 feh_change_bg() {
@@ -135,9 +140,6 @@ if [[ $1 != "packages" ]] && [[ $1 != "aur" ]]; then
     elif [[ $1 == "light" ]]; then
         feh_change_bg $HOME/.config/i3/pink-mountain.jpg
     fi
-
-    # Symlink ~/.zsh/.zshrc to .zshrc
-    ln -s $HOME/.zsh/.zshrc $HOME/.zshrc
 else
     str_name=$1
     str_content=${!str_name}
