@@ -116,12 +116,6 @@ install_packages() {
         mkdir -p $HOME/.config/mpv/scripts
         ln -s /usr/lib/mpv/mpris.so $HOME/.config/mpv/scripts/mpris.so
     fi
-
-    # Install prezto for zsh
-    if [[ ! -d "$HOME/.zprezto" ]]; then
-        git clone --recursive https://github.com/sorin-ionescu/prezto.git \
-            "${ZDOTDIR:-$HOME}/.zprezto"
-    fi
 }
 
 if [[ $1 != "packages" ]] && [[ $1 != "aur" ]]; then
@@ -141,6 +135,9 @@ if [[ $1 != "packages" ]] && [[ $1 != "aur" ]]; then
     elif [[ $1 == "light" ]]; then
         feh_change_bg $HOME/.config/i3/pink-mountain.jpg
     fi
+
+    # Symlink ~/.zsh/.zshrc to .zshrc
+    ln -s $HOME/.zsh/.zshrc .zshrc
 else
     str_name=$1
     str_content=${!str_name}
