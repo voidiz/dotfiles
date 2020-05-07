@@ -28,7 +28,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'w0ng/vim-hybrid'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rakr/vim-two-firewatch'
-Plug 'fenetikm/falcon'
+Plug 'dylanaraps/wal.vim'
+Plug 'deviantfero/wpgtk.vim'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -73,22 +74,35 @@ Plug 'shime/vim-livedown'
 " LaTeX
 Plug 'lervag/vimtex'
 
+" Syntax coloring/indentation support
+Plug 'sheerun/vim-polyglot'
+
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
 " Colors
-if (has("termguicolors"))
-    set termguicolors
-endif
-
+" if (has("termguicolors"))
+"     set termguicolors
+" endif
+"
 set t_Co=256
 syntax on
-hi VertSplit ctermbg=0 ctermfg=0
-colorscheme falcon
 
 " Set background
 runtime bg/bg.vim
+
+" Colorscheme overrides
+autocmd ColorScheme *
+    \ hi Pmenu ctermbg=0 |
+    \ hi VertSplit ctermbg=0 ctermfg=0 |
+    \ hi ColorColumn ctermbg=176 |
+    \ hi Error ctermbg=0 ctermfg=1 |
+    \ hi WarningMsg ctermbg=0 ctermfg=8 |
+    \ hi Search ctermbg=2 ctermfg=0 |
+    \ hi Comment cterm=italic
+
+colorscheme wal
 
 " Dark theme
 " let g:hybrid_use_Xresources = 1
@@ -105,9 +119,8 @@ runtime bg/bg.vim
 " Lightline
 set laststatus=2
 set noshowmode
-let g:falcon_lightline = 1
 let g:lightline = {
-    \ 'colorscheme': 'falcon',
+    \ 'colorscheme': 'wal',
     \ }
 """""""""""""""""""""""""""""""""""""""""""
 
@@ -131,7 +144,6 @@ au Filetype python
     \ setl textwidth=79 |
     \ setl colorcolumn=79 |
     \ setl fileformat=unix
-highlight ColorColumn ctermbg=176
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -147,6 +159,15 @@ au Filetype asm,go
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
 au Filetype javascript,html,htmldjango,css,javascript.jsx
+    \ setl tabstop=2 |
+    \ setl softtabstop=2 |
+    \ setl shiftwidth=2 |
+    \ setl fileformat=unix
+"""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""
+" c/c++ settings
+au Filetype c,cpp
     \ setl tabstop=2 |
     \ setl softtabstop=2 |
     \ setl shiftwidth=2 |

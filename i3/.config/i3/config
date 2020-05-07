@@ -21,11 +21,9 @@ exec_always --no-startup-id picom --config $HOME/.config/picom.conf -b
 # Flashfocus (focus border replacement)
 # exec_always --no-startup-id flashfocus
 
-# Start wal
-#exec --no-startup-id wal -R
-
 # Set the background
 set_from_resource $wall i3wm.wall
+# exec_always --no-startup-id wal -i "$HOME/.config/i3/dark-flower.jpg" -b "#1c1c1c"
 exec_always --no-startup-id feh --bg-scale $wall
 # exec --no-startup-id nitrogen --restore
 
@@ -179,7 +177,7 @@ bindsym $mod+Shift+a move scratchpad
 bindsym $mod+Shift+s scratchpad show
 
 # lock i3
-bindsym Control+Mod1+L exec $HOME/.config/i3/lock.sh
+bindsym Control+Mod1+Shift+l exec $HOME/.config/i3/lock.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
