@@ -137,7 +137,7 @@ if [[ $1 != "packages" ]] && [[ $1 != "aur" ]]; then
     fi
 
     # Symlink ~/.zsh/.zshrc to .zshrc
-    ln -s $HOME/.zsh/.zshrc .zshrc
+    ln -s $HOME/.zsh/.zshrc $HOME/.zshrc
 else
     str_name=$1
     str_content=${!str_name}
