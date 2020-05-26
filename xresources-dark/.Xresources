@@ -24,13 +24,14 @@
 i3wm.bg:        #DCA6D3
 i3wm.bg2:       #E8DFEA
 i3wm.tx:        #1C1C1C
-i3wm.wall:      $HOME/.config/i3/dark-flower.jpg 
+i3wm.wall:      $HOME/.config/i3/bridge.jpg
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
-st.font:        Noto Sans Mono CJK JP:pixelsize=17:antialias=true:autohint=true;
+st.font:        Noto Sans Mono CJK JP:pixelsize=16:antialias=true:autohint=true;
 st.borderpx:    15
 st.cursorshape: 6
 st.chscale:     1.1
+/* st.opacity:     200 */
 
 Xft.lcdfilter: lcddefault

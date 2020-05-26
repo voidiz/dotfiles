@@ -83,6 +83,7 @@ textbox-prompt-colon {
 #element {
     border: 0;
     padding: 1px;
+    highlight: bold;
 }
 
 #element.normal.normal {

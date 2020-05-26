@@ -272,7 +272,7 @@ bindsym $mod+x gaps inner all plus 5
 bindsym $mod+shift+x gaps inner all minus 5
 
 # hide borders
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
 # colors
 
