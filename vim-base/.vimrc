@@ -49,6 +49,9 @@ Plug 'mattn/emmet-vim'
 " Comment stuff plugin
 Plug 'tpope/vim-commentary'
 
+" Change surrounding symbols
+Plug 'tpope/vim-surround'
+
 " Pairs (parens, brackets, quotes, etc.)
 Plug 'jiangmiao/auto-pairs'
 
@@ -197,7 +200,7 @@ let g:coc_global_extensions = [
     \ 'coc-json', 'coc-tsserver', 'coc-html',
     \ 'coc-css', 'coc-python', 'coc-highlight',
     \ 'coc-emmet', 'coc-go', 'coc-eslint',
-    \ 'coc-prettier'
+    \ 'coc-prettier', 'coc-vimtex'
     \]
 
 " configurations
@@ -292,8 +295,8 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 """""""""""""""""""""""""""""""""""""""""""
 " latex settings
-let g:text_flavor = 'latex'
-let g:vimtex_view_method = "zathura"
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
 let g:vimtex_latexmk_continuous = 1
 let g:vimtex_compiler_progname = 'nvr'
 """""""""""""""""""""""""""""""""""""""""""

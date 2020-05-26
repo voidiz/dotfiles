@@ -28,9 +28,9 @@ i3wm.wall:      $HOME/.config/i3/dark-flower.jpg
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
-st.font:        Noto Sans Mono CJK JP:pixelsize=16:antialias=true:autohint=true;
+st.font:        Noto Sans Mono CJK JP:pixelsize=17:antialias=true:autohint=true;
 st.borderpx:    15
 st.cursorshape: 6
-st.chscale:     1.2
+st.chscale:     1.1
 
 Xft.lcdfilter: lcddefault
