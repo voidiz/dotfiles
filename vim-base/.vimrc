@@ -71,6 +71,10 @@ Plug 'elzr/vim-json'
 " Indentation and syntax highlighting, React jsx
 Plug 'mxw/vim-jsx'
 
+" React + ts
+Plug 'ianks/vim-tsx'
+Plug 'leafgarland/typescript-vim'
+
 " Live markdown preview
 Plug 'shime/vim-livedown'
 
@@ -161,7 +165,7 @@ au Filetype asm,go
 """""""""""""""""""""""""""""""""""""""""""
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
-au Filetype javascript,html,htmldjango,css,javascript.jsx
+au Filetype javascript,html,htmldjango,css,javascript.jsx,typescriptreact
     \ setl tabstop=2 |
     \ setl softtabstop=2 |
     \ setl shiftwidth=2 |
@@ -200,7 +204,7 @@ let g:coc_global_extensions = [
     \ 'coc-json', 'coc-tsserver', 'coc-html',
     \ 'coc-css', 'coc-python', 'coc-highlight',
     \ 'coc-emmet', 'coc-go', 'coc-eslint',
-    \ 'coc-prettier', 'coc-vimtex'
+    \ 'coc-prettier', 'coc-vimtex', 'coc-tslint-plugin',
     \]
 
 " configurations
