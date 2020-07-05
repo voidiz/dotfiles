@@ -23,34 +23,34 @@ light=(
 )
 
 packages="
-    xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo
-    xorg-xev i3-gaps picom dunst i3lock-color
-    noto-fonts adobe-source-han-sans-jp-fonts rofi
-    htop
+xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo
+xorg-xev i3-gaps picom dunst i3lock-color
+noto-fonts adobe-source-han-sans-jp-fonts rofi
+htop
 
-    pulseaudio pulseaudio-alsa pulseaudio-bluetooth 
-    pavucontrol alsa-utils
+pulseaudio pulseaudio-alsa pulseaudio-bluetooth 
+pavucontrol alsa-utils
 
-    bluez bluez-utils netctl ifplugd wpa_supplicant
+bluez bluez-utils netctl ifplugd wpa_supplicant
 
-    curl exa ffmpeg go nodejs npm python imagemagick jq
-    man-db man-pages neovim python-pynvim python-jedi
-    stow wget youtube-dl xdotool xsel zsh
+curl exa ffmpeg go nodejs npm python imagemagick jq
+man-db man-pages neovim python-pynvim python-jedi
+stow wget youtube-dl xdotool xsel zsh
 
-    deluge firefox discord telegram-desktop fcitx
-    fcitx-mozc fcitx-im fcitx-configtool feh flameshot
-    kdeconnect keepassxc mpv mps-youtube streamlink
-    sxiv ttf-hanazono zathura zathura-pdf-mupdf
+deluge firefox discord telegram-desktop fcitx
+fcitx-mozc fcitx-im fcitx-configtool feh flameshot
+kdeconnect keepassxc mpv mps-youtube streamlink 
+sxiv ttf-hanazono zathura zathura-pdf-mupdf
 "
 
 aur="
-    polybar neovim-remote nnn-git xst-git 
+polybar neovim-remote nnn-git xst-git 
 
-    otf-san-francisco otf-sfmono ttf-font-awesome 
-    ttf-material-design-icons ttf-unifont
+otf-san-francisco otf-sfmono ttf-font-awesome 
+ttf-material-design-icons ttf-unifont
 
-    chatterino2-git plex-media-player spicetify-cli spotify
-    ffmpeg-compat-57 dropbox indicator-kdeconnect-git mpv-mpris
+chatterino2-git plex-media-player spicetify-cli spotify
+ffmpeg-compat-57 dropbox indicator-kdeconnect-git mpv-mpris
 "
 
 stow_dots() {
