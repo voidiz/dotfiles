@@ -8,9 +8,6 @@ autoload -U promptinit; promptinit
 zstyle :prompt:pure:path color magenta
 prompt pure
 
-# Set exa colors
-source $HOME/.vim/plugged/falcon/exa/EXA_COLORS
-
 # Set up Node Version Manager
 # source /usr/share/nvm/init-nvm.sh
 
