@@ -109,7 +109,8 @@ autocmd ColorScheme *
     \ hi Search ctermbg=2 ctermfg=0 |
     \ hi Comment cterm=italic
 
-colorscheme wal
+" colorscheme wal
+colorscheme Tomorrow-Night
 
 " Dark theme
 " let g:hybrid_use_Xresources = 1
@@ -127,7 +128,7 @@ colorscheme wal
 set laststatus=2
 set noshowmode
 let g:lightline = {
-    \ 'colorscheme': 'wal',
+    \ 'colorscheme': 'Tomorrow_Night',
     \ }
 """""""""""""""""""""""""""""""""""""""""""
 
@@ -165,7 +166,8 @@ au Filetype asm,go
 """""""""""""""""""""""""""""""""""""""""""
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
-au Filetype javascript,html,htmldjango,css,javascript.jsx,typescriptreact
+au Filetype javascript,html,htmldjango,css,javascript.jsx,
+            \typescriptreact,typescript
     \ setl tabstop=2 |
     \ setl softtabstop=2 |
     \ setl shiftwidth=2 |
