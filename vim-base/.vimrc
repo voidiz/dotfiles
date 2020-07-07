@@ -27,7 +27,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'w0ng/vim-hybrid'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'rakr/vim-two-firewatch'
 Plug 'dylanaraps/wal.vim'
 Plug 'deviantfero/wpgtk.vim'
 
@@ -89,10 +88,10 @@ call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""
 " Colors
-" if (has("termguicolors"))
-"     set termguicolors
-" endif
-"
+ if (has("termguicolors"))
+     set termguicolors
+ endif
+
 set t_Co=256
 syntax on
 
@@ -110,7 +109,9 @@ autocmd ColorScheme *
     \ hi Comment cterm=italic
 
 " colorscheme wal
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+let ayucolor="dark"
+colorscheme ayu
 
 " Dark theme
 " let g:hybrid_use_Xresources = 1
@@ -128,7 +129,7 @@ colorscheme Tomorrow-Night
 set laststatus=2
 set noshowmode
 let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night',
+    \ 'colorscheme': 'ayu',
     \ }
 """""""""""""""""""""""""""""""""""""""""""
 
