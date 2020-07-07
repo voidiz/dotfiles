@@ -296,6 +296,9 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
+" Shift + Alt + F to format current buffer
+nmap <M-S-F> <Plug>(coc-format)
+
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 """""""""""""""""""""""""""""""""""""""""""
