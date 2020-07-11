@@ -2,28 +2,53 @@
 /* *.background:   #282a36 */
 
 /* -- Pink -- */
-*foreground:    #E8DFEA
-*background:    #1C1C1C
-*.color0:       #1C1C1C
-*.color1:       #CE6AA2
-*.color2:       #A991AE
-*.color3:       #D398AF
-*.color4:       #BAA5C5
-*.color5:       #DCA6D3
-*.color6:       #CCB2D1
-*.color7:       #E8DFEA
-*.color8:       #A29CA3
-*.color9:       #CE6AA2
-*.color10:      #A991AE
-*.color11:      #D398AF
-*.color12:      #BAA5C5
-*.color13:      #DCA6D3
-*.color14:      #CCB2D1
-*.color15:      #E8DFEA
+/* *foreground:    #E8DFEA */
+/* *background:    #1C1C1C */
+/* *.color0:       #1C1C1C */
+/* *.color1:       #CE6AA2 */
+/* *.color2:       #A991AE */
+/* *.color3:       #D398AF */
+/* *.color4:       #BAA5C5 */
+/* *.color5:       #DCA6D3 */
+/* *.color6:       #CCB2D1 */
+/* *.color7:       #E8DFEA */
+/* *.color8:       #A29CA3 */
+/* *.color9:       #CE6AA2 */
+/* *.color10:      #A991AE */
+/* *.color11:      #D398AF */
+/* *.color12:      #BAA5C5 */
+/* *.color13:      #DCA6D3 */
+/* *.color14:      #CCB2D1 */
+/* *.color15:      #E8DFEA */
 
-i3wm.bg:        #DCA6D3
-i3wm.bg2:       #E8DFEA
-i3wm.tx:        #1C1C1C
+/* i3wm.bg:        #DCA6D3 */
+/* i3wm.bg2:       #E8DFEA */
+/* i3wm.tx:        #1C1C1C */
+
+/* -- Ayu -- */
+*.background:   #0e1419
+*.foreground:   #e5e1cf
+*.color0:       #000000
+*.color1:       #ff3333
+*.color2:       #b8cc52
+*.color3:  	#e6c446
+*.color4: 	#36a3d9
+*.color5:  	#f07078
+*.color6:  	#95e5cb
+*.color7:  	#ffffff
+*.color8:       #323232
+*.color9:       #ff6565
+*.color10: 	#e9fe83
+*.color11: 	#fff778
+*.color12: 	#68d4ff
+*.color13: 	#ffa3aa
+*.color14: 	#c7fffc
+*.color15:	#ffffff
+
+i3wm.bg:        #ffa3aa
+i3wm.bg2:       #c7fffc
+i3wm.tx:        #0e1419
+
 i3wm.wall:      $HOME/.config/i3/bridge.jpg
 
 st.termname:    st-256color
@@ -33,5 +58,6 @@ st.borderpx:    15
 st.cursorshape: 6
 st.chscale:     1.1
 /* st.opacity:     200 */
+st.cursorfg:    #f19618
 
 Xft.lcdfilter: lcddefault

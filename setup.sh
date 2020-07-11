@@ -44,7 +44,7 @@ sxiv ttf-hanazono zathura zathura-pdf-mupdf
 "
 
 aur="
-polybar neovim-remote nnn-git xst-git 
+polybar neovim-remote nnn-git xst-git lazygit
 
 otf-san-francisco otf-sfmono ttf-font-awesome 
 ttf-material-design-icons ttf-unifont
