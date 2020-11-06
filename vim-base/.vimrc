@@ -106,7 +106,8 @@ autocmd ColorScheme *
     \ hi Error ctermbg=0 ctermfg=1 |
     \ hi WarningMsg ctermbg=0 ctermfg=8 |
     \ hi Search ctermbg=2 ctermfg=0 |
-    \ hi Comment cterm=italic
+    \ hi Comment cterm=italic |
+    \ hi NERDTreeFile guifg=1
 
 " colorscheme wal
 " colorscheme Tomorrow-Night
