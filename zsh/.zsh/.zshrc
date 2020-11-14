@@ -20,7 +20,7 @@ alias ls="exa"
 # c++: Compile and run the supplied file with
 # all inputs *.in in the cwd
 ccc() {
-    g++ -O2 -g -Wall -pedantic "$@"
+    g++ -std=c++17 -O2 -g -Wall -pedantic "$@"
     for file in *.in; do
         echo "Input $file:"
         ./a.out < "$file"; echo -e
