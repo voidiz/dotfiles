@@ -183,6 +183,9 @@ au Filetype c,cpp
     \ setl softtabstop=4 |
     \ setl shiftwidth=4 |
     \ setl fileformat=unix
+
+" compile and run with *.in as input
+nnoremap <leader>ru :!g++ -g -O2 -Wall -pedantic %:p && for file in *.in; do echo "Input $file:"; ./a.out < "$file"; echo -e; done<CR>
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
