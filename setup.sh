@@ -8,18 +8,8 @@ pillow=(
 )
 
 i3=(
-    picom i3 polybar-base rofi-base
-    themes systemd nvim vim-base x zsh
-)
-
-dark=(
-    dunst-dark polybar-dark rofi-dark xresources-dark 
-    vim-dark
-)
-
-light=(
-    dunst-light polybar-light rofi-light xresources-light 
-    vim-light
+    picom i3 polybar dunst xresources
+    themes systemd nvim vim x zsh
 )
 
 packages="
@@ -63,11 +53,6 @@ stow_dots() {
     if [[ ! -f "$HOME/.zshrc" ]]; then
         ln -s $HOME/.zsh/.zshrc $HOME/.zshrc
     fi
-}
-
-feh_change_bg() {
-    feh --bg-scale $1
-    echo "Set background"
 }
 
 apply_xresources() {
@@ -134,12 +119,6 @@ if [[ $1 != "packages" ]] && [[ $1 != "aur" ]]; then
     fi
 
     apply_xresources $1
-
-    if [[ $1 == "dark" ]]; then
-        feh_change_bg $HOME/.config/i3/dark-flower.jpg
-    elif [[ $1 == "light" ]]; then
-        feh_change_bg $HOME/.config/i3/pink-mountain.jpg
-    fi
 else
     str_name=$1
     str_content=${!str_name}

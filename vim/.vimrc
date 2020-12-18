@@ -57,23 +57,6 @@ Plug 'jiangmiao/auto-pairs'
 " Code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-" React/JS
-" Indentation and syntax highlighting for JS
-Plug 'pangloss/vim-javascript'
-
-" JSON highlighting etc.
-Plug 'elzr/vim-json'
-
-" Indentation and syntax highlighting, React jsx
-Plug 'mxw/vim-jsx'
-
-" React + ts
-Plug 'ianks/vim-tsx'
-Plug 'leafgarland/typescript-vim'
-
 " Live markdown preview
 Plug 'shime/vim-livedown'
 
@@ -95,9 +78,6 @@ call plug#end()
 set t_Co=256
 syntax on
 
-" Set background
-runtime bg/bg.vim
-
 " Colorscheme overrides
 autocmd ColorScheme *
     \ hi Pmenu ctermbg=0 |
@@ -113,6 +93,7 @@ autocmd ColorScheme *
 " colorscheme Tomorrow-Night
 let ayucolor="dark"
 colorscheme ayu
+set background=dark
 
 " Dark theme
 " let g:hybrid_use_Xresources = 1
@@ -209,27 +190,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " extensions
 let g:coc_global_extensions = [
     \ 'coc-json', 'coc-tsserver', 'coc-html',
-    \ 'coc-css', 'coc-python', 'coc-highlight',
+    \ 'coc-css', 'coc-jedi', 'coc-highlight',
     \ 'coc-emmet', 'coc-go', 'coc-eslint',
     \ 'coc-prettier', 'coc-vimtex', 'coc-tslint-plugin',
     \ 'coc-clangd'
     \]
-
-" configurations
-" let g:coc_user_config = {
-"     \ "languageserver": {
-"     \     "ccls": {
-"     \         "command": "ccls",
-"     \         "filetypes": ["c", "cpp", "objc", "objcpp"],
-"     \         "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-"     \         "initializationOptions": {
-"     \             "cache": {
-"     \                 "directory": "/tmp/ccls"
-"     \             }
-"     \         }
-"     \     }
-"     \ }
-"     \}
 
 " if hidden is not set, TextEdit might fail.
 set hidden
