@@ -9,7 +9,7 @@ pillow=(
 
 i3=(
     picom i3 polybar dunst xresources
-    themes systemd nvim vim x zsh
+    themes systemd nvim vim x zsh rofi
 )
 
 packages="
