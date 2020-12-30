@@ -41,8 +41,8 @@ i3lock-color polybar neovim-remote nnn-git xst-git lazygit
 otf-san-francisco otf-sfmono ttf-font-awesome 
 ttf-material-design-icons ttf-unifont
 
-chatterino2-git plex-media-player spicetify-cli spotify
-ffmpeg-compat-57 dropbox indicator-kdeconnect-git mpv-mpris
+chatterino2-git spicetify-cli spotify ffmpeg-compat-57
+dropbox mpv-mpris indicator-kdeconnect-git
 "
 
 stow_dots() {
