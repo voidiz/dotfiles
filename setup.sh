@@ -4,7 +4,7 @@ set -eu
 
 common=(
     kitty rofi themes systemd nvim vim
-    xresources zsh
+    xresources zsh x
 )
 
 i3=(
@@ -17,8 +17,8 @@ xfce=(
 
 packages="
 xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo
-xorg-xev i3-gaps picom dunst noto-fonts
-adobe-source-han-sans-jp-fonts rofi htop
+xorg-xev i3-gaps picom dunst noto-fonts noto-fonts-cjk
+rofi htop
 
 pulseaudio pulseaudio-alsa pulseaudio-bluetooth 
 pavucontrol alsa-utils
@@ -27,7 +27,7 @@ bluez bluez-utils netctl ifplugd wpa_supplicant
 
 curl exa ffmpeg go nodejs npm python imagemagick jq
 man-db man-pages neovim python-pynvim python-jedi
-stow tmux wget youtube-dl xdotool xsel zsh
+stow tmux wget youtube-dl xdotool xsel xclip zsh
 
 deluge firefox discord telegram-desktop fcitx
 fcitx-mozc fcitx-im fcitx-configtool feh flameshot
