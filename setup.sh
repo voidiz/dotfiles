@@ -17,9 +17,8 @@ xfce=(
 
 packages="
 xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo
-xorg-xev i3-gaps picom dunst i3lock-color
-noto-fonts adobe-source-han-sans-jp-fonts rofi
-htop
+xorg-xev i3-gaps picom dunst noto-fonts
+adobe-source-han-sans-jp-fonts rofi htop
 
 pulseaudio pulseaudio-alsa pulseaudio-bluetooth 
 pavucontrol alsa-utils
@@ -37,7 +36,7 @@ sxiv ttf-hanazono zathura zathura-pdf-mupdf
 "
 
 aur="
-polybar neovim-remote nnn-git xst-git lazygit
+i3lock-color polybar neovim-remote nnn-git xst-git lazygit
 
 otf-san-francisco otf-sfmono ttf-font-awesome 
 ttf-material-design-icons ttf-unifont
