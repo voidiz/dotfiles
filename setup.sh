@@ -2,14 +2,17 @@
 
 set -eu
 
-pillow=(
-    awesome picom kitty rofi themes
-    systemd nvim vim-base x xresources zsh
+common=(
+    kitty rofi themes systemd nvim vim
+    xresources zsh
 )
 
 i3=(
-    picom i3 polybar dunst xresources
-    themes systemd nvim vim x zsh rofi
+    picom polybar i3 dunst
+)
+
+xfce=(
+    tint2 dunst
 )
 
 packages="
@@ -44,6 +47,11 @@ ffmpeg-compat-57 dropbox indicator-kdeconnect-git mpv-mpris
 "
 
 stow_dots() {
+    for dot in ${common[@]}; do
+        stow $dot --override=.+ --no-folding
+        echo "Symlinking $dot"
+    done
+
     for dot in ${list_contents[@]}; do
         stow $dot --override=.+ --no-folding
         echo "Symlinking $dot"
@@ -56,20 +64,21 @@ stow_dots() {
 }
 
 apply_xresources() {
-    if [[ ! -d "$HOME/.vim/bg" ]]; then
-        mkdir "$HOME/.vim/bg"
-    fi
-
+    # Apply xresources
     xrdb $HOME/.Xresources
     echo "Applied Xresources"
 
-    pgrep xst | xargs -L1 kill -USR1
-    echo "Reloaded all xst terminals"
+    # Reload xst if any are open
+    local ps=$(pgrep xst)
+    if [[ -n $ps ]]; then
+        kill -USR1 $ps
+        echo "Reloaded all xst terminals"
+    fi
 
+    # Reload dunst
     if [[ -n $(pgrep dunst) ]]; then
         killall dunst
-    else
-        echo "Dunst process not found, won't restart"
+        echo "Restarted dunst"
     fi
 
     # Requires python module neovim-remote
@@ -83,12 +92,12 @@ apply_xresources() {
     if [[ -n $(pgrep polybar) ]]; then
         polybar-msg cmd restart > /dev/null 2>&1
         echo "Reloaded polybar"
-    else
-        echo "Polybar not found, won't restart"
     fi
 
-    i3-msg reload > /dev/null 2>&1
-    echo "Reloaded i3"
+    if [[ -n $(pgrep i3) ]]; then
+        i3-msg reload > /dev/null 2>&1
+        echo "Reloaded i3"
+    fi
 }
 
 install_packages() {
