@@ -301,3 +301,6 @@ client.placeholder      $bg     $bg     $tx  $bg        $bg
 # curl -F'file=@/tmp/screenshot.png' http://0x0.st | xclip -selection clipboard; rm -f /tmp/screenshot.png"
 exec_always --no-startup-id flameshot
 bindsym Print exec flameshot gui
+
+# Gif screen recording to clipboard
+bindsym Control+Shift+Print exec giph -s -d 3 -t 10 -y | curl -s -X POST -F file=@- https://0x0.st | xclip -sel clip
