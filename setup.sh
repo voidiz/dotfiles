@@ -27,7 +27,8 @@ bluez bluez-utils netctl ifplugd wpa_supplicant
 
 curl exa ffmpeg go nodejs npm python imagemagick jq
 man-db man-pages neovim python-pynvim python-jedi
-stow tmux wget youtube-dl xclip xdotool xsel zsh
+stow syncthing tmux wget youtube-dl xclip xdotool
+xsel zsh
 
 chromium deluge discord telegram-desktop fcitx
 fcitx-mozc fcitx-im fcitx-configtool feh flameshot

@@ -26,7 +26,7 @@
 /* i3wm.tx:        #1C1C1C */
 
 /* -- Ayu -- */
-*.background:   #0e1419
+*.background:   #071523
 *.foreground:   #e5e1cf
 *.color0:       #000000
 *.color1:       #ff3333
@@ -49,7 +49,7 @@ i3wm.bg:        #ffa3aa
 i3wm.bg2:       #c7fffc
 i3wm.tx:        #0e1419
 
-i3wm.wall:      $HOME/.config/i3/pink-mountain.jpg
+i3wm.wall:      $HOME/Downloads/peepo.jpeg
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
