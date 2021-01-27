@@ -49,7 +49,7 @@ i3wm.bg:        #ffa3aa
 i3wm.bg2:       #c7fffc
 i3wm.tx:        #0e1419
 
-i3wm.wall:      $HOME/Downloads/peepo.jpeg
+i3wm.wall:      $HOME/.config/i3/dark-flower.jpg
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
