@@ -57,13 +57,13 @@ Plug 'jiangmiao/auto-pairs'
 " Code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Live markdown preview
-Plug 'shime/vim-livedown'
+" Syntax coloring
+if has('nvim')
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
 
-" LaTeX
-Plug 'lervag/vimtex'
-
-" Syntax coloring/indentation support
+" Only used for indentation in nvim since treesitter's
+" indentation doesn't work
 Plug 'sheerun/vim-polyglot'
 
 call plug#end()
@@ -79,8 +79,11 @@ set t_Co=256
 syntax on
 
 " Colorscheme overrides
+" Group names can be found with ':so $VIMRUNTIME/syntax/hitest.vim'
 autocmd ColorScheme *
-    \ hi Pmenu ctermbg=0 |
+    \ hi Normal ctermbg=NONE guibg=NONE |
+    \ hi LineNr ctermbg=NONE guibg=NONE |
+    \ hi Pmenu ctermbg=NONE |
     \ hi VertSplit ctermbg=0 ctermfg=0 |
     \ hi ColorColumn ctermbg=176 |
     \ hi Error ctermbg=0 ctermfg=1 |
@@ -190,7 +193,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " extensions
 let g:coc_global_extensions = [
     \ 'coc-json', 'coc-tsserver', 'coc-html',
-    \ 'coc-css', 'coc-jedi', 'coc-highlight',
+    \ 'coc-css', 'coc-pyright', 'coc-highlight',
     \ 'coc-emmet', 'coc-go', 'coc-eslint',
     \ 'coc-prettier', 'coc-vimtex', 'coc-tslint-plugin',
     \ 'coc-clangd'
@@ -271,12 +274,4 @@ nmap <M-S-F> <Plug>(coc-format)
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-"""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""
-" latex settings
-let g:tex_flavor = 'latex'
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_latexmk_continuous = 1
-let g:vimtex_compiler_progname = 'nvr'
 """""""""""""""""""""""""""""""""""""""""""

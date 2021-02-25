@@ -26,7 +26,7 @@ pavucontrol alsa-utils
 bluez bluez-utils netctl ifplugd wpa_supplicant
 
 curl exa ffmpeg go nodejs npm python imagemagick jq
-man-db man-pages neovim python-pynvim python-jedi
+man-db man-pages python-pynvim python-jedi
 stow syncthing tmux wget youtube-dl xclip xdotool
 xsel zsh
 
@@ -38,6 +38,7 @@ sxiv ttf-hanazono zathura zathura-pdf-mupdf
 
 aur="
 i3lock-color polybar neovim-remote nnn-git xst-git lazygit
+neovim-nightly-bin
 
 otf-san-francisco otf-sfmono ttf-font-awesome 
 ttf-material-design-icons ttf-unifont
