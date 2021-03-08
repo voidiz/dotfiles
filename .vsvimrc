@@ -1,0 +1,22 @@
+" Toggle comment
+nnoremap gcc :vsc Edit.ToggleComment<CR>
+vnoremap gc :vsc Edit.ToggleComment<CR><Esc><Esc>
+
+" Format file
+nnoremap <leader>f :vsc Edit.FormatDocument<CR>
+
+" Format selection
+vnoremap <leader>f :vsc Edit.FormatSelection<CR>
+
+" Jump between errors
+nnoremap [g :vsc View.PreviousError<CR>
+nnoremap ]g :vsc View.NextError<CR>
+
+" Rename symbol
+nnoremap <leader>rn :vsc Refactor.Rename<CR>
+
+" Show symbol info (errors, etc.)
+nnoremap <S-K> :vsc Edit.QuickInfo<CR>
+
+" Fuzzy file search
+nnoremap <C-P> :vsc Edit.GoToFile<CR>
