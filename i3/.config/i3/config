@@ -274,6 +274,9 @@ bindsym $mod+shift+z gaps outer all minus 5
 bindsym $mod+x gaps inner all plus 5
 bindsym $mod+shift+x gaps inner all minus 5
 
+# Open an empty window
+bindsym $mod+c exec i3-msg open
+
 # hide borders
 for_window [class="^.*"] border pixel 1
 
@@ -304,6 +307,10 @@ client.placeholder      $bg     $bg     $tx  $bg        $bg
 # curl -F'file=@/tmp/screenshot.png' http://0x0.st | xclip -selection clipboard; rm -f /tmp/screenshot.png"
 exec_always --no-startup-id flameshot
 bindsym Print exec flameshot gui
+
+# Screenshot current window and copy to clipboard
+# Sys_Req is the PrtScr key when Alt (Mod1) is held
+bindsym Mod1+Sys_Req exec import -window "$(xdotool getwindowfocus)" /tmp/scr.jpg && xclip -sel c -t image/jpg < /tmp/scr.jpg && rm /tmp/scr.jpg
 
 # Gif screen recording to clipboard
 bindsym Control+Shift+Print exec giph -s -d 3 -t 10 -y | curl -s -X POST -F file=@- https://0x0.st | xclip -sel clip
