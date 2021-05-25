@@ -23,8 +23,8 @@
     background: #1c1c1c;
     background-color: @background;
     foreground: #ffffff;
-    main: #dca6d3;
-    main2: #dca6d3;
+    main: #ffa3aa;
+    main2: #ffa3aa;
     border-color: @background;
     spacing: 10;
 }
@@ -36,13 +36,13 @@
     /* borde1-radius: 10px; */
     border: 1;
     border-color: @main;
-    height: 250px;
+    /* height: 250px; */
     padding: 25px;
     /* location: south west; */
     location: center;
     /* x-offset: 50px; */
     /* y-offset: -50px; */
-    width: 350px;
+    /* width: 350px; */
 }
 
 #mainbox {
