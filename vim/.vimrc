@@ -80,22 +80,23 @@ syntax on
 
 " Colorscheme overrides
 " Group names can be found with ':so $VIMRUNTIME/syntax/hitest.vim'
-autocmd ColorScheme *
-    \ hi Normal ctermbg=NONE guibg=NONE |
-    \ hi LineNr ctermbg=NONE guibg=NONE |
-    \ hi Pmenu ctermbg=NONE |
-    \ hi VertSplit ctermbg=0 ctermfg=0 |
-    \ hi ColorColumn ctermbg=176 |
-    \ hi Error ctermbg=0 ctermfg=1 |
-    \ hi WarningMsg ctermbg=0 ctermfg=8 |
-    \ hi Search ctermbg=2 ctermfg=0 |
-    \ hi Comment cterm=italic |
-    \ hi NERDTreeFile guifg=1
+" autocmd ColorScheme *
+"     \ hi Normal ctermbg=NONE guibg=NONE |
+"     \ hi LineNr ctermbg=NONE guibg=NONE |
+"     \ hi Pmenu ctermbg=NONE |
+"     \ hi VertSplit ctermbg=0 ctermfg=0 |
+"     \ hi ColorColumn ctermbg=176 |
+"     \ hi Error ctermbg=0 ctermfg=1 |
+"     \ hi WarningMsg ctermbg=0 ctermfg=8 |
+"     \ hi Search ctermbg=2 ctermfg=0 |
+"     \ hi Comment cterm=italic |
+"     \ hi NERDTreeFile guifg=1
 
 " colorscheme wal
 " colorscheme Tomorrow-Night
-let ayucolor="dark"
-colorscheme ayu
+" let ayucolor="dark"
+" colorscheme ayu
+colorscheme jellybeans
 set background=dark
 
 " Dark theme
@@ -103,7 +104,6 @@ set background=dark
 " let g:hybrid_custom_term_colors = 1
 " colorscheme hybrid
 " colorscheme dracula
-" set background=dark
 
 " Restore cursor to bar on exit
 :au VimLeave * set guicursor=a:ver100-blinkon0
@@ -114,7 +114,7 @@ set background=dark
 set laststatus=2
 set noshowmode
 let g:lightline = {
-    \ 'colorscheme': 'ayu',
+    \ 'colorscheme': 'jellybeans',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
