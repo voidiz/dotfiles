@@ -80,17 +80,17 @@ syntax on
 
 " Colorscheme overrides
 " Group names can be found with ':so $VIMRUNTIME/syntax/hitest.vim'
-" autocmd ColorScheme *
-"     \ hi Normal ctermbg=NONE guibg=NONE |
-"     \ hi LineNr ctermbg=NONE guibg=NONE |
-"     \ hi Pmenu ctermbg=NONE |
-"     \ hi VertSplit ctermbg=0 ctermfg=0 |
-"     \ hi ColorColumn ctermbg=176 |
-"     \ hi Error ctermbg=0 ctermfg=1 |
-"     \ hi WarningMsg ctermbg=0 ctermfg=8 |
-"     \ hi Search ctermbg=2 ctermfg=0 |
-"     \ hi Comment cterm=italic |
-"     \ hi NERDTreeFile guifg=1
+autocmd ColorScheme *
+    \ hi Pmenu ctermbg=NONE guibg=NONE |
+    " \ hi Normal ctermbg=NONE guibg=NONE |
+    " \ hi LineNr ctermbg=NONE guibg=NONE |
+    " \ hi VertSplit ctermbg=0 ctermfg=0 |
+    " \ hi ColorColumn ctermbg=176 |
+    " \ hi Error ctermbg=0 ctermfg=1 |
+    " \ hi WarningMsg ctermbg=0 ctermfg=8 |
+    " \ hi Search ctermbg=2 ctermfg=0 |
+    " \ hi Comment cterm=italic |
+    " \ hi NERDTreeFile guifg=1
 
 " colorscheme wal
 " colorscheme Tomorrow-Night
@@ -246,12 +246,15 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
+" Use <c-space> in insert mode to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+" Use <c-space> in normal mode to trigger fix
+nmap <silent> <c-space> <Plug>(coc-codeaction-selected)<CR>
 
 " Navigate completion list with <Tab> and <S-Tab>
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
