@@ -3,7 +3,7 @@
 set -eu
 
 common=(
-    kitty rofi themes systemd nvim vim
+    kitty rofi themes systemd mpv nvim vim
     xresources zsh x
 )
 

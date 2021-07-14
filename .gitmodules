@@ -1,0 +1,3 @@
+[submodule "mpv/.config/mpv/scripts/mpvacious"]
+	path = mpv/.config/mpv/scripts/mpvacious
+	url = https://github.com/Ajatt-Tools/mpvacious
