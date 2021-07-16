@@ -25,8 +25,8 @@ pavucontrol alsa-utils
 
 bluez bluez-utils netctl ifplugd wpa_supplicant
 
-curl exa ffmpeg go nodejs npm python imagemagick jq
-man-db man-pages python-pynvim python-jedi
+bat curl exa ffmpeg go nodejs npm python imagemagick jq
+man-db man-pages python-pynvim python-jedi ripgrep
 stow syncthing tmux wget youtube-dl xclip xdotool
 xsel zsh
 
