@@ -64,6 +64,9 @@ setopt autocd extendedglob
 # Vi-mode editing
 bindkey -v
 
+# Search history with Ctrl+R
+bindkey "^R" history-incremental-search-backward
+
 # Extended completion
 zstyle :compinstall filename "$HOME/.zsh/.zshrc"
 autoload -Uz compinit; compinit
