@@ -184,9 +184,10 @@ nnoremap <leader>ru :!g++ -std=c++17 -g -O2 -Wall -pedantic %:p && for file in *
 
 """""""""""""""""""""""""""""""""""""""""""
 " fzf(.vim) settings
-nnoremap <c-p> :Files<CR>
-nnoremap <leader>fi :Rg<CR>
+nnoremap <c-p> :GFiles<CR>
+nnoremap <leader>fi :RG<CR>
 nnoremap <leader>hi :Hist<CR>
+nnoremap <leader>fb :BLines<CR>
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
