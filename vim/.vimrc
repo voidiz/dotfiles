@@ -216,6 +216,10 @@ let g:coc_global_extensions = [
     \ 'coc-clangd'
     \]
 
+let g:coc_filetype_map = {
+    \ 'html.twig': 'html',
+    \}
+
 " if hidden is not set, TextEdit might fail.
 set hidden
 

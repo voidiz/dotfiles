@@ -2,6 +2,7 @@
 export ZDOTDIR="$HOME/.zsh"
 export FPATH="$FPATH:$HOME/.zsh/pure"
 export EDITOR=nvim
+export VISUAL=nvim
 
 # Set prompt
 autoload -U promptinit; promptinit

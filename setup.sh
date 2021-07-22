@@ -38,7 +38,7 @@ sxiv ttf-hanazono zathura zathura-pdf-mupdf
 
 aur="
 i3lock-color polybar neovim-remote nnn-git xst-git lazygit
-neovim-nightly-bin
+neovim-nightly-bin dragon-drag-and-drop
 
 otf-san-francisco otf-sfmono ttf-font-awesome 
 ttf-material-design-icons ttf-unifont

@@ -313,4 +313,7 @@ bindsym Print exec flameshot gui
 bindsym Mod1+Sys_Req exec import -window "$(xdotool getwindowfocus)" /tmp/scr.jpg && xclip -sel c -t image/jpg < /tmp/scr.jpg && rm /tmp/scr.jpg
 
 # Gif screen recording to clipboard
-bindsym Control+Shift+Print exec giph -s -d 3 -t 10 -y | curl -s -X POST -F file=@- https://0x0.st | xclip -sel clip
+# bindsym Control+Shift+Print exec giph -s -d 3 -t 10 -y | curl -s -X POST -F file=@- https://0x0.st | xclip -sel clip
+
+# Gif screen recording to drag and drop
+bindsym Control+Shift+Print exec $HOME/.config/i3/screen-rec.sh
