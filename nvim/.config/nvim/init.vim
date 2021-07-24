@@ -2,6 +2,7 @@
 
 set shell=/bin/bash
 set encoding=utf-8
+set shortmess+=c " for nvim-compe
 
 " Share system clipboard
 set clipboard+=unnamedplus

@@ -95,7 +95,7 @@ i3wm.wall:      $HOME/.config/i3/blue.jpg
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
-st.font:        Noto Sans Mono CJK JP:pixelsize=16:antialias=true:autohint=true;
+st.font:        Noto Sans Mono Nerd Font:pixelsize=16:antialias=true:autohint=true;
 st.borderpx:    15
 st.cursorshape: 6
 st.chscale:     1.1
