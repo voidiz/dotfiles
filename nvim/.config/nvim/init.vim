@@ -7,6 +7,9 @@ set shortmess+=c " for nvim-compe
 " Share system clipboard
 set clipboard+=unnamedplus
 
+" Mouse scrolling in tmux
+set mouse=a
+
 " Source .vimrc
 " set runtimepath^=~/.vim runtimepath+=~/.vim/after
 " let &packpath = &runtimepath
