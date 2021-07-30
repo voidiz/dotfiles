@@ -23,7 +23,7 @@ rofi htop
 pulseaudio pulseaudio-alsa pulseaudio-bluetooth 
 pavucontrol alsa-utils
 
-bluez bluez-utils netctl ifplugd wpa_supplicant
+bluez bluez-utils iwd
 
 bat curl exa ffmpeg go nodejs npm python imagemagick jq
 man-db man-pages python-pynvim python-jedi ripgrep
@@ -38,7 +38,7 @@ sxiv ttf-hanazono zathura zathura-pdf-mupdf
 
 aur="
 i3lock-color polybar neovim-remote nnn-git xst-git lazygit
-neovim-nightly-bin dragon-drag-and-drop
+dragon-drag-and-drop
 
 otf-san-francisco otf-sfmono ttf-font-awesome
 ttf-material-design-icons ttf-unifont nerd-fonts-noto-sans-mono
