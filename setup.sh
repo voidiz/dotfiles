@@ -23,14 +23,14 @@ rofi htop
 pulseaudio pulseaudio-alsa pulseaudio-bluetooth 
 pavucontrol alsa-utils
 
-bluez bluez-utils iwd
+bluez bluez-utils iwd openresolv
 
 bat curl exa ffmpeg go nodejs npm python imagemagick jq
 man-db man-pages python-pynvim python-jedi ripgrep
 stow syncthing tmux wget youtube-dl xclip xdotool
 xsel zsh
 
-chromium deluge discord telegram-desktop fcitx
+deluge discord telegram-desktop fcitx
 fcitx-mozc fcitx-im fcitx-configtool feh flameshot
 kdeconnect keepassxc mpv mps-youtube streamlink 
 sxiv ttf-hanazono zathura zathura-pdf-mupdf
@@ -43,8 +43,8 @@ dragon-drag-and-drop
 otf-san-francisco otf-sfmono ttf-font-awesome
 ttf-material-design-icons ttf-unifont nerd-fonts-noto-sans-mono
 
-chatterino2-git spicetify-cli spotify sp ffmpeg-compat-57
-dropbox mpv-mpris indicator-kdeconnect-git
+chatterino2-git spicetify-cli spotify sp google-chrome
+dropbox mpv-mpris ffmpeg-compat-57 indicator-kdeconnect-git
 "
 
 stow_dots() {
