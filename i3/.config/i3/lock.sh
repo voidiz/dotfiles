@@ -14,17 +14,17 @@ boxbg="#00000000"
 wrong="#FF0000FF"
 
 i3lock -k -i /tmp/lockframe.jpg \
-    --insidevercolor=$boxbg --insidewrongcolor=$boxbg \
-    --insidecolor=$boxbg --ringvercolor=$primary \
-    --ringwrongcolor=$wrong --ringcolor=$secondary \
-    --linecolor=$boxbg --keyhlcolor=$primary \
-    --bshlcolor=$primary --separatorcolor=$primary \
-    --verifcolor=$primary --wrongcolor=$wrong \
-    --layoutcolor=$primary --indpos="200:800" \
-    --timecolor=$secondary --timepos="250:780" \
-    --datecolor=$secondary --datepos="250:810" \
+    --insidever-color=$boxbg --insidewrong-color=$boxbg \
+    --inside-color=$boxbg --ringver-color=$primary \
+    --ringwrong-color=$wrong --ring-color=$secondary \
+    --line-color=$boxbg --keyhl-color=$primary \
+    --bshl-color=$primary --separator-color=$primary \
+    --verif-color=$primary --wrong-color=$wrong \
+    --layout-color=$primary --ind-pos="200:800" \
+    --time-color=$secondary --time-pos="250:780" \
+    --date-color=$secondary --date-pos="250:810" \
     --radius=25 --ring-width=10 \
-    --veriftext="" --wrongtext="" --noinputtext="" \
-    --locktext="" --lockfailedtext="" \
-    --datesize=14 \
+    --verif-text="" --wrong-text="" --noinput-text="" \
+    --lock-text="" --lockfailed-text="" \
+    --date-size=14 \
     --time-align=1 --date-align=1 --indicator
