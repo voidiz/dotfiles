@@ -20,8 +20,8 @@ xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo
 xorg-xev i3-gaps picom dunst noto-fonts noto-fonts-cjk
 rofi htop
 
-pulseaudio pulseaudio-alsa pulseaudio-bluetooth 
-pavucontrol alsa-utils
+pipewire pipewire-alsa pipewire-pulse pavucontrol
+alsa-utils
 
 bluez bluez-utils iwd openresolv
 
