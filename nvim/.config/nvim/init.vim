@@ -24,6 +24,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set scrolloff=3
+set autoindent
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -86,6 +87,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 " Auto completion
 Plug 'hrsh7th/nvim-compe'
+
+" Git stuff
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
