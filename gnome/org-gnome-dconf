@@ -49,12 +49,19 @@ translate=true
 [desktop/applications/terminal]
 exec='xst'
 
+[desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/void/.local/share/backgrounds/2021-08-07-12-56-54-blue.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
 [desktop/calendar]
 show-weekdate=false
 
 [desktop/input-sources]
 per-window=false
-sources=[('xkb', 'se'), ('xkb', 'jp')]
+sources=[('xkb', 'se')]
 xkb-options=['lv3:ralt_switch']
 
 [desktop/interface]
@@ -69,16 +76,22 @@ monospace-font-name='NotoSansMono Nerd Font 10'
 show-battery-percentage=true
 
 [desktop/notifications]
-application-children=['com-uploadedlobster-peek', 'org-gnome-nautilus', 'mpv', 'thunderbird']
+application-children=['com-uploadedlobster-peek', 'org-gnome-nautilus', 'mpv', 'thunderbird', 'spotify', 'discord']
 
 [desktop/notifications/application/com-uploadedlobster-peek]
 application-id='com.uploadedlobster.peek.desktop'
+
+[desktop/notifications/application/discord]
+application-id='discord.desktop'
 
 [desktop/notifications/application/mpv]
 application-id='mpv.desktop'
 
 [desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
+
+[desktop/notifications/application/spotify]
+application-id='spotify.desktop'
 
 [desktop/notifications/application/thunderbird]
 application-id='thunderbird.desktop'
@@ -96,7 +109,12 @@ tap-to-click=true
 two-finger-scrolling-enabled=true
 
 [desktop/screensaver]
+color-shading-type='solid'
 lock-delay=uint32 0
+picture-options='zoom'
+picture-uri='file:///home/void/.local/share/backgrounds/2021-08-07-12-56-54-blue.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [desktop/search-providers]
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
@@ -105,7 +123,7 @@ sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gn
 idle-delay=uint32 300
 
 [desktop/wm/keybindings]
-close=['<Super>q', '<Alt>F4']
+close=['<Shift><Super>q']
 maximize=@as []
 minimize=['<Super>comma']
 move-to-monitor-down=@as []
@@ -142,13 +160,14 @@ switch-to-workspace-right=@as []
 switch-to-workspace-up=['<Primary><Super>Up', '<Primary><Super>k']
 switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
-toggle-maximized=['<Super>m']
+toggle-maximized=['<Super>f']
 unmaximize=@as []
 
 [desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
 num-workspaces=10
 titlebar-font='SF Pro Display Bold 12'
+workspace-names=@as []
 
 [epiphany]
 ask-for-default=false
@@ -170,7 +189,7 @@ y=135
 
 [mutter]
 dynamic-workspaces=false
-workspaces-only-on-primary=true
+workspaces-only-on-primary=false
 
 [mutter/keybindings]
 toggle-tiled-left=@as []
@@ -178,6 +197,9 @@ toggle-tiled-right=@as []
 
 [mutter/wayland/keybindings]
 restore-shortcuts=@as []
+
+[nautilus/icon-view]
+default-zoom-level='small'
 
 [nautilus/preferences]
 default-folder-viewer='icon-view'
@@ -193,7 +215,10 @@ area-screenshot=@as []
 area-screenshot-clip=['<Primary>Print']
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 email=['<Super>e']
-home=['<Super>f']
+home=@as []
+next=['<Super>p']
+play=['<Super>o']
+previous=['<Super>i']
 rotate-video-lock-static=@as []
 screensaver=['<Super>Escape']
 screenshot=@as []
@@ -208,9 +233,16 @@ binding='<Primary><Alt>t'
 command='xst'
 name='Open terminal'
 
+[settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>d'
+command='rofi -show drun'
+name='Rofi drun'
+
 [shell]
 command-history=['r']
-enabled-extensions=['native-window-placement@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
+disable-user-extensions=false
+disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['native-window-placement@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
 had-bluetooth-devices-setup=true
 welcome-dialog-last-shown-version='40.3'
 
@@ -218,6 +250,8 @@ welcome-dialog-last-shown-version='40.3'
 current-workspace-only=true
 
 [shell/extensions/pop-shell]
+active-hint=true
+hint-color-rgba='rgb(116,128,207)'
 tile-by-default=false
 
 [shell/keybindings]
@@ -238,6 +272,7 @@ toggle-overview=@as []
 locations=@av []
 
 [software]
+check-timestamp=int64 1628328991
 first-run=false
 
 [tweaks]
