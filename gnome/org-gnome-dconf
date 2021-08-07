@@ -1,0 +1,244 @@
+[Music]
+window-maximized=true
+window-position=[0, 0]
+window-size=[1920, 1001]
+
+[boxes]
+first-run=false
+view='icon-view'
+window-maximized=true
+
+[calculator]
+accuracy=9
+angle-units='degrees'
+base=10
+button-mode='basic'
+number-format='automatic'
+show-thousands=false
+show-zeroes=false
+source-currency=''
+source-units='degree'
+target-currency=''
+target-units='radian'
+window-position=(26, 23)
+word-size=64
+
+[calendar]
+active-view='month'
+window-maximized=true
+window-position=(0, 0)
+window-size=(1920, 1048)
+
+[control-center]
+last-panel='keyboard'
+
+[desktop/app-folders]
+folder-children=['Utilities', 'YaST']
+
+[desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[desktop/applications/terminal]
+exec='xst'
+
+[desktop/calendar]
+show-weekdate=false
+
+[desktop/input-sources]
+per-window=false
+sources=[('xkb', 'se'), ('xkb', 'jp')]
+xkb-options=['lv3:ralt_switch']
+
+[desktop/interface]
+clock-show-weekday=false
+document-font-name='SF Pro Display 12'
+font-antialiasing='grayscale'
+font-hinting='slight'
+font-name='SF Pro Display 12'
+gtk-im-module='gtk-im-context-simple'
+gtk-theme='oomox-materia-dark'
+monospace-font-name='NotoSansMono Nerd Font 10'
+show-battery-percentage=true
+
+[desktop/notifications]
+application-children=['com-uploadedlobster-peek', 'org-gnome-nautilus', 'mpv', 'thunderbird']
+
+[desktop/notifications/application/com-uploadedlobster-peek]
+application-id='com.uploadedlobster.peek.desktop'
+
+[desktop/notifications/application/mpv]
+application-id='mpv.desktop'
+
+[desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[desktop/notifications/application/thunderbird]
+application-id='thunderbird.desktop'
+
+[desktop/peripherals/keyboard]
+delay=uint32 175
+repeat-interval=uint32 16
+
+[desktop/peripherals/mouse]
+speed=-0.014705882352941124
+
+[desktop/peripherals/touchpad]
+natural-scroll=false
+tap-to-click=true
+two-finger-scrolling-enabled=true
+
+[desktop/screensaver]
+lock-delay=uint32 0
+
+[desktop/search-providers]
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[desktop/session]
+idle-delay=uint32 300
+
+[desktop/wm/keybindings]
+close=['<Super>q', '<Alt>F4']
+maximize=@as []
+minimize=['<Super>comma']
+move-to-monitor-down=@as []
+move-to-monitor-left=@as []
+move-to-monitor-right=@as []
+move-to-monitor-up=@as []
+move-to-workspace-1=['<Shift><Super>1']
+move-to-workspace-10=['<Shift><Super>0']
+move-to-workspace-2=['<Shift><Super>2']
+move-to-workspace-3=['<Shift><Super>3']
+move-to-workspace-4=['<Shift><Super>4']
+move-to-workspace-5=['<Shift><Super>5']
+move-to-workspace-6=['<Shift><Super>6']
+move-to-workspace-7=['<Shift><Super>7']
+move-to-workspace-8=['<Shift><Super>8']
+move-to-workspace-9=['<Shift><Super>9']
+move-to-workspace-down=@as []
+move-to-workspace-up=@as []
+switch-applications=@as []
+switch-applications-backward=@as []
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-10=['<Super>0']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-5=['<Super>5']
+switch-to-workspace-6=['<Super>6']
+switch-to-workspace-7=['<Super>7']
+switch-to-workspace-8=['<Super>8']
+switch-to-workspace-9=['<Super>9']
+switch-to-workspace-down=['<Primary><Super>Down', '<Primary><Super>j']
+switch-to-workspace-left=@as []
+switch-to-workspace-right=@as []
+switch-to-workspace-up=['<Primary><Super>Up', '<Primary><Super>k']
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
+toggle-maximized=['<Super>m']
+unmaximize=@as []
+
+[desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
+num-workspaces=10
+titlebar-font='SF Pro Display Bold 12'
+
+[epiphany]
+ask-for-default=false
+
+[epiphany/state]
+is-maximized=false
+window-position=(-1, -1)
+window-size=(948, 512)
+
+[evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[libgnomekbd/preview]
+height=611
+width=1464
+x=240
+y=135
+
+[mutter]
+dynamic-workspaces=false
+workspaces-only-on-primary=true
+
+[mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[mutter/wayland/keybindings]
+restore-shortcuts=@as []
+
+[nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+search-view='list-view'
+
+[nautilus/window-state]
+initial-size=(948, 512)
+maximized=false
+
+[settings-daemon/plugins/media-keys]
+area-screenshot=@as []
+area-screenshot-clip=['<Primary>Print']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+email=['<Super>e']
+home=['<Super>f']
+rotate-video-lock-static=@as []
+screensaver=['<Super>Escape']
+screenshot=@as []
+screenshot-clip=['Print']
+terminal=['<Super>t']
+window-screenshot=@as []
+window-screenshot-clip=['<Alt>Print']
+www=['<Super>b']
+
+[settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Primary><Alt>t'
+command='xst'
+name='Open terminal'
+
+[shell]
+command-history=['r']
+enabled-extensions=['native-window-placement@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
+had-bluetooth-devices-setup=true
+welcome-dialog-last-shown-version='40.3'
+
+[shell/app-switcher]
+current-workspace-only=true
+
+[shell/extensions/pop-shell]
+tile-by-default=false
+
+[shell/keybindings]
+open-application-menu=@as []
+switch-to-application-1=@as []
+switch-to-application-2=@as []
+switch-to-application-3=@as []
+switch-to-application-4=@as []
+switch-to-application-5=@as []
+switch-to-application-6=@as []
+switch-to-application-7=@as []
+switch-to-application-8=@as []
+switch-to-application-9=@as []
+toggle-message-tray=['<Super>v']
+toggle-overview=@as []
+
+[shell/world-clocks]
+locations=@av []
+
+[software]
+first-run=false
+
+[tweaks]
+show-extensions-notice=false
