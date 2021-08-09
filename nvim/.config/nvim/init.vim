@@ -169,10 +169,10 @@ au Filetype asm,go
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
 au Filetype javascript,html,htmldjango,css,javascript.jsx,
-            \typescriptreact,typescript
-    \ setl tabstop=4 |
-    \ setl softtabstop=4 |
-    \ setl shiftwidth=4 |
+            \typescriptreact,typescript,json
+    \ setl tabstop=2 |
+    \ setl softtabstop=2 |
+    \ setl shiftwidth=2 |
     \ setl fileformat=unix
 """""""""""""""""""""""""""""""""""""""""""
 
