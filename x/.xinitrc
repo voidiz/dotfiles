@@ -6,7 +6,7 @@ export XMODIFIERS=@im=fcitx
 
 xset r rate 175 50
 systemctl --user import-environment DISPLAY
-# fcitx -d
+fcitx -d
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap

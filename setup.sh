@@ -4,15 +4,15 @@ set -eu
 
 common=(
     kitty rofi themes systemd mpv nvim vim
-    xresources zsh x tmux
+    xresources zsh x tmux fusuma dunst
 )
 
 i3=(
-    picom polybar i3 dunst
+    picom polybar i3
 )
 
 xfce=(
-    tint2 dunst
+    tint2
 )
 
 packages="

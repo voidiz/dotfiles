@@ -64,7 +64,7 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#dca6d3"
+    frame_color = "#6699cc"
 
     # Define a color for the separator.
     # possible values are:
@@ -238,7 +238,7 @@
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
+    history = ctrl+mod1+space
 
     # Context menu.
     context = ctrl+shift+period
@@ -248,7 +248,7 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#1c1c1c"
     foreground = "#ffffff"
-    frame_color = "#dca6d3"
+    frame_color = "#6699cc"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -256,7 +256,7 @@
 [urgency_normal]
     background = "#1c1c1c"
     foreground = "#ffffff"
-    frame_color = "#dca6d3"
+    frame_color = "#6699cc"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon

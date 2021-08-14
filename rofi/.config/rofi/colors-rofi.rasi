@@ -23,8 +23,8 @@
     background: #1c1c1c;
     background-color: @background;
     foreground: #ffffff;
-    main: #ffa3aa;
-    main2: #ffa3aa;
+    main: #6699cc;
+    main2: #6699cc;
     border-color: @background;
     spacing: 10;
 }

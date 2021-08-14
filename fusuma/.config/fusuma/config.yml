@@ -1,0 +1,24 @@
+swipe:
+  3:
+    left:
+      command: "xdotool key alt+Left" # History back
+    right:
+      command: "xdotool key alt+Right" # History forward
+    up:
+      command: "xdotool key ctrl+shift+tab" # Prev tab
+    down:
+      command: "xdotool key ctrl+tab" # Next tab
+  4:
+    left:
+      command: "xdotool set_desktop --relative -- -1" # Switch to previous workspace
+    right:
+      command: "xdotool set_desktop --relative -- 1" # Switch to next workspace
+    up:
+      command: "xdotool set_desktop --relative -- -1" # Switch to previous workspace
+    down:
+      command: "xdotool set_desktop --relative -- 1" # Switch to next workspace
+pinch:
+  in:
+    command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
+  out:
+    command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
