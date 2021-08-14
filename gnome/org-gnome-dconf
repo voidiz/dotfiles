@@ -1,3 +1,6 @@
+[GWeather]
+temperature-unit='centigrade'
+
 [Music]
 window-maximized=true
 window-position=[0, 0]
@@ -25,12 +28,12 @@ word-size=64
 
 [calendar]
 active-view='month'
-window-maximized=true
-window-position=(0, 0)
-window-size=(1920, 1048)
+window-maximized=false
+window-position=(23, 15)
+window-size=(800, 600)
 
 [control-center]
-last-panel='keyboard'
+last-panel='bluetooth'
 
 [desktop/app-folders]
 folder-children=['Utilities', 'YaST']
@@ -72,11 +75,13 @@ font-hinting='slight'
 font-name='SF Pro Display 12'
 gtk-im-module='gtk-im-context-simple'
 gtk-theme='oomox-materia-dark'
+icon-theme='Reversal-blue-dark'
 monospace-font-name='NotoSansMono Nerd Font 10'
 show-battery-percentage=true
 
 [desktop/notifications]
-application-children=['com-uploadedlobster-peek', 'org-gnome-nautilus', 'mpv', 'thunderbird', 'spotify', 'discord']
+application-children=['com-uploadedlobster-peek', 'org-gnome-nautilus', 'mpv', 'thunderbird', 'spotify', 'discord', 'org-kde-kdeconnect-daemon', 'io-github-seadve-kooha', 'gnome-control-center', 'org-gnome-fileroller', 'gnome-power-panel', 'google-chrome', 'org-gnome-evolution-alarm-notify', 'org-gnome-extensions']
+show-banners=true
 
 [desktop/notifications/application/com-uploadedlobster-peek]
 application-id='com.uploadedlobster.peek.desktop'
@@ -84,11 +89,35 @@ application-id='com.uploadedlobster.peek.desktop'
 [desktop/notifications/application/discord]
 application-id='discord.desktop'
 
+[desktop/notifications/application/gnome-control-center]
+application-id='gnome-control-center.desktop'
+
+[desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[desktop/notifications/application/google-chrome]
+application-id='google-chrome.desktop'
+
+[desktop/notifications/application/io-github-seadve-kooha]
+application-id='io.github.seadve.Kooha.desktop'
+
 [desktop/notifications/application/mpv]
 application-id='mpv.desktop'
 
+[desktop/notifications/application/org-gnome-evolution-alarm-notify]
+application-id='org.gnome.Evolution-alarm-notify.desktop'
+
+[desktop/notifications/application/org-gnome-extensions]
+application-id='org.gnome.Extensions.desktop'
+
+[desktop/notifications/application/org-gnome-fileroller]
+application-id='org.gnome.FileRoller.desktop'
+
 [desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
+
+[desktop/notifications/application/org-kde-kdeconnect-daemon]
+application-id='org.kde.kdeconnect.daemon.desktop'
 
 [desktop/notifications/application/spotify]
 application-id='spotify.desktop'
@@ -181,6 +210,22 @@ window-size=(948, 512)
 migrated=true
 network-monitor-gio-name=''
 
+[file-roller/dialogs/extract]
+recreate-folders=true
+skip-newer=false
+
+[file-roller/listing]
+list-mode='as-folder'
+name-column-width=379
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[file-roller/ui]
+sidebar-width=200
+window-height=601
+window-width=825
+
 [libgnomekbd/preview]
 height=611
 width=1464
@@ -209,6 +254,9 @@ search-view='list-view'
 [nautilus/window-state]
 initial-size=(948, 512)
 maximized=false
+
+[settings-daemon/plugins/color]
+night-light-enabled=false
 
 [settings-daemon/plugins/media-keys]
 area-screenshot=@as []
@@ -239,20 +287,43 @@ command='rofi -show drun'
 name='Rofi drun'
 
 [shell]
+app-picker-layout=[{'org.gnome.Contacts.desktop': <{'position': <0>}>, 'org.gnome.Weather.desktop': <{'position': <1>}>, 'org.gnome.clocks.desktop': <{'position': <2>}>, 'org.gnome.Maps.desktop': <{'position': <3>}>, 'anki.desktop': <{'position': <4>}>, 'org.gnome.Books.desktop': <{'position': <5>}>, 'org.gnome.Photos.desktop': <{'position': <6>}>, 'org.gnome.Totem.desktop': <{'position': <7>}>, 'org.gnome.Calculator.desktop': <{'position': <8>}>, 'org.gnome.gedit.desktop': <{'position': <9>}>, 'simple-scan.desktop': <{'position': <10>}>, 'gnome-control-center.desktop': <{'position': <11>}>, 'gnome-system-monitor.desktop': <{'position': <12>}>, 'org.gnome.Boxes.desktop': <{'position': <13>}>, 'org.gnome.Terminal.desktop': <{'position': <14>}>, 'Utilities': <{'position': <15>}>, 'bssh.desktop': <{'position': <16>}>, 'yelp.desktop': <{'position': <17>}>, 'bvnc.desktop': <{'position': <18>}>, 'org.gnome.Cheese.desktop': <{'position': <19>}>, 'avahi-discover.desktop': <{'position': <20>}>, 'com.chatterino.chatterino.desktop': <{'position': <21>}>, 'chrome-jndclpdbaamdhonoechobihbbiimdgai-Default.desktop': <{'position': <22>}>, 'cmake-gui.desktop': <{'position': <23>}>}, {'compton.desktop': <{'position': <0>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <1>}>, 'discord.desktop': <{'position': <2>}>, 'org.gnome.Documents.desktop': <{'position': <3>}>, 'dropbox.desktop': <{'position': <4>}>, 'org.gnome.Extensions.desktop': <{'position': <5>}>, 'fcitx.desktop': <{'position': <6>}>, 'fcitx-configtool.desktop': <{'position': <7>}>, 'org.flameshot.Flameshot.desktop': <{'position': <8>}>, 'google-chrome.desktop': <{'position': <9>}>, 'lstopo.desktop': <{'position': <10>}>, 'htop.desktop': <{'position': <11>}>, 'com.github.iwalton3.jellyfin-media-player.desktop': <{'position': <12>}>, 'org.kde.kdeconnect.app.desktop': <{'position': <13>}>, 'org.kde.kdeconnect.nonplasma.desktop': <{'position': <14>}>, 'org.kde.kdeconnect.settings.desktop': <{'position': <15>}>, 'org.kde.kdeconnect.sms.desktop': <{'position': <16>}>, 'org.keepassxc.KeePassXC.desktop': <{'position': <17>}>, 'net.lutris.Lutris.desktop': <{'position': <18>}>, 'mpv.desktop': <{'position': <19>}>, 'nvim.desktop': <{'position': <20>}>, 'picom.desktop': <{'position': <21>}>, 'chrome-fhbjgbiflinjbdggehcddcbncdddomop-Default.desktop': <{'position': <22>}>, 'io.github.seadve.Kooha.desktop': <{'position': <23>}>}, {'pavucontrol.desktop': <{'position': <0>}>, 'assistant.desktop': <{'position': <1>}>, 'designer.desktop': <{'position': <2>}>, 'linguist.desktop': <{'position': <3>}>, 'qdbusviewer.desktop': <{'position': <4>}>, 'qv4l2.desktop': <{'position': <5>}>, 'qvidcap.desktop': <{'position': <6>}>, 'spotify.desktop': <{'position': <7>}>, 'telegramdesktop.desktop': <{'position': <8>}>, 'thunderbird.desktop': <{'position': <9>}>, 'org.pwmt.zathura.desktop': <{'position': <10>}>, 'org.gnome.Software.desktop': <{'position': <11>}>, 'org.gnome.Music.desktop': <{'position': <12>}>, 'org.gnome.Calendar.desktop': <{'position': <13>}>, 'org.gnome.Epiphany.desktop': <{'position': <14>}>, 'org.gnome.Nautilus.desktop': <{'position': <15>}>, 'virt-manager.desktop': <{'position': <16>}>}]
 command-history=['r']
 disable-user-extensions=false
-disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['native-window-placement@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
+disabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['native-window-placement@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com', 'swap-workspaces@voidiz.github.io']
+favorite-apps=@as []
 had-bluetooth-devices-setup=true
 welcome-dialog-last-shown-version='40.3'
 
 [shell/app-switcher]
 current-workspace-only=true
 
+[shell/extensions/dash-to-panel]
+animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+appicon-margin=8
+appicon-padding=4
+available-monitors=[0]
+hotkeys-overlay-combo='TEMPORARILY'
+isolate-workspaces=true
+leftbox-padding=-1
+panel-anchors='{"0":"MIDDLE"}'
+panel-lengths='{"0":100}'
+panel-positions='{"0":"TOP"}'
+panel-sizes='{"0":34}'
+show-appmenu=false
+show-apps-icon-file=''
+status-icon-padding=-1
+tray-padding=-1
+window-preview-title-position='TOP'
+
 [shell/extensions/pop-shell]
-active-hint=true
+active-hint=false
 hint-color-rgba='rgb(116,128,207)'
 tile-by-default=false
+
+[shell/extensions/user-theme]
+name='Flat-Remix-Blue-Darkest-fullPanel'
 
 [shell/keybindings]
 open-application-menu=@as []
@@ -272,7 +343,7 @@ toggle-overview=@as []
 locations=@av []
 
 [software]
-check-timestamp=int64 1628328991
+check-timestamp=int64 1628934999
 first-run=false
 
 [tweaks]
