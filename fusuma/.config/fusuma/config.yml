@@ -5,9 +5,9 @@ swipe:
     right:
       command: "xdotool key alt+Right" # History forward
     up:
-      command: "xdotool key ctrl+shift+tab" # Prev tab
+      command: "xdotool key ctrl+shift+Tab" # Prev tab
     down:
-      command: "xdotool key ctrl+tab" # Next tab
+      command: "xdotool key ctrl+Tab" # Next tab
   4:
     left:
       command: "xdotool set_desktop --relative -- -1" # Switch to previous workspace
