@@ -24,7 +24,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set scrolloff=3
-set autoindent
+" set smartindent
+filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -51,6 +52,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'w0ng/vim-hybrid'
 Plug 'ayu-theme/ayu-vim'
+Plug 'sainnhe/sonokai'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -80,7 +82,10 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'nvim-lua/lsp-status.nvim'
 
 " Syntax highlighting, indentation, etc.
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" For indentation
+Plug 'sheerun/vim-polyglot'
 
 " Highlight colors
 Plug 'norcalli/nvim-colorizer.lua'
@@ -90,6 +95,11 @@ Plug 'hrsh7th/nvim-compe'
 
 " Git stuff
 Plug 'tpope/vim-fugitive'
+
+" Mainly for jsx/tsx indentation
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 
@@ -112,8 +122,7 @@ set t_Co=256
 " autocmd ColorScheme *
 "     \ hi Pmenu ctermbg=NONE guibg=NONE
 
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme sonokai
 set background=dark
 
 " Restore cursor to bar on exit
@@ -134,7 +143,7 @@ function! LspStatus() abort
 endfunction
 
 let g:lightline = {
-    \ 'colorscheme': 'ayu_mirage',
+    \ 'colorscheme': 'sonokai',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'lspstatus', 'readonly', 'filename', 'modified' ] ]
@@ -168,11 +177,16 @@ au Filetype asm,go
 """""""""""""""""""""""""""""""""""""""""""
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
-au Filetype javascript,html,htmldjango,css,javascript.jsx,
-            \typescriptreact,typescript,json
+au Filetype javascript,html,htmldjango,css,javascript.jsx
     \ setl tabstop=4 |
     \ setl softtabstop=4 |
     \ setl shiftwidth=4 |
+    \ setl fileformat=unix
+
+au Filetype typescriptreact,typescript,json
+    \ setl tabstop=2 |
+    \ setl softtabstop=2 |
+    \ setl shiftwidth=2 |
     \ setl fileformat=unix
 """""""""""""""""""""""""""""""""""""""""""
 

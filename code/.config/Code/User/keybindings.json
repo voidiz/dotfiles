@@ -1,0 +1,73 @@
+[
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+w j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "ctrl+w h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+w l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+w ctrl+w",
+        "command": "workbench.action.navigateEditorGroups"
+    },
+    {
+        "key": "f4",
+        "command": "search.action.focusNextSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "f4",
+        "command": "-search.action.focusNextSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "shift+f4",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "shift+f4",
+        "command": "-search.action.focusPreviousSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+[Semicolon]",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+shift+[Semicolon]",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+shift+f",
+        "command": "editor.action.formatDocument"
+    }
+]
