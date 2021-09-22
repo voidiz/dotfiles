@@ -86,6 +86,11 @@ textbox-prompt-colon {
     highlight: bold;
 }
 
+#element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
 #element.normal.normal {
     background-color: @normal-background;
     text-color: @normal-foreground;
