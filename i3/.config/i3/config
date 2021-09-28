@@ -54,10 +54,10 @@ font pango:SF Pro Text 10
 floating_modifier $mod
 
 # start a terminal
-bindsym Control+Mod1+T exec xst
+bindsym Control+Mod1+T exec kitty --single-instance
 
-# open a new window in the cwd
-bindsym Control+Mod1+Return exec $HOME/.config/i3/xst-cwd.sh
+# open a new window in the cwd (xst)
+# bindsym Control+Mod1+Return exec $HOME/.config/i3/xst-cwd.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
