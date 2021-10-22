@@ -1,11 +1,4 @@
 ----------------------------------------------
--- Autopairs config
-require'nvim-autopairs'.setup {
-    fast_wrap = {}
-}
-----------------------------------------------
-
-----------------------------------------------
 -- Treesitter (syntax, indent,..) config
 -- require'nvim-treesitter.configs'.setup {
 --     -- ensure_installed = { "c", "cpp", "python", "go", "json", "javascript" },
@@ -84,94 +77,63 @@ local function make_config(server)
     }
 end
 
--- lsp-install
-local function setup_servers()
-    require'lspinstall'.setup()
+local lsp_installer = require("nvim-lsp-installer")
 
-    -- get all installed servers
-    local servers = require'lspinstall'.installed_servers()
-    -- ... and add manually installed servers
-    table.insert(servers, "clangd")
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
 
-    for _, server in pairs(servers) do
-        local config = make_config(server)
-        require'lspconfig'[server].setup(config)
-    end
-end
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
 
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-    setup_servers() -- reload installed servers
-    vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
+    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
+end)
 ----------------------------------------------
 
 ----------------------------------------------
--- Compe (auto-complete) config
-vim.o.completeopt = 'menuone,noselect'
-require'compe'.setup {
-    enabled = true,
-    autocomplete = true,
-    debug = false,
-    min_length = 1,
-    preselect = 'enable',
-    throttle_time = 80,
-    source_timeout = 200,
-    incomplete_delay = 400,
-    max_abbr_width = 100,
-    max_kind_width = 100,
-    max_menu_width = 100,
-    documentation = {
-        border = 'solid'
+-- Setup nvim-cmp.
+local cmp = require'cmp'
+
+cmp.setup({
+    mapping = {
+      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.close(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+      ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
     },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+    }, {
+      { name = 'buffer' },
+    })
+})
 
-    source = {
-        path = true,
-        nvim_lsp = {
-            enable = true,
-            priority = 10001 -- higher priority than buffer
-        },
-        buffer = {
-            enable = true,
-            priority = 1
-        },
-    }
-}
+-- Setup lspconfig.
+-- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- require('lspconfig')['nvim_lsp'].setup {
+--     capabilities = capabilities
+-- }
+----------------------------------------------
 
-local t = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return t "<C-n>"
-    else
-        return t "<Tab>"
-    end
-end
-_G.s_tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return t "<C-p>"
-    else
-        -- If <S-Tab> is not working in your terminal, change it to <C-h>
-        return t "<S-Tab>"
-    end
-end
-
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-
--- This line is important for auto-import
-vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm(luaeval(\'require "nvim-autopairs".autopairs_cr()\'))', { expr = true })
--- vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<CR>")', { expr = true })
-vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
+----------------------------------------------
+-- autopairs config
+require('nvim-autopairs').setup{}
+require("nvim-autopairs.completion.cmp").setup({
+  map_cr = true, --  map <CR> on insert mode
+  map_complete = true, -- it will auto insert `(` (map_char) after select function or method item
+  auto_select = true, -- automatically select the first item
+  insert = false, -- use insert confirm behavior instead of replace
+  map_char = { -- modifies the function or method delimiter by filetypes
+    all = '(',
+    tex = '{'
+  }
+})
 ----------------------------------------------
 
 ----------------------------------------------

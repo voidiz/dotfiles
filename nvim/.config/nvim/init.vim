@@ -78,7 +78,7 @@ Plug 'windwp/nvim-autopairs'
 
 " Language server
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-lua/lsp-status.nvim'
 
 " Syntax highlighting, indentation, etc.
@@ -91,7 +91,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Auto completion
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
 
 " Git stuff
 Plug 'tpope/vim-fugitive'
