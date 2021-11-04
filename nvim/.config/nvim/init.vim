@@ -93,6 +93,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Auto completion
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
 
 " Git stuff
 Plug 'tpope/vim-fugitive'

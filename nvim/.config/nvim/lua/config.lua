@@ -80,7 +80,11 @@ end
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
+    local capabilities = require('cmp_nvim_lsp')
+        .update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    local opts = {
+        capabilities = capabilities
+    }
 
     -- (optional) Customize the options passed to the server
     -- if server.name == "tsserver" then
