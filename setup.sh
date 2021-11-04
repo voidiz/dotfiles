@@ -21,7 +21,7 @@ xorg-xev i3-gaps picom dunst noto-fonts noto-fonts-cjk
 rofi htop
 
 pipewire pipewire-alsa pipewire-pulse pavucontrol
-alsa-utils
+alsa-utils lib32-pipewire
 
 bluez bluez-utils iwd openresolv
 
