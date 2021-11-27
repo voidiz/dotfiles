@@ -63,6 +63,17 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob
 
+# Don't add to histfile if prefixed with space
+setopt HIST_IGNORE_SPACE
+
+# Search history with prefix
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey -M vicmd 'j' down-line-or-beginning-search
+bindkey -M vicmd 'k' up-line-or-beginning-search
+
 # Vi-mode editing
 bindkey -v
 

@@ -121,7 +121,7 @@ install_packages() {
 if [[ $1 != "packages" ]] && [[ $1 != "aur" ]]; then
     list_name=$1[@]
     list_contents=${!list_name}
-    stow_dots "$list_contents"
+    stow_dots
 
     if ! xset q &>/dev/null; then
         echo "Done!"
