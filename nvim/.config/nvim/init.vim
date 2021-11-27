@@ -80,6 +80,8 @@ Plug 'windwp/nvim-autopairs'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-lua/lsp-status.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " Syntax highlighting, indentation, etc.
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -180,9 +182,9 @@ au Filetype asm,go
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
 au Filetype javascript,html,htmldjango,css,javascript.jsx
-    \ setl tabstop=4 |
-    \ setl softtabstop=4 |
-    \ setl shiftwidth=4 |
+    \ setl tabstop=2 |
+    \ setl softtabstop=2 |
+    \ setl shiftwidth=2 |
     \ setl fileformat=unix
 
 au Filetype typescriptreact,typescript,json
