@@ -11,12 +11,14 @@ zstyle :prompt:pure:path color magenta
 prompt pure
 
 # Set up Node Version Manager
-# source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh --no-use
 
 # Aliases
 alias vim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 alias ..="cd .."
 alias ls="exa"
+alias ssh="kitty +kitten ssh" # terminfo fix
+alias synk="rsync -avhP --info=progress2" # archive, verbose, human, partial
 
 # nnn configuration (use n instead of nnn)
 n ()
