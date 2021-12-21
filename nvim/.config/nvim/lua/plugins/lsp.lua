@@ -79,14 +79,14 @@ lsp_installer.on_server_ready(function(server)
 end)
 
 -- Null-ls
-local null_ls = require'null-ls'
-null_ls.config({
+local null_ls = require('null-ls')
+null_ls.setup({
+    on_attack = on_attach,
     sources = {
         null_ls.builtins.formatting.prettierd,
-        null_ls.builtins.formatting.autopep8
+        null_ls.builtins.formatting.black.with({
+            extra_args = { '--line-length', '79' }
+        })
     }
-})
-require'lspconfig'['null-ls'].setup({
-    on_attach = on_attach
 })
 

@@ -134,7 +134,7 @@ set background=dark
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
-" Lightline (with coc.nvim specific settings)
+" Lightline (with lspstatus-specific settings)
 set laststatus=2
 set noshowmode
 
@@ -167,6 +167,10 @@ au Filetype python
     \ setl textwidth=79 |
     \ setl colorcolumn=79 |
     \ setl fileformat=unix
+
+" run with *.in as input
+au Filetype python
+    \ nnoremap <leader>ru :!for file in *.in; do echo "Input $file:"; python "%:p" < "$file"; echo -e; done<CR>
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -203,7 +207,8 @@ au Filetype c,cpp
     \ setl fileformat=unix
 
 " compile and run with *.in as input
-nnoremap <leader>ru :!g++ -std=c++17 -g -O2 -Wall -pedantic %:p && for file in *.in; do echo "Input $file:"; ./a.out < "$file"; echo -e; done<CR>
+au Filetype cpp
+    \ nnoremap <leader>ru :!g++ -std=c++17 -g -O2 -Wall -pedantic %:p && for file in *.in; do echo "Input $file:"; ./a.out < "$file"; echo -e; done<CR>
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
