@@ -10,5 +10,6 @@ configuration {
 	combi-modi: "window,drun,run";
 	separator-style: "solid";
 	hide-scrollbar: true;
-	theme: "~/.config/rofi/colors-rofi.rasi";
 }
+
+@theme "~/.config/rofi/colors-rofi.rasi"

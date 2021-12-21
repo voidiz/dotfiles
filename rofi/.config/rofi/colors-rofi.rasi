@@ -33,7 +33,7 @@
     background-color: @background;
     /* border: 1; */
     /* border-color: @main2; */
-    /* borde1-radius: 10px; */
+    /* border-radius: 10px; */
     border: 1;
     border-color: @main;
     /* height: 250px; */
