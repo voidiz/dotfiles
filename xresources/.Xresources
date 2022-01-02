@@ -87,11 +87,11 @@
 *.color7:       #ffffff
 *.color15:      #ffffff
 
-i3wm.bg:        #6699cc
-i3wm.bg2:       #f2f0ec
+i3wm.bg:        #c66e66
+i3wm.bg2:       #909090
 i3wm.tx:        #1f2430
 
-i3wm.wall:      $HOME/.config/i3/blue.jpg
+i3wm.wall:      $HOME/.config/i3/cherry.jpg
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
@@ -100,6 +100,6 @@ st.borderpx:    15
 st.cursorshape: 6
 st.chscale:     1.1
 /* st.opacity:     200 */
-st.cursorfg:    #6699cc
+st.cursorfg:    #c66e66
 
 Xft.lcdfilter: lcddefault

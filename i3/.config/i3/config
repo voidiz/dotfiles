@@ -48,7 +48,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:SF Pro Text 10
+font pango:SF Pro Text Medium 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -265,8 +265,13 @@ bindsym $mod+shift+x gaps inner all minus 5
 # Open an empty window
 bindsym $mod+c exec i3-msg open
 
-# hide borders
-for_window [class="^.*"] border pixel 1
+# Hide borders
+for_window [all] border normal 0
+
+# Title format
+for_window [all] title_format " %title"
+for_window [all] title_window_icon on
+for_window [class="^kitty$"] title_window_icon off
 
 # colors
 

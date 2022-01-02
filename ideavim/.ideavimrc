@@ -1,0 +1,35 @@
+""" Misc Notes ------------------------------
+" Navigating search results with C-j and C-k:
+"   Settings > Keymap | Editor Actions > Down/Up
+
+""" Plugins  --------------------------------
+set surround
+set commentary
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+" System clipboard
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+""" Mappings --------------------------------
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>z <Action>(ToggleDistractionFreeMode)
+nmap <leader>fi <Action>(FindInPath)
+nmap <A-S-F> <Action>(ReformatCode)
+nmap [g <Action>(GotoPreviousError)
+nmap ]g <Action>(GotoNextError)
+nmap <C-p> <Action>(GotoFile)
+nmap \re :source ~/.ideavimrc<CR>
+nmap <C-w>L <Action>(MoveEditorToOppositeTabGroup)
+nmap <C-w>H <Action>(MoveEditorToOppositeTabGroup)
+

@@ -34,6 +34,8 @@ deluge discord telegram-desktop fcitx
 fcitx-mozc fcitx-im fcitx-configtool feh flameshot
 kdeconnect keepassxc mpv mps-youtube streamlink 
 sxiv ttf-hanazono zathura zathura-pdf-mupdf
+
+nautilus
 "
 
 aur="
@@ -45,6 +47,8 @@ ttf-material-design-icons ttf-unifont nerd-fonts-noto-sans-mono
 
 chatterino2-git spicetify-cli spotify sp google-chrome
 dropbox mpv-mpris ffmpeg-compat-57 indicator-kdeconnect-git
+
+nautilus-open-any-terminal
 "
 
 stow_dots() {

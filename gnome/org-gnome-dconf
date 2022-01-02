@@ -50,7 +50,7 @@ name='suse-yast.directory'
 translate=true
 
 [desktop/applications/terminal]
-exec='xst'
+exec='kitty --single-instance'
 
 [desktop/background]
 color-shading-type='solid'
@@ -278,7 +278,7 @@ www=['<Super>b']
 
 [settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Primary><Alt>t'
-command='xst'
+command='kitty --single-instance'
 name='Open terminal'
 
 [settings-daemon/plugins/media-keys/custom-keybindings/custom1]

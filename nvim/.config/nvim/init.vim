@@ -121,13 +121,13 @@ unlet plug_install
 
 set t_Co=256
 
-" Colorscheme overrides
-" Group names can be found with ':so $VIMRUNTIME/syntax/hitest.vim'
-" autocmd ColorScheme *
-"     \ hi Pmenu ctermbg=NONE guibg=NONE
-
 colorscheme sonokai
 set background=dark
+
+" Colorscheme overrides
+" Group names can be found with ':so $VIMRUNTIME/syntax/hitest.vim'
+hi Normal guibg=235 ctermbg=235
+hi EndOfBuffer guibg=235 ctermbg=235
 
 " Restore cursor to bar on exit
 :au VimLeave * set guicursor=a:ver100-blinkon0
@@ -147,7 +147,7 @@ function! LspStatus() abort
 endfunction
 
 let g:lightline = {
-    \ 'colorscheme': 'sonokai',
+    \ 'colorscheme': 'ayu_mirage',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'lspstatus', 'readonly', 'filename', 'modified' ] ]
