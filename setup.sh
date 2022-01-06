@@ -4,7 +4,7 @@ set -eu
 
 common=(
     kitty rofi themes systemd mpv nvim vim
-    xresources zsh x tmux fusuma dunst
+    xresources zsh x tmux fusuma dunst zathura
 )
 
 i3=(
