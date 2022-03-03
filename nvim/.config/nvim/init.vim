@@ -96,6 +96,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
 
 " Git stuff
 Plug 'tpope/vim-fugitive'
@@ -177,9 +178,9 @@ au Filetype python
 " asm/go settings
 au Filetype asm,go
     \ setl noexpandtab |
-    \ setl softtabstop=8 |
-    \ setl tabstop=8 |
-    \ setl shiftwidth=8
+    \ setl softtabstop=4 |
+    \ setl tabstop=4 |
+    \ setl shiftwidth=4
 """"""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -217,6 +218,10 @@ nnoremap <c-p> :GFiles<CR>
 nnoremap <leader>fi :RG<CR>
 nnoremap <leader>hi :Hist<CR>
 nnoremap <leader>fb :BLines<CR>
+
+" history for previous searches, navigate with ctrl-p/n
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
