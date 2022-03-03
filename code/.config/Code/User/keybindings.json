@@ -69,5 +69,10 @@
     {
         "key": "alt+shift+f",
         "command": "editor.action.formatDocument"
+    },
+    {
+        "key": "ctrl+k ctrl+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
     }
 ]
