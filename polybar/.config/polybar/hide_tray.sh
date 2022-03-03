@@ -3,7 +3,9 @@
 tray_height=25
 height=$(xdpyinfo | awk '/dimensions/{split($2,res,"x");print res[2]}')
 pos=$(xdotool search --name --onlyvisible "Polybar tray window" \
-    getwindowgeometry | grep $((height + tray_height)) )
+    getwindowgeometry | grep $((height + tray_height - 10)) )
+
+echo $pos
 
 if [[ -n "$pos" ]]; then
     xdotool search --name --onlyvisible "Polybar tray window" \
