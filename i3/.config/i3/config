@@ -120,6 +120,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# toggle sticky (only for floating)
+bindsym $mod+Control+space sticky toggle
+
 # focus the parent container
 bindsym $mod+a focus parent
 

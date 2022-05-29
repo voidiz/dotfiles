@@ -18,7 +18,7 @@ xfce=(
 packages="
 xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo
 xorg-xev i3-gaps picom dunst noto-fonts noto-fonts-cjk
-rofi htop
+rofi htop gnome-keyring
 
 pipewire pipewire-alsa pipewire-pulse pavucontrol
 alsa-utils lib32-pipewire
@@ -33,7 +33,8 @@ xsel zsh
 deluge discord telegram-desktop fcitx
 fcitx-mozc fcitx-im fcitx-configtool feh flameshot
 kdeconnect keepassxc mpv mps-youtube streamlink 
-sxiv ttf-hanazono zathura zathura-pdf-mupdf
+sxiv ttf-cascadia-code ttf-hanazono zathura
+zathura-pdf-mupdf
 
 nautilus
 "

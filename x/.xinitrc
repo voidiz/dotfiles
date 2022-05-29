@@ -4,9 +4,17 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-xset r rate 175 50
 systemctl --user import-environment DISPLAY
+
+# Repeat rate
+xset r rate 175 50
+
+# Input method
 fcitx -d
+
+# Gnome keyring
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
