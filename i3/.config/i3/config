@@ -23,7 +23,7 @@ exec_always --no-startup-id picom --config $HOME/.config/picom.conf -b
 # Set the background
 set_from_resource $wall i3wm.wall
 # exec_always --no-startup-id wal -i "$HOME/.config/i3/dark-flower.jpg" -b "#1c1c1c"
-exec_always --no-startup-id feh --bg-scale $wall
+exec_always --no-startup-id feh --bg-fill $wall
 # exec --no-startup-id nitrogen --restore
 
 # Purple/pink gradient

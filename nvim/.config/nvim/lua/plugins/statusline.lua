@@ -1,7 +1,7 @@
 local vi_mode_utils = require'feline.providers.vi_mode'
 
 local colors = {
-    fg = '#c66e66',
+    fg = '#E6B673',
     bg = '#1f2430'
 }
 
@@ -157,7 +157,7 @@ components.inactive[1] = {
     {
         provider = 'file_type',
         hl = {
-            fg = 'white',
+            fg = 'black',
             bg = 'fg',
             style = 'bold',
         },

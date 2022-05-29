@@ -126,13 +126,15 @@ endif
 
 set t_Co=256
 
-colorscheme sonokai
+colorscheme ayu
 set background=dark
 
 " Colorscheme overrides
 " Group names can be found with ':so $VIMRUNTIME/syntax/hitest.vim'
 hi Normal guibg=235 ctermbg=235
 hi EndOfBuffer guibg=235 ctermbg=235
+hi LineNr guifg=#E6B673
+hi Directory guifg=#E6B673
 
 " Restore cursor to bar on exit
 :au VimLeave * set guicursor=a:ver100-blinkon0
