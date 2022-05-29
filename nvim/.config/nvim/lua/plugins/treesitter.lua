@@ -31,5 +31,9 @@ require'nvim-treesitter.configs'.setup {
     -- Detect comment style at cursor
     context_commentstring = {
         enable = true
+    },
+
+    indent = {
+        enable = true
     }
 }
