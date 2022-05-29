@@ -3,22 +3,9 @@ local kind_labels_mt = {__index = function(_, k) return k end}
 local kind_labels = {}
 setmetatable(kind_labels, kind_labels_mt)
 
-require'lsp-status'.register_progress()
-require'lsp-status'.config({
-    kind_labels = kind_labels,
-    indicator_errors = "×",
-    indicator_warnings = "!",
-    indicator_info = "i",
-    indicator_hint = "›",
-    status_symbol = "",
-})
-
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-    -- Statusline
-    require'lsp-status'.on_attach(client, bufnr)
 
     -- Mappings.
     local opts = { noremap=true, silent=true }

@@ -10,6 +10,9 @@ set clipboard+=unnamedplus
 " Mouse scrolling in tmux
 set mouse=a
 
+" Hide tilde empty line
+set fillchars=eob:\ 
+
 " Source .vimrc
 " set runtimepath^=~/.vim runtimepath+=~/.vim/after
 " let &packpath = &runtimepath
@@ -54,11 +57,13 @@ Plug 'w0ng/vim-hybrid'
 Plug 'ayu-theme/ayu-vim'
 Plug 'sainnhe/sonokai'
 
-" Lightline
-Plug 'itchyny/lightline.vim'
+" File explorer
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
-" NERDTree
-Plug 'scrooloose/nerdtree'
+" Lightline
+" Plug 'itchyny/lightline.vim'
+Plug 'feline-nvim/feline.nvim'
 
 " Auto close HTML tags
 Plug 'alvan/vim-closetag'
@@ -75,19 +80,23 @@ Plug 'tpope/vim-surround'
 " Pairs (parens, brackets, quotes, etc.)
 " Plug 'jiangmiao/auto-pairs'
 Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-ts-autotag'
 
 " Language server
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'nvim-lua/lsp-status.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " Syntax highlighting, indentation, etc.
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Detect comment style with treesitter
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " For indentation
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-sleuth'
 
 " Highlight colors
 Plug 'norcalli/nvim-colorizer.lua'
@@ -101,11 +110,6 @@ Plug 'L3MON4D3/LuaSnip'
 " Git stuff
 Plug 'tpope/vim-fugitive'
 
-" Mainly for jsx/tsx indentation
-" Plug 'leafgarland/typescript-vim'
-" Plug 'peitalin/vim-jsx-typescript'
-" Plug 'maxmellon/vim-jsx-pretty'
-
 call plug#end()
 
 if plug_install
@@ -116,9 +120,9 @@ unlet plug_install
 
 """""""""""""""""""""""""""""""""""""""""""
 " Colors
- if (has("termguicolors"))
-     set termguicolors
- endif
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 set t_Co=256
 
@@ -132,33 +136,6 @@ hi EndOfBuffer guibg=235 ctermbg=235
 
 " Restore cursor to bar on exit
 :au VimLeave * set guicursor=a:ver100-blinkon0
-"""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""
-" Lightline (with lspstatus-specific settings)
-set laststatus=2
-set noshowmode
-
-function! LspStatus() abort
-  if luaeval('#vim.lsp.buf_get_clients() > 0')
-    return luaeval("require('lsp-status').status()")
-  endif
-
-  return ''
-endfunction
-
-let g:lightline = {
-    \ 'colorscheme': 'ayu_mirage',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'lspstatus', 'readonly', 'filename', 'modified' ] ]
-    \ },
-    \ 'component_function': {
-    \   'lspstatus': 'LspStatus'
-    \ },
-    \ }
-
-autocmd User LspDiagnosticsChanged call lightline#update()
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -186,13 +163,7 @@ au Filetype asm,go
 """""""""""""""""""""""""""""""""""""""""""
 " Web settings
 " au BufNewFile,BufRead *.js,*.html,*.css,*.php:
-au Filetype javascript,html,htmldjango,css,javascript.jsx
-    \ setl tabstop=2 |
-    \ setl softtabstop=2 |
-    \ setl shiftwidth=2 |
-    \ setl fileformat=unix
-
-au Filetype typescriptreact,typescript,json
+au Filetype javascript,html,htmldjango,css,javascript.jsx,typescriptreact,typescript,json
     \ setl tabstop=2 |
     \ setl softtabstop=2 |
     \ setl shiftwidth=2 |
@@ -233,9 +204,12 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
-" nerdtree settings
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" nvim tree settings
+nnoremap <C-n> :NvimTreeToggle<CR>
+hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg
+
+" close vim if nvim tree is the last window
+autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
