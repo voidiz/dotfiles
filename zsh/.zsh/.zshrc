@@ -14,7 +14,7 @@ prompt pure
 source /usr/share/nvm/init-nvm.sh --no-use
 
 # Aliases
-alias vim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
+alias vim="nvim"
 alias ..="cd .."
 alias ls="exa"
 alias ssh="kitty +kitten ssh" # terminfo fix

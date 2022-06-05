@@ -30,7 +30,7 @@ man-db man-pages python-pynvim python-jedi ripgrep
 stow syncthing tmux wget youtube-dl xclip xdotool
 xsel zsh
 
-deluge discord telegram-desktop fcitx
+deluge discord telegram-desktop fcitx geary
 fcitx-mozc fcitx-im fcitx-configtool feh flameshot
 kdeconnect keepassxc mpv mps-youtube streamlink 
 sxiv ttf-cascadia-code ttf-hanazono zathura
@@ -41,10 +41,10 @@ nautilus
 
 aur="
 i3lock-color polybar neovim-remote nnn-git xst-git lazygit
-dragon-drag-and-drop
+dragon-drop
 
-otf-san-francisco otf-sfmono ttf-font-awesome
-ttf-material-design-icons ttf-unifont nerd-fonts-noto-sans-mono
+otf-sfmono ttf-font-awesome ttf-material-design-icons
+ttf-unifont nerd-fonts-noto-sans-mono
 
 chatterino2-git spicetify-cli spotify sp google-chrome
 dropbox mpv-mpris ffmpeg-compat-57 indicator-kdeconnect-git

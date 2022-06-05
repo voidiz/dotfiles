@@ -21,8 +21,8 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-monitor1=DisplayPort-0
-monitor2=HDMI-A-0
+monitor1=DP-1
+monitor2=HDMI-1
 
 # Monitor gamma
 xrandr --current --output "$monitor1" --gamma 0.71:0.71:0.71
