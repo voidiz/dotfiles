@@ -59,6 +59,12 @@ ccc() {
     done
 }
 
+# rsync files to Android movies folder (using sshelper)
+# $1 is src, $2 is ip
+asynk() {
+    synk -e 'ssh -p2222' $1 $2:SDCard/Movies
+}
+
 # History
 HISTFILE=~/.zsh/.histfile
 HISTSIZE=1000

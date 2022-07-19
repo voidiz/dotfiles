@@ -13,6 +13,7 @@ require'nvim-treesitter.configs'.setup {
         "lua",
         "make",
         "php",
+        "rust",
         "scss",
         "tsx",
         "typescript",
