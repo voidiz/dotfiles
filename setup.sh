@@ -23,10 +23,10 @@ rofi htop gnome-keyring
 pipewire pipewire-alsa pipewire-pulse pavucontrol
 alsa-utils lib32-pipewire
 
-bluez bluez-utils iwd openresolv
+bluez bluez-utils iwd openresolv tailscale
 
 bat curl exa ffmpeg go nodejs npm python imagemagick jq
-man-db man-pages python-pynvim python-jedi ripgrep
+man-db man-pages python-pynvim python-jedi ripgrep rsync
 stow syncthing tmux wget youtube-dl xclip xdotool
 xsel zsh
 
