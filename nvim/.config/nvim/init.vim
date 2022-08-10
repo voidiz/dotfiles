@@ -208,6 +208,7 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 """""""""""""""""""""""""""""""""""""""""""
 " nvim tree settings
 nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>gt :NvimTreeFindFile<CR>
 hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg
 
 " close vim if nvim tree is the last window
