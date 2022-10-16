@@ -22,14 +22,14 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-    buf_set_keymap('n', '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+    buf_set_keymap('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+    buf_set_keymap('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
     buf_set_keymap("n", "<M-S-F>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
     buf_set_keymap("x", "<leader>fo", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
 
     -- Set autocommands conditional on server_capabilities
-    if client.resolved_capabilities.document_highlight then
+    if client.server_capabilities.document_highlight then
         vim.api.nvim_exec([[
         augroup lsp_document_highlight
         autocmd! * <buffer>
@@ -44,7 +44,7 @@ end
 local lsp_installer = require('nvim-lsp-installer')
 lsp_installer.on_server_ready(function(server)
     local capabilities = require('cmp_nvim_lsp')
-        .update_capabilities(vim.lsp.protocol.make_client_capabilities())
+        .default_capabilities(vim.lsp.protocol.make_client_capabilities())
     local opts = {
         capabilities = capabilities,
         on_attach = on_attach
@@ -54,7 +54,7 @@ lsp_installer.on_server_ready(function(server)
         opts.on_attach = function(client, bufnr)
             -- Disable tsserver formatting since we use prettierd
             -- through null-ls instead
-            client.resolved_capabilities.document_formatting = false
+            client.server_capabilities.document_formatting = false
 
             on_attach(client, bufnr)
         end
