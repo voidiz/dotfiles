@@ -3,7 +3,7 @@ export ZDOTDIR="$HOME/.zsh"
 export FPATH="$FPATH:$HOME/.zsh/pure"
 export EDITOR=nvim
 export VISUAL=nvim
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
 
 # Set prompt
 autoload -U promptinit; promptinit
@@ -93,3 +93,4 @@ zstyle :compinstall filename "$HOME/.zsh/.zshrc"
 autoload -Uz compinit; compinit
 # Ignore case matching
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+

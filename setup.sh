@@ -48,6 +48,7 @@ ttf-unifont nerd-fonts-noto-sans-mono
 
 chatterino2-git spicetify-cli spotify sp google-chrome
 dropbox mpv-mpris ffmpeg-compat-57 indicator-kdeconnect-git
+anki-official-binary-bundle
 
 nautilus-open-any-terminal
 "
