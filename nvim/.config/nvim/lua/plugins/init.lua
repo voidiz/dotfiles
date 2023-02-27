@@ -1,13 +1,12 @@
 return {
-    -- Various colorschemes
-    "flazz/vim-colorschemes",
-    "w0ng/vim-hybrid",
+    -- Colorscheme
     {
-        "ayu-theme/ayu-vim",
+        "rose-pine/neovim",
         priority = 1000,
         lazy = false,
         config = function()
-            vim.cmd([[colorscheme ayu]])
+            require("rose-pine").setup()
+            vim.cmd([[colorscheme rose-pine]])
 
             -- Colorscheme overrides
             -- Group names can be found with ':so $VIMRUNTIME/syntax/hitest.vim'
@@ -17,7 +16,6 @@ return {
             vim.api.nvim_set_hl(0, "Directory", { fg = "#E6B673" })
         end,
     },
-    "sainnhe/sonokai",
 
     -- Emmet
     "mattn/emmet-vim",

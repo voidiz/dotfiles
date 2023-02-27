@@ -1,9 +1,16 @@
 local M = {
+    -- Auto completion
     "hrsh7th/nvim-cmp",
     dependencies = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
         "L3MON4D3/LuaSnip",
+
+        -- Collection of snippets
+        "rafamadriz/friendly-snippets",
+
+        -- LuaSnip completion source for nvim-cmp
+        "saadparwaiz1/cmp_luasnip",
     },
 }
 
@@ -30,9 +37,11 @@ function M.config()
             ["<CR>"] = cmp.mapping.confirm({ select = true }),
             ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
+                    -- Next completion item
                     cmp.select_next_item()
-                elseif luasnip.expand_or_jumpable() then
-                    luasnip.expand_or_jump()
+                elseif luasnip.jumpable(1) then
+                    -- Jump to the next node
+                    luasnip.jump(1)
                 elseif has_words_before() then
                     cmp.complete()
                 else
@@ -57,6 +66,8 @@ function M.config()
             { name = "buffer" },
         }),
     })
+
+    require("luasnip.loaders.from_vscode").lazy_load()
 end
 
 return M

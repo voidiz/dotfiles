@@ -49,3 +49,7 @@ set recolor-darkcolor           "#f8f8f2" # Foreground
 
 # Open the same file a in new window
 map <C-Return> exec 'zathura "%"'
+
+# Ctrl-Click to jump to line in editor
+set synctex true
+set synctex-editor-command "code -g %{input}:%{line}"

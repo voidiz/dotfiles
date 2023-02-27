@@ -67,3 +67,12 @@ autocmd("Filetype", {
         )
     end,
 })
+
+augroup("ft_docs", { clear = true })
+autocmd("Filetype", {
+    group = "ft_docs",
+    pattern = { "tex", "latex", "markdown" },
+    callback = function()
+        vim.opt_local.wrap = true
+    end,
+})

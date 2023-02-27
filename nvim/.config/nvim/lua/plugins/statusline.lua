@@ -1,4 +1,5 @@
 local M = {
+    -- Statusline
     "freddiehaddad/feline.nvim",
 }
 
