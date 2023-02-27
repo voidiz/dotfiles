@@ -25,23 +25,27 @@ monitor1=DisplayPort-0
 monitor2=HDMI-A-0
 
 # Monitor gamma
-xrandr --current --output "$monitor1" --gamma 0.71:0.71:0.71
+# xrandr --current --output "$monitor1" --gamma 0.71:0.71:0.71
 
 # Monitor position
-xrandr --output "$monitor1" --mode 1920x1080 --rate 144.00 --pos 0x0 --primary \
-    --output "$monitor2" --mode 1920x1080 --rate 60.00 --pos 1920x0
+# xrandr --output "$monitor1" --mode 1920x1080 --rate 144.00 --pos 0x0 --primary \
+#     --output "$monitor2" --mode 1920x1080 --rate 60.00 --pos 1920x0
 
 # osu! resolution
-xrandr --newmode "1600x900_144.00"  311.75  1600 1736 1904 2208  900 903 908 981 -hsync +vsync
-xrandr --addmode "$monitor1" 1600x900_144.00
+# xrandr --newmode "1600x900_144.00"  311.75  1600 1736 1904 2208  900 903 908 981 -hsync +vsync
+# xrandr --addmode "$monitor1" 1600x900_144.00
+
+# Portable monitor
+xrandr --newmode "1920x1200_120.00"  410.50  1920 2080 2288 2656  1200 1203 1209 1289 -hsync +vsync
+xrandr --addmode DisplayPort-0 1920x1200_120.00
 
 # Tablet settings
-xsetwacom set "Wacom Intuos S Pen stylus" MapToOutput "$monitor1" # Map to full resolution
-xsetwacom set "Wacom Intuos S Pen stylus" Area 0 0 6000 3375 # top left area
+# xsetwacom set "Wacom Intuos S Pen stylus" MapToOutput "$monitor1" # Map to full resolution
+# xsetwacom set "Wacom Intuos S Pen stylus" Area 0 0 6000 3375 # top left area
 
 # Slight smoothing (CTL-480)
-xsetwacom set "Wacom Intuos S Pen stylus" Suppress 2
-xsetwacom set "Wacom Intuos S Pen stylus" RawSample 4
+# xsetwacom set "Wacom Intuos S Pen stylus" Suppress 2
+# xsetwacom set "Wacom Intuos S Pen stylus" RawSample 4
 
 # Lowest smoothing (CTL-490)
 # xsetwacom set "Wacom Intuos S 2 Pen stylus" Suppress 0
