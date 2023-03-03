@@ -13,11 +13,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Automatically source all files in plugins/
 require("lazy").setup("plugins", {
     -- defaults = { lazy = true },
     install = { colorscheme = { "ayu" } },
-    -- Automatically check for plugin updates
-    checker = { enabled = true },
     -- Disable annoying change notification
     change_detection = { notify = false },
     -- debug = true,
@@ -27,21 +26,3 @@ require("lazy").setup("plugins", {
 
 -- Autocmds
 require("autocmds")
-
--- Treesitter (syntax, indent, ...)
-require("plugins.treesitter")
-
--- Lsp + statusline
-require("plugins.lsp")
-
--- Auto completion
-require("plugins.cmp")
-
--- Autopairs
-require("plugins.autopairs")
-
--- File explorer
-require("plugins.tree")
-
--- Statusline
-require("plugins.statusline")
