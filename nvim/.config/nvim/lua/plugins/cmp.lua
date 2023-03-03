@@ -65,6 +65,14 @@ function M.config()
         }, {
             { name = "buffer" },
         }),
+        window = {
+            completion = {
+                border = "rounded",
+            },
+            documentation = {
+                border = nil,
+            },
+        },
     })
 
     require("luasnip.loaders.from_vscode").lazy_load()

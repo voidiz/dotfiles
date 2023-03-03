@@ -1,11 +1,23 @@
--- Setup statusline with labels
-local kind_labels_mt = {
-    __index = function(_, k)
-        return k
-    end,
-}
-local kind_labels = {}
-setmetatable(kind_labels, kind_labels_mt)
+vim.diagnostic.config({
+    update_in_insert = true,
+    severity_sort = true,
+    float = {
+        focusable = false,
+        style = "minimal",
+        border = "rounded",
+        source = "always",
+        header = "",
+        prefix = "",
+    },
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = "rounded",
+})
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
@@ -94,7 +106,13 @@ return {
                                 settings = {
                                     texlab = {
                                         build = {
-                                            args = { '-pdf', '-interaction=nonstopmode', '-synctex=1', '--shell-escape', '%f' },
+                                            args = {
+                                                "-pdf",
+                                                "-interaction=nonstopmode",
+                                                "-synctex=1",
+                                                "--shell-escape",
+                                                "%f",
+                                            },
                                             onSave = true,
                                         },
                                         forwardSearch = {

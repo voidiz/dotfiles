@@ -7,8 +7,8 @@ function M.config()
     local vi_mode_utils = require("feline.providers.vi_mode")
 
     local colors = {
-        fg = "#E6B673",
-        bg = "#1f2430",
+        fg = "#908caa",
+        bg = "#191724",
     }
 
     local components = {

@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins", {
     -- defaults = { lazy = true },
     install = { colorscheme = { "ayu" } },
-    -- Automatically check of plugin updates
+    -- Automatically check for plugin updates
     checker = { enabled = true },
     -- Disable annoying change notification
     change_detection = { notify = false },

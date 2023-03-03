@@ -7,13 +7,6 @@ return {
         config = function()
             require("rose-pine").setup()
             vim.cmd([[colorscheme rose-pine]])
-
-            -- Colorscheme overrides
-            -- Group names can be found with ':so $VIMRUNTIME/syntax/hitest.vim'
-            vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
-            vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE", ctermbg = "NONE" })
-            vim.api.nvim_set_hl(0, "LineNr", { fg = "#E6B673" })
-            vim.api.nvim_set_hl(0, "Directory", { fg = "#E6B673" })
         end,
     },
 
