@@ -62,88 +62,85 @@ end
 
 return {
     "neovim/nvim-lspconfig",
-    dependencies = {
-        -- Rust analyzer, debugger, inlay hints, etc. setup
-        "simrat39/rust-tools.nvim",
-        {
-            -- Neovim lua autocompletion
-            "folke/neodev.nvim",
-            config = function()
-                require("neodev").setup({})
-            end,
-        },
-        {
-            -- Handle LSP servers, linters, formatters, debuggers
-            "williamboman/mason.nvim",
-            config = function()
-                require("mason").setup({})
-            end,
-            dependencies = {
-                -- LSP server helpers
-                "williamboman/mason-lspconfig.nvim",
-                config = function()
-                    local capabilities =
-                        require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup({})
+        end,
+    },
+    -- Rust analyzer, debugger, inlay hints, etc. setup
+    "simrat39/rust-tools.nvim",
+    {
+        -- Neovim lua autocompletion
+        "folke/neodev.nvim",
+        config = function()
+            require("neodev").setup({})
+        end,
+    },
+    {
+        -- LSP server helpers
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+            local capabilities =
+                require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-                    require("mason-lspconfig").setup({})
-                    require("mason-lspconfig").setup_handlers({
-                        -- Default handler
-                        function(server)
-                            require("lspconfig")[server].setup({ on_attach = on_attach, capabilities = capabilities })
-                        end,
-                        ["rust_analyzer"] = function()
-                            require("rust-tools").setup({
-                                server = {
-                                    on_attach = on_attach,
-                                    capabilities = capabilities,
-                                },
-                            })
-                        end,
-                        ["texlab"] = function()
-                            require("lspconfig")["texlab"].setup({
-                                on_attach = on_attach,
-                                capabilities = capabilities,
-                                settings = {
-                                    texlab = {
-                                        build = {
-                                            args = {
-                                                "-pdf",
-                                                "-interaction=nonstopmode",
-                                                "-synctex=1",
-                                                "--shell-escape",
-                                                "%f",
-                                            },
-                                            onSave = true,
-                                        },
-                                        forwardSearch = {
-                                            executable = "zathura",
-                                            args = { "--synctex-forward", "%l:1:%f", "%p" },
-                                        },
-                                    },
-                                },
-                            })
-                        end,
+            require("mason-lspconfig").setup({})
+            require("mason-lspconfig").setup_handlers({
+                -- Default handler
+                function(server)
+                    require("lspconfig")[server].setup({ on_attach = on_attach, capabilities = capabilities })
+                end,
+                ["rust_analyzer"] = function()
+                    require("rust-tools").setup({
+                        server = {
+                            on_attach = on_attach,
+                            capabilities = capabilities,
+                        },
                     })
                 end,
-            },
-        },
-        {
-            -- LSP server for formatters, etc.
-            "jose-elias-alvarez/null-ls.nvim",
-            dependencies = { "nvim-lua/plenary.nvim" },
-            config = function()
-                local null_ls = require("null-ls")
-                null_ls.setup({
-                    on_attach = on_attach,
-                    sources = {
-                        null_ls.builtins.formatting.prettierd,
-                        null_ls.builtins.formatting.black.with({
-                            extra_args = { "--line-length", "79" },
-                        }),
-                        null_ls.builtins.formatting.stylua.with({ extra_args = { "--indent-type", "Spaces" } }),
-                    },
-                })
-            end,
-        },
+                ["texlab"] = function()
+                    require("lspconfig")["texlab"].setup({
+                        on_attach = on_attach,
+                        capabilities = capabilities,
+                        settings = {
+                            texlab = {
+                                build = {
+                                    args = {
+                                        "-pdf",
+                                        "-interaction=nonstopmode",
+                                        "-synctex=1",
+                                        "--shell-escape",
+                                        "%f",
+                                    },
+                                    onSave = true,
+                                },
+                                forwardSearch = {
+                                    executable = "zathura",
+                                    args = { "--synctex-forward", "%l:1:%f", "%p" },
+                                },
+                            },
+                        },
+                    })
+                end,
+            })
+        end,
+    },
+    {
+        -- LSP server for formatters, etc.
+        "jose-elias-alvarez/null-ls.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            local null_ls = require("null-ls")
+            null_ls.setup({
+                on_attach = on_attach,
+                sources = {
+                    null_ls.builtins.formatting.prettierd,
+                    null_ls.builtins.formatting.black.with({
+                        extra_args = { "--line-length", "79" },
+                    }),
+                    null_ls.builtins.formatting.stylua.with({ extra_args = { "--indent-type", "Spaces" } }),
+                },
+            })
+        end,
     },
 }
