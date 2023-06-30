@@ -32,9 +32,8 @@ xsel zsh
 
 deluge discord telegram-desktop fcitx geary
 fcitx-mozc fcitx-im fcitx-configtool feh flameshot
-kdeconnect keepassxc mpv mps-youtube streamlink 
-sxiv ttf-cascadia-code ttf-hanazono zathura
-zathura-pdf-mupdf
+kdeconnect keepassxc mpv streamlink sxiv
+ttf-cascadia-code ttf-hanazono zathura zathura-pdf-mupdf
 
 nautilus
 "
