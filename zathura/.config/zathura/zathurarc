@@ -1,4 +1,10 @@
 #
+# Options
+#
+
+set selection-clipboard clipboard
+
+#
 # Rose Pine color theme
 #
 
