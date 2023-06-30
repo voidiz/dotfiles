@@ -19,6 +19,7 @@ alias ..="cd .."
 alias ls="exa"
 alias ssh="kitty +kitten ssh" # terminfo fix
 alias synk="rsync -avhP --info=progress2" # archive, verbose, human, partial
+alias dnd="dragon-drop"
 
 # nnn configuration (use n instead of nnn)
 n ()
