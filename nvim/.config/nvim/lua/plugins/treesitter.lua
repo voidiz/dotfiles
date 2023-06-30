@@ -45,6 +45,9 @@ return {
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)
         end,
+        dependencies = {
+            "JoosepAlviste/nvim-ts-context-commentstring",
+        },
     },
 
     -- Auto close and rename HTML tags
