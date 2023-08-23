@@ -24,12 +24,5 @@ return {
 
     -- Git stuff
     "tpope/vim-fugitive",
-
-    -- Highlight colors
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup({})
-        end,
-    },
+    "tpope/vim-rhubarb",
 }
