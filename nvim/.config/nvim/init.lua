@@ -3,10 +3,6 @@
 
 -- Use system clipboard
 vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
-
--- Disable netrw (built-in file explorer) since we use nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 ------------------------------------------
 -- Formatting (see :help nvim-defaults)
 
