@@ -3,7 +3,7 @@ export ZDOTDIR="$HOME/.zsh"
 export FPATH="$FPATH:$HOME/.zsh/pure"
 export EDITOR=nvim
 export VISUAL=nvim
-export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin"
 
 # Set prompt
 autoload -U promptinit; promptinit
@@ -11,7 +11,10 @@ zstyle :prompt:pure:path color magenta
 prompt pure
 
 # Set up Node Version Manager
-source /usr/share/nvm/init-nvm.sh --no-use
+# source /usr/share/nvm/init-nvm.sh --no-use
+# Set up Fast Node Manager
+export PATH="$HOME/.local/share/fnm:$PATH"
+eval "`fnm env`"
 
 # Aliases
 alias vim="nvim"
@@ -97,3 +100,4 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
