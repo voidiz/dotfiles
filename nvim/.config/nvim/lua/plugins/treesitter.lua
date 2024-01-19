@@ -33,11 +33,6 @@ return {
                 enable = true,
             },
 
-            -- Detect comment style at cursor
-            context_commentstring = {
-                enable = true,
-            },
-
             indent = {
                 enable = true,
             },
