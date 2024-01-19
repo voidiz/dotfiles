@@ -74,5 +74,20 @@
         "key": "ctrl+k ctrl+i",
         "command": "-editor.action.showHover",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "Escape",
+        "command": "workbench.action.closeSidebar",
+        "when": "searchViewletFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "search.action.focusNextSearchResult",
+        "when": "searchViewletVisible",
+    },
+    {
+        "key": "ctrl+k",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "searchViewletVisible",
     }
 ]
