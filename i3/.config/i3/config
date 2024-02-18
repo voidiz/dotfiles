@@ -310,6 +310,9 @@ client.placeholder      $bg     $bg     $tx  $bg        $bg
 exec_always --no-startup-id flameshot
 bindsym Print exec flameshot gui
 
+# section is §, the key next to 1
+bindsym $mod+section exec flameshot gui
+
 # Screenshot current window and copy to clipboard
 # Sys_Req is the PrtScr key when Alt (Mod1) is held
 bindsym Mod1+Sys_Req exec import -window "$(xdotool getwindowfocus)" /tmp/scr.jpg && xclip -sel c -t image/jpg < /tmp/scr.jpg && rm /tmp/scr.jpg
