@@ -89,5 +89,9 @@
         "key": "ctrl+k",
         "command": "search.action.focusPreviousSearchResult",
         "when": "searchViewletVisible",
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
     }
 ]
