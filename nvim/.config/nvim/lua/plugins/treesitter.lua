@@ -28,11 +28,6 @@ return {
                 enable = true,
             },
 
-            -- Auto-close and rename HTML tags
-            autotag = {
-                enable = true,
-            },
-
             indent = {
                 enable = true,
             },
