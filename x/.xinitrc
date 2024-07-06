@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# For fcitx to work in kitty
+export GLFW_IM_MODULE=ibus
+
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
@@ -10,7 +13,7 @@ systemctl --user import-environment DISPLAY
 xset r rate 175 50
 
 # Input method
-fcitx -d
+fcitx5 -d
 
 # Gnome keyring
 eval $(gnome-keyring-daemon --start)
