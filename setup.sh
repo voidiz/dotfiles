@@ -45,7 +45,7 @@ dragon-drop
 otf-sfmono ttf-font-awesome ttf-material-design-icons
 ttf-unifont nerd-fonts-noto-sans-mono
 
-chatterino2-git spicetify-cli spotify sp google-chrome
+chatterino2-appimage spicetify-cli spotify sp google-chrome
 dropbox mpv-mpris ffmpeg-compat-57 indicator-kdeconnect-git
 anki-official-binary-bundle
 
