@@ -293,12 +293,12 @@ set_from_resource $bg i3wm.bg #f0f0f0
 set_from_resource $bg2 i3wm.bg2 #f0f0f0
 set_from_resource $tx i3wm.tx #ffffff
 
-# class                 border  backgr. text indicator  child_border
-client.focused          $bg     $bg     $tx  $bg        $bg
-client.focused_inactive $bg2    $bg2    $tx  $bg2       $bg2
-client.unfocused        $tx     $tx     $bg  $tx        $tx
-client.urgent           $bg     $bg     $tx  $bg        $bg
-client.placeholder      $bg     $bg     $tx  $bg        $bg
+# class                 border  backgr. text    indicator  child_border
+client.focused          $tx     $tx     $bg     $tx        $tx
+client.focused_inactive $tx     $tx     #ededed $tx        $tx
+client.unfocused        $tx     $tx     $bg2    $tx        $tx
+client.urgent           $bg     $bg     $tx     $bg        $bg
+client.placeholder      $bg     $bg     $tx     $bg        $bg
 
 # client.background       $bg
 
