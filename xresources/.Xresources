@@ -1,8 +1,8 @@
-i3wm.bg:        #908caa
-i3wm.bg2:       #6e6a86
-i3wm.tx:        #191724
+i3wm.bg:        #D47773
+i3wm.bg2:       #ABA6C9
+i3wm.tx:        #232136
 
-i3wm.wall:      $HOME/.config/i3/blue.jpg
+i3wm.wall:      $HOME/.config/i3/glitch.png
 
 st.termname:    st-256color
 st.shell:       /usr/bin/zsh
