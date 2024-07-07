@@ -21,7 +21,7 @@ return {
             },
             ignore_focus = {},
             always_divide_middle = true,
-            globalstatus = true,
+            globalstatus = false,
             refresh = {
                 statusline = 1000,
                 tabline = 1000,
@@ -34,10 +34,10 @@ return {
             lualine_c = {},
             lualine_x = {},
             lualine_y = {},
-            lualine_z = { { "filetype", color = "StatusLine", padding = { right = 2 } } },
+            lualine_z = {},
         },
         inactive_sections = {
-            lualine_a = {},
+            lualine_a = { { "filename", color = "StatusLineNC", padding = { left = 2 } } },
             lualine_b = {},
             lualine_c = {},
             lualine_x = {},
