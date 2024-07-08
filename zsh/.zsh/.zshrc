@@ -95,6 +95,12 @@ bindkey "^R" history-incremental-search-backward
 # Extended completion
 zstyle :compinstall filename "$HOME/.zsh/.zshrc"
 autoload -Uz compinit; compinit
+
+# Source completion files
+for file in $HOME/.zsh/completions/*.zsh; do
+    source "$file"
+done
+
 # Ignore case matching
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
