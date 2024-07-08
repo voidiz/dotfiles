@@ -61,20 +61,10 @@ local on_attach = function(client, bufnr)
 end
 
 return {
-    "neovim/nvim-lspconfig",
     {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup({})
-        end,
-    },
-    -- Rust analyzer, debugger, inlay hints, etc. setup
-    "simrat39/rust-tools.nvim",
-    {
-        -- Neovim lua autocompletion
-        "folke/neodev.nvim",
-        config = function()
-            require("neodev").setup({})
         end,
     },
     {
@@ -126,23 +116,26 @@ return {
             })
         end,
     },
-    -- {
-    --     -- LSP server for formatters, etc.
-    --     "nvimtools/none-ls.nvim",
-    --     dependencies = { "nvimtools/none-ls-extras.nvim" },
-    --     config = function()
-    --         local null_ls = require("null-ls")
-    --         null_ls.setup({
-    --             on_attach = on_attach,
-    --             sources = {
-    --                 null_ls.builtins.formatting.prettierd,
-    --                 null_ls.builtins.formatting.black.with({
-    --                     extra_args = { "--line-length", "79" },
-    --                 }),
-    --                 null_ls.builtins.formatting.stylua.with({ extra_args = { "--indent-type", "Spaces" } }),
-    --                 require("none-ls.diagnostics.eslint"),
-    --             },
-    --         })
-    --     end,
-    -- },
+    -- Rust analyzer, debugger, inlay hints, etc. setup
+    "simrat39/rust-tools.nvim",
+    {
+        -- Neovim lua autocompletion
+        "folke/neodev.nvim",
+        config = function()
+            require("neodev").setup({})
+        end,
+    },
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            -- Add custom LSP configs (for LSP configs not in mason-lspconfig and nvim-lspconfig)
+            local capabilities =
+                require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+            require("lspconfig.configs").spicedb = require("plugins.custom_lsp.spicedb")
+            require("lspconfig")["spicedb"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+        end,
+    },
 }
