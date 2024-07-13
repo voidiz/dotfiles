@@ -19,10 +19,12 @@ eval "`fnm env`"
 # Aliases
 alias vim="nvim"
 alias ..="cd .."
-alias ls="exa"
+alias ls="eza --hyperlink"
 alias ssh="kitty +kitten ssh" # terminfo fix
 alias synk="rsync -avhP --info=progress2" # archive, verbose, human, partial
 alias dnd="dragon-drop"
+alias rg="rg --hyperlink-format=kitty"
+alias ndiff="nvim -d"
 
 # nnn configuration (use n instead of nnn)
 n ()

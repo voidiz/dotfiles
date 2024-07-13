@@ -25,14 +25,14 @@ alsa-utils lib32-pipewire
 
 bluez bluez-utils iwd openresolv tailscale
 
-bat curl exa ffmpeg go nodejs npm python imagemagick jq
+bat curl eza ffmpeg go nodejs npm python imagemagick jq
 man-db man-pages python-pynvim python-jedi ripgrep rsync
 stow syncthing tmux wget youtube-dl xclip xdotool
 xsel zsh
 
 deluge discord telegram-desktop geary fcitx5
 fcitx5-configtool feh flameshot kdeconnect keepassxc
-mpv streamlink nsxiv ttf-cascadia-code ttf-hanazono
+mpv streamlink nsxiv ttf-jetbrains-mono ttf-hanazono
 zathura zathura-pdf-mupdf
 
 nautilus

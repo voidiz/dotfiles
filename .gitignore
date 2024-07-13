@@ -3,3 +3,6 @@ stow-build/
 .histfile
 .zcompdump
 .zcompdump.*
+
+# kitty repo used for types when developing kittens
+kitty/.config/kitty/kittens/kitty
