@@ -22,6 +22,9 @@ end
 
 -- Hide tilde empty line
 vim.o.fillchars = "eob: "
+
+-- Hide cmdline
+vim.o.cmdheight = 0
 ------------------------------------------
 -- GO
 require("config")

@@ -8,6 +8,10 @@ local theme = {
 
 return {
     "nvim-lualine/lualine.nvim",
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+        "meuter/lualine-so-fancy.nvim",
+    },
     event = { "ColorScheme" },
     opts = {
         options = {
@@ -32,7 +36,11 @@ return {
             lualine_a = { { "filename", color = "StatusLine", padding = { left = 2 } } },
             lualine_b = { { "diagnostics", color = "StatusLine" } },
             lualine_c = {},
-            lualine_x = {},
+            lualine_x = {
+                { "fancy_macro", color = "StatusLine" },
+                { "fancy_searchcount", color = "StatusLine" },
+                { "fancy_location", color = "StatusLine" },
+            },
             lualine_y = {},
             lualine_z = {},
         },
