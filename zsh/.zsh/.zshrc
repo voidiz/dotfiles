@@ -99,7 +99,7 @@ zstyle :compinstall filename "$HOME/.zsh/.zshrc"
 autoload -Uz compinit; compinit
 
 # Source completion files
-for file in $HOME/.zsh/completions/*.zsh; do
+for file in $HOME/.zsh/completions/*.zsh(N.); do
     source "$file"
 done
 
