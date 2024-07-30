@@ -94,10 +94,6 @@ bindkey -v
 # Search history with Ctrl+R
 bindkey "^R" history-incremental-search-backward
 
-# Extended completion
-zstyle :compinstall filename "$HOME/.zsh/.zshrc"
-autoload -Uz compinit; compinit
-
 # Match extensions using glob, main completer, match others when nothing found
 zstyle ':completion:*' completer _extensions _complete _approximate
 
@@ -124,13 +120,12 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
+# Source completion files (e.g., _docker)
+fpath=($fpath $ZDOTDIR/completions)
 
-# Source completion files
-for file in $HOME/.zsh/completions/*.zsh(N.); do
-    source "$file"
-done
+# Enable extended completion
+zstyle :compinstall filename "$HOME/.zsh/.zshrc"
+autoload -Uz compinit; compinit
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
