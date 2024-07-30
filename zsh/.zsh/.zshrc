@@ -98,13 +98,39 @@ bindkey "^R" history-incremental-search-backward
 zstyle :compinstall filename "$HOME/.zsh/.zshrc"
 autoload -Uz compinit; compinit
 
+# Match extensions using glob, main completer, match others when nothing found
+zstyle ':completion:*' completer _extensions _complete _approximate
+
+# Try exact case, then try ignore case. Finally, try substrings.
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Use completion menu
+zstyle ':completion:*' menu select
+
+# Styling
+zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Group results
+zstyle ':completion:*' group-name ''
+
+# Navigate results using hjkl
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
 # Source completion files
 for file in $HOME/.zsh/completions/*.zsh(N.); do
     source "$file"
 done
-
-# Ignore case matching
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
