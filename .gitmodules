@@ -2,5 +2,5 @@
 	path = mpv/.config/mpv/scripts/mpvacious
 	url = https://github.com/Ajatt-Tools/mpvacious
 [submodule "/home/void/.dotfiles/zsh/.zsh/pure"]
-	path = /home/void/.dotfiles/zsh/.zsh/pure
+	path = zsh/.zsh/pure
 	url = https://github.com/sindresorhus/pure
