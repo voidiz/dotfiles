@@ -127,6 +127,9 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            { "folke/neoconf.nvim", cmd = "Neoconf", opts = {} },
+        },
         config = function()
             -- Add custom LSP configs (for LSP configs not in mason-lspconfig and nvim-lspconfig)
             local capabilities =
