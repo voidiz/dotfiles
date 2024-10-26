@@ -1,9 +1,3 @@
-local M = {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.4",
-    dependencies = { "nvim-lua/plenary.nvim" },
-}
-
 -- Open git files, or fallback to find files if not in a git directory
 local function git_files_fallback()
     local builtin = require("telescope.builtin")
@@ -14,6 +8,19 @@ local function git_files_fallback()
         builtin.find_files()
     end
 end
+
+local M = {
+    "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
+    keys = {
+        { "<C-p>", git_files_fallback, desc = "Git Files" },
+        { "<leader>fi", "<cmd>Telescope live_grep<CR>", desc = "Live Grep" },
+        { "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Buffer Fuzzy Find" },
+        { "<leader>ff", "<cmd>Telescope resume<CR>", desc = "Resume" },
+    },
+    tag = "0.1.4",
+    dependencies = { "nvim-lua/plenary.nvim" },
+}
 
 function M.config()
     local actions = require("telescope.actions")
@@ -27,13 +34,6 @@ function M.config()
             },
         },
     })
-
-    local builtin = require("telescope.builtin")
-
-    vim.keymap.set("n", "<C-p>", git_files_fallback, {})
-    vim.keymap.set("n", "<leader>fi", builtin.live_grep, {})
-    vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, {})
-    vim.keymap.set("n", "<leader>ff", builtin.resume, {})
 end
 
 return M

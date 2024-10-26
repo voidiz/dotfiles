@@ -1,5 +1,8 @@
 return {
     "nvim-tree/nvim-tree.lua",
+    keys = {
+        { "<C-n>", "<cmd>NvimTreeToggle<CR>" },
+    },
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
@@ -10,6 +13,5 @@ return {
     },
     config = function(_, opts)
         require("nvim-tree").setup(opts)
-        vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", {})
     end,
 }
