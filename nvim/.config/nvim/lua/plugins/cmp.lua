@@ -64,6 +64,10 @@ function M.config()
             { name = "nvim_lsp" },
             { name = "luasnip" },
             { name = "vim-dadbod-completion" },
+            {
+                name = "lazydev",
+                group_index = 0, -- to skip loading LuaLS completions
+            },
         }, {
             { name = "buffer" },
         }),

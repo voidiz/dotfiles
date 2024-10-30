@@ -80,15 +80,6 @@ return {
                 function(server)
                     require("lspconfig")[server].setup({ on_attach = on_attach, capabilities = capabilities })
                 end,
-                ["rust_analyzer"] = function()
-                    require("rust-tools").setup({
-                        server = {
-                            on_attach = on_attach,
-                            capabilities = capabilities,
-                            update_in_insert = true,
-                        },
-                    })
-                end,
                 ["texlab"] = function()
                     require("lspconfig")["texlab"].setup({
                         on_attach = on_attach,
@@ -116,14 +107,18 @@ return {
             })
         end,
     },
-    -- Rust analyzer, debugger, inlay hints, etc. setup
-    "simrat39/rust-tools.nvim",
+    {
+        -- Rust analyzer, debugger, inlay hints, etc. setup.
+        -- Do not use rust-analyzer through mason.nvim with this.
+        "mrcjkb/rustaceanvim",
+        version = "^5", -- Recommended
+        lazy = false, -- This plugin is already lazy
+    },
     {
         -- Neovim lua autocompletion
-        "folke/neodev.nvim",
-        config = function()
-            require("neodev").setup({})
-        end,
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {},
     },
     {
         "neovim/nvim-lspconfig",
