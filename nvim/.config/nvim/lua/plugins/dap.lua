@@ -20,22 +20,22 @@ return {
                 function()
                     require("dapui").toggle()
                 end,
-                desc = "Open DAP UI"
+                desc = "Open DAP UI",
             },
             {
                 "<leader>db",
                 function()
                     require("dap").toggle_breakpoint()
                 end,
-                desc = "Toggle Breakpoint"
+                desc = "Toggle Breakpoint",
             },
             {
                 "<leader>dc",
                 function()
                     require("dap").continue()
                 end,
-                desc = "Continue"
-            }
+                desc = "Continue",
+            },
         },
     },
 }

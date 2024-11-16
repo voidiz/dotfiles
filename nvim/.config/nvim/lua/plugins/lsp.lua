@@ -44,28 +44,13 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
     -- buf_set_keymap("n", "<M-S-F>", "<cmd>lua vim.lsp.buf.format{ async = true }<CR>", opts)
     buf_set_keymap("x", "<leader>fo", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-
-    -- Set autocommands conditional on server_capabilities
-    if client.server_capabilities.document_highlight then
-        vim.api.nvim_exec2(
-            [[
-        augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-        augroup END
-            ]],
-            {}
-        )
-    end
 end
 
 return {
     {
         "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup({})
-        end,
+        cmd = { "Mason", "MasonInstall", "MasonUpdate", "MasonLog", "MasonUninstall", "MasonUninstallAll" },
+        opts = {},
     },
     {
         -- LSP server helpers
@@ -116,6 +101,14 @@ return {
         "mrcjkb/rustaceanvim",
         version = "^5", -- Recommended
         lazy = false, -- This plugin is already lazy
+        init = function()
+            --- @type rustaceanvim.Opts
+            vim.g.rustaceanvim = {
+                server = {
+                    on_attach = on_attach,
+                },
+            }
+        end,
     },
     {
         -- Neovim lua autocompletion

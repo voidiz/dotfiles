@@ -25,6 +25,9 @@ vim.o.fillchars = "eob: "
 
 -- Hide cmdline
 vim.o.cmdheight = 0
+
+-- Always use one signcolumn to prevent layout shifts
+vim.o.signcolumn = "yes:1"
 ------------------------------------------
 -- GO
 require("config")
