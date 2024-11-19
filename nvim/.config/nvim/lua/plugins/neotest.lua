@@ -12,6 +12,7 @@ return {
             require("neotest").setup({
                 adapters = {
                     require("neotest-golang"),
+                    require("rustaceanvim.neotest"),
                 },
                 discovery = {
                     -- Only AST parse the currently opened buffer.
