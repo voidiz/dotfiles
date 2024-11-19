@@ -16,7 +16,7 @@ return {
         -- Define your formatters
         formatters_by_ft = {
             lua = { "stylua" },
-            python = { "black" },
+            python = { "ruff_format" },
             javascript = { { "prettierd", "prettier" } },
             typescript = { { "prettierd", "prettier" } },
             javascriptreact = { { "prettierd", "prettier" } },
@@ -28,7 +28,7 @@ return {
             yaml = { { "prettierd", "prettier" } },
             markdown = { { "prettierd", "prettier" } },
             c = { "clang-format" },
-            cpp = { "clang-format" }
+            cpp = { "clang-format" },
         },
         -- Set up format-on-save
         -- format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
@@ -37,8 +37,8 @@ return {
             stylua = {
                 prepend_args = { "--indent-type", "Spaces" },
             },
-            black = {
-                prepend_args = { "--line-length", "79" },
+            ruff_format = {
+                append_args = { "--line-length", "79" },
             },
         },
     },

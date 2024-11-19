@@ -8,7 +8,7 @@ return {
             -- javascriptreact = { "eslint_d" },
             -- typescriptreact = { "eslint_d" },
             markdown = { "markdownlint" },
-            python = { "pylint" },
+            -- python = { "ruff" }, -- ruff is an lsp, so not necessary
         }
 
         local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
