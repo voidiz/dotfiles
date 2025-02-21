@@ -59,7 +59,7 @@ return {
             local capabilities =
                 require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-            require("mason-lspconfig").setup({})
+            require("mason-lspconfig").setup()
             require("mason-lspconfig").setup_handlers({
                 -- Default handler
                 function(server)

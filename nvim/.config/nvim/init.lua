@@ -3,6 +3,29 @@
 
 -- Use system clipboard
 vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
+
+-- Always copy to the system clipboard through OSC 52.
+-- (Requires a terminal that supports it)
+local function paste()
+    return {
+        vim.split(vim.fn.getreg(""), "\n"),
+        vim.fn.getregtype(""),
+    }
+end
+vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+        ["+"] = paste,
+        ["*"] = paste,
+    },
+}
+
+-- Leader key
+vim.g.mapleader = " "
 ------------------------------------------
 -- Formatting (see :help nvim-defaults)
 
