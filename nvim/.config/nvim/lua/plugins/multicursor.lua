@@ -5,6 +5,7 @@ return {
         {
             "<C-j>",
             function()
+                -- Autopairs doesn't work with multiple cursors
                 require("nvim-autopairs").disable()
                 require("multicursor-nvim").matchAddCursor(1)
             end,
@@ -45,12 +46,12 @@ return {
             mode = { "n", "v" },
         },
         {
-            "<leader>ca",
+            "<leader>cf",
             function()
                 require("nvim-autopairs").disable()
                 require("multicursor-nvim").matchAllAddCursors()
             end,
-            desc = "Add multicursors at all locations matching word/selection",
+            desc = "Add multicursors at all locations matching word/selection in file",
             mode = { "n", "v" },
         },
         {

@@ -85,6 +85,18 @@ config.keys = {
         mods = "CTRL|SHIFT",
         action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
     },
+    {
+        -- Escape sequence for Ctrl + Shift + J
+        key = "J",
+        mods = "CTRL|SHIFT",
+        action = act.SendString("\x1b[74;5u"),
+    },
+    {
+        -- Escape sequence for Ctrl + Shift + K
+        key = "K",
+        mods = "CTRL|SHIFT",
+        action = act.SendString("\x1b[75;5u"),
+    },
 }
 
 -- ALT + number to activate that tab
