@@ -43,14 +43,44 @@ if vim.fn.has("termguicolors") then
     vim.o.termguicolors = true
 end
 
--- Hide tilde empty line
-vim.o.fillchars = "eob: "
+-- Fillchars (empty spaces get filled with these characters)
+vim.opt.fillchars = {
+    vert = "▕", -- alternatives │
+    fold = " ",
+    eob = " ", -- suppress ~ at EndOfBuffer
+    diff = "╱", -- alternatives = ⣿ ░ ─ ╱
+    msgsep = "‾",
+    foldopen = "▾",
+    foldsep = "│",
+    foldclose = "▸",
+}
 
 -- Hide cmdline
 vim.o.cmdheight = 0
 
 -- Always use one signcolumn to prevent layout shifts
 vim.o.signcolumn = "yes:1"
+
+--- Tabline with only filename
+--- @param tab integer
+function _G.MinimalTabline()
+    local s = ""
+    for i = 1, vim.fn.tabpagenr("$") do
+        local winnr = vim.fn.tabpagewinnr(i)
+        local buflist = vim.fn.tabpagebuflist(i)
+        local bufnr = buflist[winnr]
+        local fname = vim.fn.bufname(bufnr)
+        local label = fname ~= "" and vim.fn.fnamemodify(fname, ":t") or "[No Name]"
+
+        if i == vim.fn.tabpagenr() then
+            s = s .. "%#TabLineSel#" .. " " .. i .. ": " .. label .. " "
+        else
+            s = s .. "%#TabLine#" .. " " .. i .. ": " .. label .. " "
+        end
+    end
+    return s .. "%#TabLineFill#"
+end
+vim.opt.tabline = "%!v:lua.MinimalTabline()"
 ------------------------------------------
 -- GO
 require("config")
