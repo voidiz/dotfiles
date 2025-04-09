@@ -22,6 +22,7 @@ return {
                 "NvimTree",
                 "TelescopePrompt",
                 "qf",
+                "DiffviewFiles",
             },
             ignore_focus = {},
             always_divide_middle = true,

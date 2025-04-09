@@ -1,8 +1,17 @@
 return {
     {
         "andythigpen/nvim-coverage",
-        lazy = true,
         event = "VeryLazy",
+        cmd = {
+            "Coverage",
+            "CoverageLoad",
+            "CoverageLoadLcov",
+            "CoverageShow",
+            "CoverageHide",
+            "CoverageToggle",
+            "CoverageClear",
+            "CoverageSummary",
+        },
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require("coverage").setup({

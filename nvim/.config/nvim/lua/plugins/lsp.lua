@@ -114,7 +114,12 @@ return {
         -- Neovim lua autocompletion
         "folke/lazydev.nvim",
         ft = "lua",
-        opts = {},
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                { path = "snacks.nvim", words = { "Snacks" } },
+            },
+        },
     },
     {
         "neovim/nvim-lspconfig",
