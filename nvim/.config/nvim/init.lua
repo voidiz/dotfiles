@@ -62,7 +62,6 @@ vim.o.cmdheight = 0
 vim.o.signcolumn = "yes:1"
 
 --- Tabline with only filename
---- @param tab integer
 function _G.MinimalTabline()
     local s = ""
     for i = 1, vim.fn.tabpagenr("$") do

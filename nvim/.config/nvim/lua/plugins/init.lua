@@ -23,10 +23,9 @@ return {
             })
             vim.cmd([[colorscheme rose-pine]])
 
-            -- Set delete fillchars fg color
-            merge_hl("DiffDelete", { fg = "#2d2b47" })
-
-            -- Override diffview colors
+            -- Override diffview colors (use :Inspect and :filter /Diffview/
+            -- highlight to find the highlight groups)
+            merge_hl("DiffviewDiffDelete", { fg = "#2d2b47" })
             merge_hl("DiffviewFilePanelDeletions", { fg = "#872944", bg = "NONE" })
             merge_hl("DiffviewFilePanelInsertions", { fg = "#58bea3", bg = "NONE" })
             merge_hl("DiffviewStatusModified", { fg = "#8cbac3", bg = "NONE" })
