@@ -43,6 +43,31 @@ return {
         bigfile = { enabled = true },
 
         -- Telescope replacement
-        picker = { enabled = true },
+        picker = {
+            enabled = true,
+            win = {
+                list = {
+                    on_buf = function(self)
+                        self:execute("calculate_file_truncate_width")
+                    end,
+                },
+                preview = {
+                    on_buf = function(self)
+                        self:execute("calculate_file_truncate_width")
+                    end,
+                    on_close = function(self)
+                        self:execute("calculate_file_truncate_width")
+                    end,
+                },
+            },
+            actions = {
+                -- Make file truncation consider window width
+                -- https://github.com/folke/snacks.nvim/issues/1217#issuecomment-2661465574
+                calculate_file_truncate_width = function(self)
+                    local width = self.list.win:size().width
+                    self.opts.formatters.file.truncate = width - 6
+                end,
+            },
+        },
     },
 }
