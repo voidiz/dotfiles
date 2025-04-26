@@ -35,12 +35,34 @@ return {
             end,
             desc = "Resume",
         },
+        {
+            "<leader>zz",
+            function()
+                Snacks.zen()
+            end,
+            desc = "Zen Mode",
+        },
     },
     --- @type snacks.Config
     opts = {
         -- Automatically set ft=bigfile for large files and files with long
         -- lines to avoid LSP and TS attaching to the buffer
         bigfile = { enabled = true },
+
+        -- Zen mode
+        zen = {
+            -- Disable code dimming/twilight
+            toggles = {
+                dim = false,
+            },
+            win = {
+                -- Uniform background (same as terminal/theme)
+                backdrop = {
+                    transparent = false,
+                    blend = 99,
+                },
+            },
+        },
 
         -- Telescope replacement
         picker = {

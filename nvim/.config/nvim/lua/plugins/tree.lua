@@ -1,3 +1,10 @@
+local VIEW_WIDTH_FIXED = 30
+local view_width_max = -1 -- Adaptive by default
+
+local function get_view_width_max()
+    return view_width_max
+end
+
 return {
     "nvim-tree/nvim-tree.lua",
     keys = {
@@ -16,6 +23,19 @@ return {
             end,
             desc = "Toggle/Focus NvimTree",
         },
+        {
+            "<leader>tw",
+            function()
+                if view_width_max == -1 then
+                    view_width_max = VIEW_WIDTH_FIXED
+                else
+                    view_width_max = -1
+                end
+
+                require("nvim-tree.api").tree.reload()
+            end,
+            desc = "Toggle Tree Adaptive Width",
+        },
     },
     dependencies = {
         "nvim-tree/nvim-web-devicons",
@@ -23,6 +43,12 @@ return {
     opts = {
         update_focused_file = {
             enable = true,
+        },
+        view = {
+            width = {
+                min = 30,
+                max = get_view_width_max,
+            },
         },
     },
     config = function(_, opts)
