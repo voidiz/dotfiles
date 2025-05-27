@@ -4,3 +4,6 @@
 [submodule "/home/void/.dotfiles/zsh/.zsh/pure"]
 	path = zsh/.zsh/pure
 	url = https://github.com/sindresorhus/pure
+[submodule "waybar/.config/waybar/rose-pine"]
+	path = waybar/.config/waybar/rose-pine
+	url = https://github.com/rose-pine/waybar

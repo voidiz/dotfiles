@@ -3,18 +3,15 @@ export ZDOTDIR="$HOME/.zsh"
 export FPATH="$FPATH:$HOME/.zsh/pure"
 export EDITOR=nvim
 export VISUAL=nvim
-export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH"
 
 # Set prompt
 autoload -U promptinit; promptinit
 zstyle :prompt:pure:path color magenta
 prompt pure
 
-# Set up Node Version Manager
-# source /usr/share/nvm/init-nvm.sh --no-use
-# Set up Fast Node Manager
-export PATH="$HOME/.local/share/fnm:$PATH"
-eval "`fnm env`"
+# Setup Mise
+eval "$(mise activate zsh)"
 
 # Aliases
 alias vim="nvim"
@@ -47,7 +44,8 @@ n ()
     # stty lwrap undef
     # stty lnext undef
 
-    nnn "$@"
+    # -A flag to disable type-to-nav
+    nnn -A "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
         . "$NNN_TMPFILE"

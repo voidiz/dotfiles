@@ -1,0 +1,26 @@
+@import "./rose-pine/rose-pine-moon.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family:
+    FontAwesome,
+    Noto Sans,
+    sans-serif;
+}
+
+window#waybar {
+  background: @base;
+}
+
+window#waybar > box {
+  padding: 5px 10px;
+}
+
+#workspaces button.focused {
+  color: @rose;
+}
+
+#clock {
+  padding-left: 10px;
+}

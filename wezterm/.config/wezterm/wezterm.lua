@@ -11,11 +11,11 @@ config.front_end = "WebGpu"
 
 --- Appearance
 local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").moon
-config.line_height = 1.2
+config.line_height = 1.4
 config.colors = theme.colors()
 config.window_frame = theme.window_frame()
 config.window_frame.font = wezterm.font({ family = "Roboto Mono" })
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 config.window_padding = {
     left = 20,
     right = 20,

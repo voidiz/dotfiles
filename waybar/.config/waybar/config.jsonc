@@ -1,0 +1,46 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 10,
+  "modules-left": ["niri/workspaces", "sway/workspaces", "sway/mode"],
+  "modules-center": [],
+  "modules-right": ["power-profiles-daemon", "pulseaudio", "battery", "tray", "clock"],
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": "󰖁 {icon}",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+  },
+  "tray": {
+    "spacing": 5,
+  },
+  "clock": {
+    "format-alt": "{:%a, %d. %b  %H:%M}",
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
+    },
+  },
+}

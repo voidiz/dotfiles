@@ -1,0 +1,31 @@
+# get outputs using swaymsg -t get_outputs
+
+# Laptop
+output "California Institute of Technology 0x1409 Unknown" {
+    mode 1920x1080@60.003
+    alias $LAPTOP
+}
+
+# Home left monitor
+output "Acer Technologies Acer XF270H B 0x83702E4D" {
+    mode 1920x1080@143.992
+    position 0,0
+    alias $HOME_LEFT
+}
+
+# Home right monitor
+output "Dell Inc. DELL P2723DE B9QC714" {
+    mode 1920x1080@60
+    position 1920,0
+    alias $HOME_RIGHT
+}
+
+profile home {
+    output $HOME_LEFT enable
+    output $HOME_RIGHT enable
+    output $LAPTOP disable
+}
+
+profile laptop {
+    output $LAPTOP enable
+}
