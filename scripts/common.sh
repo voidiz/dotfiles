@@ -13,6 +13,8 @@ pipewire pipewire-alsa pipewire-pulse pavucontrol alsa-utils lib32-pipewire
 
 bluez bluez-utils iwd systemd-resolvconf tailscale
 
+tlp
+
 bat curl eza ffmpeg gnome-keyring imagemagick jq lazygit man-db man-pages nnn
 ripgrep rsync stow syncthing wget yt-dlp zsh
 
@@ -24,10 +26,10 @@ zathura-pdf-mupdf
 COMMON_AUR_PACKAGES="
 otf-san-francisco-mono ttf-unifont nerd-fonts-noto-sans-mono
 
-dragon-drop sp
+sp
 
-anki-bin chatterino2-bin dropbox google-chrome mozc-ut fcitx5-mozc-ut
-nautilus-open-any-terminal wezterm-git
+anki-bin dragon-drop chatterino2-bin dropbox google-chrome mozc-ut
+fcitx5-mozc-ut nautilus-open-any-terminal wezterm-git
 "
 
 install_packages() {

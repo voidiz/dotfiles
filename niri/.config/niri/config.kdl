@@ -134,7 +134,7 @@ output "eDP-1" {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -193,7 +193,7 @@ layout {
         active-color "#D47773"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#ededed"
+        inactive-color "#908CAA"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -271,10 +271,10 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
+        left 0
+        right 0
+        top 0
+        bottom 0
     }
 }
 
@@ -291,10 +291,14 @@ environment {
     // For XWayland
     DISPLAY ":0"
 
-    // Other wayland stuff
+    // Wayland setting for Java Swing
     _JAVA_AWT_WM_NONREPARENTING "1"
 
+    // Wayland setting for Electron
     ELECTRON_OZONE_PLATFORM_HINT "auto"
+
+    // fcitx for XWayland
+    XMODIFIERS "@im=fcitx"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -351,7 +355,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 

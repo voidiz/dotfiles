@@ -49,4 +49,5 @@ install_packages "aur" "$COMMON_AUR_PACKAGES"
 install_packages "aur" "$I3_AUR_PACKAGES"
 stow_dots COMMON_DOTS
 stow_dots I3_DOTS
+apply_xresources
 post_setup

@@ -1,15 +1,26 @@
 {
   "layer": "top",
   "position": "top",
-  "spacing": 10,
+  "spacing": 20,
   "modules-left": ["niri/workspaces", "sway/workspaces", "sway/mode"],
-  "modules-center": [],
-  "modules-right": ["power-profiles-daemon", "pulseaudio", "battery", "tray", "clock"],
+  "modules-center": ["wlr/taskbar"],
+  "modules-right": [
+    "power-profiles-daemon",
+    "pulseaudio",
+    "battery",
+    "tray",
+    "clock",
+  ],
+  "wlr/taskbar": {
+    "all-outputs": true,
+    "on-click": "activate",
+    "justify": "center",
+  },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-bluetooth-muted": "󰖁 {icon}",
+    "format": "<span color=\"#ea9a97\">{icon}</span> {volume}%",
+    "format-bluetooth": "<span color=\"#ea9a97\">{icon}</span> {volume}%",
+    "format-bluetooth-muted": "<span color=\"#ea9a97\">󰖁 {icon}</span>",
     "format-muted": "󰖁",
     "format-icons": {
       "headphone": "",
@@ -23,17 +34,17 @@
     "on-click": "pavucontrol",
   },
   "battery": {
-    "format": "{capacity}% {icon}",
+    "format": "<span color=\"#ea9a97\">{icon}</span> {capacity}%",
     "format-icons": ["", "", "", "", ""],
   },
   "tray": {
-    "spacing": 5,
+    "spacing": 10,
   },
   "clock": {
     "format-alt": "{:%a, %d. %b  %H:%M}",
   },
   "power-profiles-daemon": {
-    "format": "{icon}",
+    "format": "<span color=\"#ea9a97\">{icon}</span>",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {

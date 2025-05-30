@@ -1,20 +1,28 @@
+/* Use GTK_DEBUG=interactive or waybar -l debug to find classes */
 @import "./rose-pine/rose-pine-moon.css";
 
 * {
-  padding: 0;
-  margin: 0;
-  font-family:
-    FontAwesome,
-    Noto Sans,
-    sans-serif;
+  font-family: "SF Pro Text", "Font Awesome 6 Free", FontAwesome, sans-serif;
 }
 
 window#waybar {
-  background: @base;
+  background: none;
+  color: @text;
 }
 
 window#waybar > box {
+  padding: 5px 5px 0 5px;
+}
+
+window#waybar > box > box {
+  background: @base;
   padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  padding: 0;
+  color: @text;
 }
 
 #workspaces button.focused {
@@ -22,5 +30,7 @@ window#waybar > box {
 }
 
 #clock {
-  padding-left: 10px;
+}
+
+box#taskbar button {
 }

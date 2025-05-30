@@ -18,6 +18,6 @@ $ git submodule update --init --recursive
 
 install packages and symlink dots:
 
-- `./_scripts/setup_niri.sh`
-- `./_scripts/setup_sway.sh`
-- `./_scripts/setup_i3.sh`
+- `./scripts/setup_niri.sh`
+- `./scripts/setup_sway.sh`
+- `./scripts/setup_i3.sh`
