@@ -10,8 +10,8 @@ SWAY_DOTS=(
 )
 
 SWAY_PACKAGES="
-gtklock kanshi rofi-wayland sway swaybg swayidle swaync waybar
-wl-clipboard xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+gtklock kanshi rofi-wayland sway swaybg swayidle swaync waybar wl-clipboard
+wlsunset xdg-desktop-portal-gnome xdg-desktop-portal-gtk
 "
 
 install_packages "official" "$COMMON_PACKAGES"

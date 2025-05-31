@@ -1,0 +1,11 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=bash -c 'pos="$(curl -s http://ip-api.com/json)" \
+    lon="$(echo $pos | jq .lon)" \
+    lat="$(echo $pos | jq .lat)" \
+    wlsunset -l $lat -L $lon'
+Restart=on-failure

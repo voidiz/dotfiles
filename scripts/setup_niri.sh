@@ -11,7 +11,8 @@ NIRI_DOTS=(
 
 NIRI_PACKAGES="
 gtklock niri rofi-wayland swaybg swayidle swaync waybar
-xdg-desktop-portal-gnome wl-clipboard xdg-desktop-portal-gtk xwayland-satellite
+xdg-desktop-portal-gnome wl-clipboard wlsunset xdg-desktop-portal-gtk
+xwayland-satellite
 "
 
 install_packages "official" "$COMMON_PACKAGES"
