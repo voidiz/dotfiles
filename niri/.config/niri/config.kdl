@@ -36,6 +36,7 @@ input {
         // drag false
         // drag-lock
         // natural-scroll
+        scroll-factor 0.3
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
@@ -76,7 +77,7 @@ output "Acer Technologies Acer XF270H B 0x83702E4D" {
 
 // Home right monitor
 output "Dell Inc. DELL P2723DE B9QC714" {
-    mode "1920x1080@60"
+    mode "1920x1080"
     position x=1920 y=0
 }
 
@@ -387,10 +388,18 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume    allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume    allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioRaiseVolume    allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
+    XF86AudioLowerVolume    allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
     XF86AudioMute           allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+    // Audio playback
+    XF86AudioPlay   allow-when-locked=true    { spawn "playerctl" "play-pause"; }
+    XF86AudioNext   allow-when-locked=true    { spawn "playerctl" "next"; }
+    XF86AudioPrev   allow-when-locked=true    { spawn "playerctl" "previous"; }
+    Mod+O           allow-when-locked=true    { spawn "playerctl" "play-pause"; }
+    Mod+P           allow-when-locked=true    { spawn "playerctl" "next"; }
+    Mod+I           allow-when-locked=true    { spawn "playerctl" "previous"; }
 
     // Brightness
     XF86MonBrightnessUp     allow-when-locked=true { spawn "brightnessctl" "set" "10%+"; }
@@ -418,10 +427,10 @@ binds {
     Mod+Ctrl+Home   { move-column-to-first; }
     Mod+Ctrl+End    { move-column-to-last; }
 
-    Mod+Ctrl+H     { focus-monitor-left; }
-    Mod+Ctrl+J     { focus-monitor-down; }
-    Mod+Ctrl+K     { focus-monitor-up; }
-    Mod+Ctrl+L     { focus-monitor-right; }
+    Mod+Ctrl+H   { focus-monitor-left; }
+    Mod+Ctrl+J   { focus-monitor-down; }
+    Mod+Ctrl+K   { focus-monitor-up; }
+    Mod+Ctrl+L   { focus-monitor-right; }
 
     Mod+Alt+H   { move-window-to-monitor-left; }
     Mod+Alt+L   { move-window-to-monitor-right; }
@@ -435,8 +444,6 @@ binds {
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }

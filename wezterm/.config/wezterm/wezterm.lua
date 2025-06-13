@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local workspace_funcs = require("workspace")
 local act = wezterm.action
 local local_config_set, local_config = pcall(require, "wezterm_local")
 
@@ -8,13 +9,15 @@ config:set_strict_mode(true)
 --- General
 config.audible_bell = "Disabled"
 config.front_end = "WebGpu"
+config.warn_about_missing_glyphs = false
 
 --- Appearance
 local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").moon
+config.font = wezterm.font({ family = "JetBrainsMono NF" })
 config.line_height = 1.4
 config.colors = theme.colors()
 config.window_frame = theme.window_frame()
-config.window_frame.font = wezterm.font({ family = "Roboto Mono" })
+config.window_frame.font = wezterm.font({ family = "JetBrainsMono NF" })
 -- config.window_decorations = "RESIZE"
 config.window_padding = {
     left = 20,
@@ -65,25 +68,18 @@ config.keys = {
                 { Foreground = { AnsiColor = "Fuchsia" } },
                 { Text = "Enter name for new workspace" },
             }),
-            action = wezterm.action_callback(function(window, pane, line)
-                -- line will be `nil` if they hit escape without entering anything
-                -- An empty string if they just hit enter
-                -- Or the actual line of text they wrote
-                if line then
-                    window:perform_action(
-                        act.SwitchToWorkspace({
-                            name = line,
-                        }),
-                        pane
-                    )
-                end
-            end),
+            action = wezterm.action_callback(workspace_funcs.switch_workspace),
         }),
+    },
+    {
+        key = "I",
+        mods = "CTRL|SHIFT",
+        action = wezterm.action_callback(workspace_funcs.switch_to_previous_workspace),
     },
     {
         key = "O",
         mods = "CTRL|SHIFT",
-        action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
+        action = wezterm.action_callback(workspace_funcs.workspace_picker)
     },
     {
         -- Escape sequence for Ctrl + Shift + J
