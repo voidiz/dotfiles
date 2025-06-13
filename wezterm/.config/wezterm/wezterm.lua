@@ -18,6 +18,7 @@ config.line_height = 1.4
 config.colors = theme.colors()
 config.window_frame = theme.window_frame()
 config.window_frame.font = wezterm.font({ family = "JetBrainsMono NF" })
+config.adjust_window_size_when_changing_font_size = false
 -- config.window_decorations = "RESIZE"
 config.window_padding = {
     left = 20,
