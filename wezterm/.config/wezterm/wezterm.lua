@@ -14,6 +14,7 @@ config.warn_about_missing_glyphs = false
 --- Appearance
 local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").moon
 config.font = wezterm.font({ family = "JetBrainsMono NF" })
+config.font_size = 11
 config.line_height = 1.4
 config.colors = theme.colors()
 config.window_frame = theme.window_frame()
