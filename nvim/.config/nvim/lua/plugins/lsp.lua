@@ -1,4 +1,5 @@
 vim.diagnostic.config({
+    virtual_text = true,
     update_in_insert = true,
     severity_sort = true,
     float = {
@@ -10,14 +11,6 @@ vim.diagnostic.config({
         prefix = "",
     },
 })
-
--- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
---     border = "rounded",
--- })
-
--- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
---     border = "rounded",
--- })
 
 local on_attach = function(client, bufnr)
     -- Mappings
@@ -71,9 +64,8 @@ return {
     },
     {
         -- Rust analyzer, debugger, inlay hints, etc. setup.
-        -- Do not use rust-analyzer through mason.nvim with this.
         "mrcjkb/rustaceanvim",
-        version = "^5", -- Recommended
+        version = "^6", -- Recommended
         lazy = false, -- This plugin is already lazy
         init = function()
             --- @type rustaceanvim.Opts
