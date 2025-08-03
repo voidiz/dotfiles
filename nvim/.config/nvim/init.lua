@@ -62,7 +62,10 @@ vim.o.cmdheight = 0
 -- Always use one signcolumn to prevent layout shifts
 vim.o.signcolumn = "yes:1"
 
---- Tabline with only filename
+-- Rounded borders on floating windows
+vim.o.winborder = "rounded"
+
+-- Tabline with only filename
 function _G.MinimalTabline()
     local s = ""
     for i = 1, vim.fn.tabpagenr("$") do

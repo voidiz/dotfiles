@@ -5,19 +5,19 @@ vim.diagnostic.config({
         focusable = false,
         style = "minimal",
         border = "rounded",
-        source = "always",
+        source = true,
         header = "",
         prefix = "",
     },
 })
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-})
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+--     border = "rounded",
+-- })
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-})
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+--     border = "rounded",
+-- })
 
 local on_attach = function(client, bufnr)
     -- Mappings
@@ -32,8 +32,8 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.keymap.set("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     vim.keymap.set("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
-    vim.keymap.set("n", "[g", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-    vim.keymap.set("n", "]g", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+    vim.keymap.set("n", "[g", "<cmd>lua vim.diagnostic.jump({ count = -1, float = true })<CR>", opts)
+    vim.keymap.set("n", "]g", "<cmd>lua vim.diagnostic.jump({ count = 1, float = true })<CR>", opts)
     vim.keymap.set("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
     vim.keymap.set("x", "<leader>fo", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
 
@@ -46,6 +46,11 @@ local on_attach = function(client, bufnr)
     -- vim.keymap.set("n", "<M-S-F>", "<cmd>lua vim.lsp.buf.format{ async = true }<CR>", opts)
 end
 
+vim.lsp.config("*", {
+    on_attach = on_attach,
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
 return {
     {
         "williamboman/mason.nvim",
@@ -56,42 +61,11 @@ return {
         -- LSP server helpers
         "williamboman/mason-lspconfig.nvim",
         config = function()
-            local capabilities =
-                require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-            require("mason-lspconfig").setup()
-            require("mason-lspconfig").setup_handlers({
-                -- Default handler
-                function(server)
-                    require("lspconfig")[server].setup({ on_attach = on_attach, capabilities = capabilities })
-                end,
-                ["rust_analyzer"] = function()
-                    -- disable since we use rustaceanvim
-                end,
-                ["texlab"] = function()
-                    require("lspconfig")["texlab"].setup({
-                        on_attach = on_attach,
-                        capabilities = capabilities,
-                        settings = {
-                            texlab = {
-                                build = {
-                                    args = {
-                                        "-pdf",
-                                        "-interaction=nonstopmode",
-                                        "-synctex=1",
-                                        "--shell-escape",
-                                        "%f",
-                                    },
-                                    onSave = true,
-                                },
-                                forwardSearch = {
-                                    executable = "zathura",
-                                    args = { "--synctex-forward", "%l:1:%f", "%p" },
-                                },
-                            },
-                        },
-                    })
-                end,
+            require("mason-lspconfig").setup({
+                automatic_enable = {
+                    -- rust_analyzer will be loaded by rustaceanvim
+                    exclude = { "rust_analyzer" },
+                },
             })
         end,
     },
@@ -127,15 +101,5 @@ return {
             -- Project-local settings
             { "folke/neoconf.nvim", cmd = "Neoconf", opts = {} },
         },
-        config = function()
-            -- Add custom LSP configs (for LSP configs not in mason-lspconfig and nvim-lspconfig)
-            local capabilities =
-                require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-            require("lspconfig.configs").spicedb = require("plugins.custom_lsp.spicedb")
-            require("lspconfig")["spicedb"].setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-            })
-        end,
     },
 }
