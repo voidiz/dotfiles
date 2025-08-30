@@ -17,7 +17,7 @@ eval "$(mise activate zsh)"
 alias vim="nvim"
 alias ..="cd .."
 alias ls="eza --hyperlink"
-alias ssh="kitty +kitten ssh" # terminfo fix
+# alias ssh="kitty +kitten ssh" # terminfo fix
 alias synk="rsync -avhP --info=progress2" # archive, verbose, human, partial
 alias dnd="dragon-drop"
 alias rg="rg --hyperlink-format=kitty"
