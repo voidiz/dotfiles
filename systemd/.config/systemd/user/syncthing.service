@@ -2,7 +2,7 @@
 Description=Syncthing, file synchronization application
 
 [Service]
-ExecStart=syncthing -no-browser
+ExecStart=syncthing --no-browser
 Restart=on-failure
 RestartSec=3
 
