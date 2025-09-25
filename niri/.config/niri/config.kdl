@@ -379,7 +379,7 @@ binds {
     Ctrl+Alt+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm" "start" "--always-new-process"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
     Shift+Mod+D hotkey-overlay-title="Combi Menu: rofi" { spawn "rofi" "-show" "combi"; }
-    Ctrl+Shift+Alt+L hotkey-overlay-title="Lock the Screen: gtklock" { spawn "gtklock"; }
+    Ctrl+Shift+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: gtklock" { spawn "gtklock"; }
     Mod+Shift+N hotkey-overlay-title="Notification Center" { spawn "swaync-client" "-t" "-sw"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
