@@ -12,13 +12,29 @@ config.front_end = "WebGpu"
 config.warn_about_missing_glyphs = false
 
 --- Appearance
-local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").moon
 config.font = wezterm.font({ family = "JetBrainsMono NF" })
 config.font_size = 11
-config.line_height = 1.4
-config.colors = theme.colors()
-config.window_frame = theme.window_frame()
-config.window_frame.font = wezterm.font({ family = "JetBrainsMono NF" })
+config.line_height = 1.0
+config.color_scheme = "rosebones_dark"
+config.window_frame = {
+    active_titlebar_bg = "#1A1825",
+    inactive_titlebar_bg = "#1A1825",
+    font = wezterm.font({ family = "JetBrainsMono NF" }),
+}
+config.colors = {
+    tab_bar = {
+        active_tab = {
+            bg_color = "#523A39",
+            fg_color = "#E1D4D4",
+        },
+        inactive_tab = {
+            bg_color = "#1A1825",
+            fg_color = "#E1D4D4",
+        },
+        inactive_tab_edge = "#303030",
+        background = "none",
+    },
+}
 config.adjust_window_size_when_changing_font_size = false
 -- config.window_decorations = "RESIZE"
 config.window_padding = {
@@ -81,7 +97,7 @@ config.keys = {
     {
         key = "O",
         mods = "CTRL|SHIFT",
-        action = wezterm.action_callback(workspace_funcs.workspace_picker)
+        action = wezterm.action_callback(workspace_funcs.workspace_picker),
     },
     {
         -- Escape sequence for Ctrl + Shift + J

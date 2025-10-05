@@ -9,19 +9,12 @@ end
 return {
     -- Colorscheme
     {
-        "rose-pine/neovim",
+        "zenbones-theme/zenbones.nvim",
+        dependencies = "rktjmp/lush.nvim",
         priority = 1000,
         lazy = false,
         config = function()
-            require("rose-pine").setup({
-                variant = "auto",
-                dark_variant = "moon",
-                highlight_groups = {
-                    StatusLine = { fg = "love", bg = "love", blend = 10 },
-                    StatusLineNC = { fg = "subtle", bg = "surface" },
-                },
-            })
-            vim.cmd([[colorscheme rose-pine]])
+            vim.cmd.colorscheme("rosebones")
 
             -- Override diffview colors (use :Inspect and :filter /Diffview/
             -- highlight to find the highlight groups)

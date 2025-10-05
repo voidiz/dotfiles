@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Automatically source all files in plugins/
 require("lazy").setup("plugins", {
     -- defaults = { lazy = true },
-    install = { colorscheme = { "rose-pine" } },
+    install = { colorscheme = { "rosebones" } },
     -- Disable annoying change notification
     change_detection = { notify = false },
     -- debug = true,

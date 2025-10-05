@@ -4,5 +4,5 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=swaybg -m fill -i "%h/.config/niri/apartments.jpg"
+ExecStart=swaybg -m fill -i "%h/.config/niri/flower.jpg"
 Restart=on-failure

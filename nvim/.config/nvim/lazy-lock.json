@@ -15,13 +15,13 @@
   "lazydev.nvim": { "branch": "main", "commit": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c" },
   "lualine-so-fancy.nvim": { "branch": "main", "commit": "6ba7b138f2ca435673eb04c2cf85f0757df69b07" },
   "lualine.nvim": { "branch": "master", "commit": "a94fc68960665e54408fe37dcf573193c4ce82c9" },
+  "lush.nvim": { "branch": "main", "commit": "9c60ec2279d62487d942ce095e49006af28eed6e" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "844d247d998c2f9a6a3baad8bb9748edc55ce69f" },
   "mason.nvim": { "branch": "main", "commit": "9e25c98d4826998460926f8c5c2284848d80ae89" },
   "multicursor.nvim": { "branch": "1.0", "commit": "9eedebdd395bbbc4711081e33b0606c079e054c3" },
   "neoconf.nvim": { "branch": "main", "commit": "b109d170e580f85d9d41f0145cbdb1aa7caaa6fe" },
   "neotest": { "branch": "master", "commit": "3c81345c28cd639fcc02843ed3653be462f47024" },
   "neotest-golang": { "branch": "main", "commit": "43a49bb3101551f67bf7945dab28be0568287e2a" },
-  "neovim": { "branch": "main", "commit": "72befaffeac38db7bdd49e0549eaa2c4806dd878" },
   "nvim-autopairs": { "branch": "master", "commit": "23320e75953ac82e559c610bec5a90d9c6dfa743" },
   "nvim-cmp": { "branch": "main", "commit": "b5311ab3ed9c846b585c0c15b7559be131ec4be9" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e" },
@@ -48,5 +48,6 @@
   "vim-rhubarb": { "branch": "master", "commit": "5496d7c94581c4c9ad7430357449bb57fc59f501" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
-  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
+  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
+  "zenbones.nvim": { "branch": "main", "commit": "a934bc07d2ed4a98b74526c172d7f043736d8935" }
 }
