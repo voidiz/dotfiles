@@ -32,6 +32,10 @@ config.colors = {
             fg_color = "#E1D4D4",
         },
         inactive_tab_edge = "#303030",
+        new_tab = {
+            bg_color = "#1A1825",
+            fg_color = "#E1D4D4",
+        },
         background = "none",
     },
 }

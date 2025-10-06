@@ -18,9 +18,9 @@
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "<span color=\"#ea9a97\">{icon}</span> {volume}%",
-    "format-bluetooth": "<span color=\"#ea9a97\">{icon}</span> {volume}%",
-    "format-bluetooth-muted": "<span color=\"#ea9a97\">󰖁 {icon}</span>",
+    "format": "<span color=\"#957E7D\">{icon}</span> {volume}%",
+    "format-bluetooth": "<span color=\"#957E7D\">{icon}</span> {volume}%",
+    "format-bluetooth-muted": "<span color=\"#957E7D\">󰖁 {icon}</span>",
     "format-muted": "󰖁",
     "format-icons": {
       "headphone": "",
@@ -34,7 +34,7 @@
     "on-click": "pavucontrol",
   },
   "battery": {
-    "format": "<span color=\"#ea9a97\">{icon}</span> {capacity}%",
+    "format": "<span color=\"#957E7D\">{icon}</span> {capacity}%",
     "format-icons": ["", "", "", "", ""],
   },
   "tray": {
@@ -44,7 +44,7 @@
     "format-alt": "{:%a, %d. %b  %H:%M}",
   },
   "power-profiles-daemon": {
-    "format": "<span color=\"#ea9a97\">{icon}</span>",
+    "format": "<span color=\"#957E7D\">{icon}</span>",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
