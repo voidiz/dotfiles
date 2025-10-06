@@ -12,14 +12,14 @@ config.front_end = "WebGpu"
 config.warn_about_missing_glyphs = false
 
 --- Appearance
-config.font = wezterm.font({ family = "JetBrainsMono NF" })
+config.font = wezterm.font({ family = "JetBrainsMono NF", weight = "Light" })
 config.font_size = 11
 config.line_height = 1.0
 config.color_scheme = "rosebones_dark"
 config.window_frame = {
     active_titlebar_bg = "#1A1825",
     inactive_titlebar_bg = "#1A1825",
-    font = wezterm.font({ family = "JetBrainsMono NF" }),
+    font = wezterm.font({ family = "JetBrainsMono NF", weight = "Light" }),
 }
 config.colors = {
     tab_bar = {
