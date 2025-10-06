@@ -50,6 +50,9 @@ return {
                 max = get_view_width_max,
             },
         },
+        filters = {
+            git_ignored = false
+        }
     },
     config = function(_, opts)
         require("nvim-tree").setup(opts)
