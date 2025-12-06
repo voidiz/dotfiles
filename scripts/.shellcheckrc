@@ -1,0 +1,3 @@
+source-path=SCRIPTDIR
+enable=check-unassigned-uppercase # SC2154
+enable=require-double-brackets # SC2292
