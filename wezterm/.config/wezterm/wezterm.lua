@@ -39,6 +39,9 @@ config.colors = {
         background = "none",
     },
 }
+config.inactive_pane_hsb = {
+    saturation = 0.7,
+}
 config.adjust_window_size_when_changing_font_size = false
 -- config.window_decorations = "RESIZE"
 config.window_padding = {
@@ -80,6 +83,26 @@ config.keys = {
         key = "l",
         mods = "SHIFT|ALT",
         action = act.MoveTabRelative(1),
+    },
+    {
+        key = "h",
+        mods = "CTRL|ALT",
+        action = act.ActivatePaneDirection("Left"),
+    },
+    {
+        key = "l",
+        mods = "CTRL|ALT",
+        action = act.ActivatePaneDirection("Right"),
+    },
+    {
+        key = "j",
+        mods = "CTRL|ALT",
+        action = act.ActivatePaneDirection("Down"),
+    },
+    {
+        key = "k",
+        mods = "CTRL|ALT",
+        action = act.ActivatePaneDirection("Up"),
     },
     {
         key = "N",
