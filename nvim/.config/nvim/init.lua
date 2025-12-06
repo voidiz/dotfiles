@@ -26,6 +26,10 @@ vim.g.clipboard = {
 
 -- Leader key
 vim.g.mapleader = " "
+
+-- Esc twice to go into terminal normal mode
+-- (once is shell vi mode, set -o vi)
+vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]])
 ------------------------------------------
 -- Formatting (see :help nvim-defaults)
 
