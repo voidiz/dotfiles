@@ -4,3 +4,6 @@
 [submodule "/home/void/.dotfiles/zsh/.zsh/pure"]
 	path = zsh/.zsh/pure
 	url = https://github.com/sindresorhus/pure
+[submodule "mpv/.config/mpv/scripts/videoclip"]
+	path = mpv/.config/mpv/scripts/videoclip
+	url = git@github.com:Ajatt-Tools/videoclip.git
