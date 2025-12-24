@@ -1,17 +1,3 @@
-vim.diagnostic.config({
-    virtual_text = true,
-    update_in_insert = true,
-    severity_sort = true,
-    float = {
-        focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = true,
-        header = "",
-        prefix = "",
-    },
-})
-
 local on_attach = function(client, bufnr)
     -- Mappings
     local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -42,6 +28,26 @@ end
 vim.lsp.config("*", {
     on_attach = on_attach,
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
+vim.lsp.enable("clangd")
+vim.lsp.enable("gopls")
+vim.lsp.enable("nixd")
+vim.lsp.enable("tailwindcss")
+vim.lsp.enable("vtsls")
+
+vim.diagnostic.config({
+    virtual_text = true,
+    update_in_insert = true,
+    severity_sort = true,
+    float = {
+        focusable = false,
+        style = "minimal",
+        border = "rounded",
+        source = true,
+        header = "",
+        prefix = "",
+    },
 })
 
 return {

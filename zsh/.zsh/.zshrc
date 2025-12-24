@@ -10,9 +10,6 @@ autoload -U promptinit; promptinit
 zstyle :prompt:pure:path color magenta
 prompt pure
 
-# Setup Mise
-eval "$(mise activate zsh)"
-
 # Aliases
 alias vim="nvim"
 alias ..="cd .."
@@ -22,6 +19,7 @@ alias synk="rsync -avhP --info=progress2" # archive, verbose, human, partial
 alias dnd="dragon-drop"
 alias rg="rg --hyperlink-format=kitty"
 alias ndiff="nvim -d"
+alias nix-shell="nix-shell --run zsh"
 
 # nnn configuration (use n instead of nnn)
 n ()

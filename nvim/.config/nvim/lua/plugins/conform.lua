@@ -16,6 +16,7 @@ return {
         -- Define your formatters
         formatters_by_ft = {
             lua = { "stylua" },
+            nix = { "alejandra" },
             python = { "ruff_format" },
             javascript = { "prettierd", "prettier", stop_after_first = true },
             typescript = { "prettierd", "prettier", stop_after_first = true },
