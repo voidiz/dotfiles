@@ -377,10 +377,11 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Ctrl+Alt+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm" "start" "--always-new-process"; }
-    Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
-    Shift+Mod+D hotkey-overlay-title="Combi Menu: rofi" { spawn "rofi" "-show" "combi"; }
-    Ctrl+Shift+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: gtklock" { spawn "gtklock"; }
-    Mod+Shift+N hotkey-overlay-title="Notification Center" { spawn "swaync-client" "-t" "-sw"; }
+    Mod+D hotkey-overlay-title="Launcher: Vicinae" repeat=false { spawn "vicinae" "toggle"; }
+    Shift+Mod+D hotkey-overlay-title="Window Switcher: Vicinae" { spawn "vicinae" "vicinae://extensions/vicinae/wm/switch-windows"; }
+    Ctrl+Shift+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: gtklock/noctalia-shell" { spawn-sh "noctalia-shell ipc call lockScreen lock || gtklock"; }
+    Mod+Shift+N hotkey-overlay-title="Notification Center" { spawn-sh "noctalia-shell ipc call notifications toggleHistory || swaync-client -t -sw"; }
+    Ctrl+Space hotkey-overlay-title="Dismiss Oldest Notification" { spawn "noctalia-shell" "ipc" "call" "notifications" "dismissOldest"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -394,16 +395,16 @@ binds {
     XF86AudioMicMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
     // Audio playback
-    XF86AudioPlay   allow-when-locked=true    { spawn "playerctl" "play-pause"; }
-    XF86AudioNext   allow-when-locked=true    { spawn "playerctl" "next"; }
-    XF86AudioPrev   allow-when-locked=true    { spawn "playerctl" "previous"; }
-    Mod+O           allow-when-locked=true    { spawn "playerctl" "play-pause"; }
-    Mod+P           allow-when-locked=true    { spawn "playerctl" "next"; }
-    Mod+I           allow-when-locked=true    { spawn "playerctl" "previous"; }
+    XF86AudioPlay   allow-when-locked=true    { spawn-sh "noctalia-shell ipc call media playPause || playerctl play-pause"; }
+    XF86AudioNext   allow-when-locked=true    { spawn-sh "noctalia-shell ipc call media next || playerctl next"; }
+    XF86AudioPrev   allow-when-locked=true    { spawn-sh "noctalia-shell ipc call media previous || playerctl previous"; }
+    Mod+O           allow-when-locked=true    { spawn-sh "noctalia-shell ipc call media playPause || playerctl play-pause"; }
+    Mod+P           allow-when-locked=true    { spawn-sh "noctalia-shell ipc call media next || playerctl next"; }
+    Mod+I           allow-when-locked=true    { spawn-sh "noctalia-shell ipc call media previous || playerctl previous"; }
 
     // Brightness
-    XF86MonBrightnessUp     allow-when-locked=true { spawn "brightnessctl" "set" "10%+"; }
-    XF86MonBrightnessDown   allow-when-locked=true { spawn "brightnessctl" "set" "10%-"; }
+    XF86MonBrightnessUp     allow-when-locked=true { spawn-sh "noctalia-shell ipc call brightness increase || brightnessctl set 10%+"; }
+    XF86MonBrightnessDown   allow-when-locked=true { spawn-sh "noctalia-shell ipc call brightness decrease || brightnessctl set 10%-"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
