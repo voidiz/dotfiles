@@ -19,7 +19,7 @@ config.color_scheme = "rosebones_dark"
 config.window_frame = {
     active_titlebar_bg = "#1A1825",
     inactive_titlebar_bg = "#1A1825",
-    font = wezterm.font({ family = "JetBrainsMono NF", weight = "Light" }),
+    font = wezterm.font({ family = "SF Pro Text" }),
 }
 config.colors = {
     tab_bar = {
