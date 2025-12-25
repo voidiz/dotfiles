@@ -19,7 +19,17 @@ alias synk="rsync -avhP --info=progress2" # archive, verbose, human, partial
 alias dnd="dragon-drop"
 alias rg="rg --hyperlink-format=kitty"
 alias ndiff="nvim -d"
-alias nix-shell="nix-shell --run zsh"
+alias nix-shell='nix-shell --run $SHELL'
+
+# Use zsh with nix develop
+nix() {
+  if [[ $1 == "develop" ]]; then
+    shift
+    command nix develop -c $SHELL "$@"
+  else
+    command nix "$@"
+  fi
+}
 
 # nnn configuration (use n instead of nnn)
 n ()
@@ -122,7 +132,3 @@ fpath=($fpath $ZDOTDIR/completions)
 # Enable extended completion
 zstyle :compinstall filename "$HOME/.zsh/.zshrc"
 autoload -Uz compinit; compinit
-
-# opam configuration
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
