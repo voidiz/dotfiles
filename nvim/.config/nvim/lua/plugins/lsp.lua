@@ -4,6 +4,7 @@ vim.lsp.enable("nixd")
 vim.lsp.enable("tailwindcss")
 vim.lsp.enable("vtsls")
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("ty")
 
 vim.diagnostic.config({
     virtual_text = true,
