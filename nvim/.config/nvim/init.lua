@@ -30,6 +30,9 @@ vim.g.mapleader = " "
 -- Esc twice to go into terminal normal mode
 -- (once is shell vi mode, set -o vi)
 vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]])
+
+-- Project local configuration
+vim.o.exrc = true
 ------------------------------------------
 -- Formatting (see :help nvim-defaults)
 
