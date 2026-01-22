@@ -1,13 +1,3 @@
-vim.lsp.enable("clangd")
-vim.lsp.enable("gopls")
-vim.lsp.enable("nixd")
-vim.lsp.enable("tailwindcss")
-vim.lsp.enable("vtsls")
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("ty")
-vim.lsp.enable("robotcode")
-vim.lsp.enable("ruff")
-
 vim.diagnostic.config({
     virtual_text = true,
     update_in_insert = true,
@@ -71,5 +61,19 @@ return {
             -- Project-local settings
             { "folke/neoconf.nvim", cmd = "Neoconf", opts = {} },
         },
+        config = function()
+            vim.lsp.config("clangd", {
+                cmd = { "clangd", "--background-index", "--clang-tidy" },
+            })
+
+            vim.lsp.enable("gopls")
+            vim.lsp.enable("nixd")
+            vim.lsp.enable("tailwindcss")
+            vim.lsp.enable("vtsls")
+            vim.lsp.enable("lua_ls")
+            vim.lsp.enable("ty")
+            vim.lsp.enable("robotcode")
+            vim.lsp.enable("ruff")
+        end,
     },
 }
