@@ -5,6 +5,8 @@ vim.lsp.enable("tailwindcss")
 vim.lsp.enable("vtsls")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ty")
+vim.lsp.enable("robotcode")
+vim.lsp.enable("ruff")
 
 vim.diagnostic.config({
     virtual_text = true,
