@@ -36,7 +36,7 @@ input {
         // drag false
         // drag-lock
         // natural-scroll
-        scroll-factor 0.3
+        scroll-factor 0.2
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
@@ -70,15 +70,16 @@ input {
 }
 
 // Home left monitor
-output "Acer Technologies Acer XF270H B 0x83702E4D" {
-    mode "1920x1080@143.992"
+output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25452F000705" {
+    // mode "2560x1440@119.998"
+    mode "2560x1440@119.998"
     position x=0 y=0
 }
 
-// Home right monitor
+// Home right monitor (lower resolution due to bandwidth limitations)
 output "Dell Inc. DELL P2723DE B9QC714" {
-    mode "1920x1080"
-    position x=1920 y=0
+    mode "1920x1080@60.000"
+    position x=2560 y=0
 }
 
 // Work left monitor
