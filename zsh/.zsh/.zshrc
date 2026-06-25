@@ -20,6 +20,7 @@ alias dnd="dragon-drop"
 alias rg="rg --hyperlink-format=kitty"
 alias ndiff="nvim -d"
 alias nix-shell='nix-shell --run $SHELL'
+alias ash="autossh -M 0 -q"
 
 # Use zsh with nix develop
 nix() {
