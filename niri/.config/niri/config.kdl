@@ -289,6 +289,9 @@ layout {
 // XWayland support
 spawn-at-startup "xwayland-satellite"
 
+// Desktop shell
+spawn-at-startup "noctalia-shell"
+
 environment {
     // For XWayland
     DISPLAY ":0"
