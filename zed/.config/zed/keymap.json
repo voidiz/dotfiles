@@ -1,0 +1,114 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    // Global keymaps
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "Workspace || Editor",
+    "bindings": {
+      // Focus terminal
+      "ctrl-odiaeresis": "terminal_panel::ToggleFocus",
+      "ctrl-;": "terminal_panel::ToggleFocus",
+
+      // Open new terminal
+      "ctrl-shift-odiaeresis": "workspace::NewTerminal",
+      "ctrl-shift-;": "workspace::NewTerminal",
+      "ctrl-:": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "Pane && !Editor",
+    "bindings": {
+      // Toggle terminal
+      "ctrl-odiaeresis": "workspace::ToggleBottomDock",
+      "ctrl-;": "workspace::ToggleBottomDock",
+      // Next and previous terminal tab
+      "alt-j": "pane::ActivateNextItem",
+      "alt-k": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    // Normal and visual mode
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "shift-alt-f": "editor::Format",
+      "ctrl-n": "project_panel::ToggleFocus",
+      // "ctrl-h": "workspace::ActivatePaneLeft",
+      // "ctrl-l": "workspace::ActivatePaneRight",
+      // "ctrl-k": "workspace::ActivatePaneUp",
+      // "ctrl-j": "workspace::ActivatePaneDown",
+      "g i": "editor::GoToImplementation",
+      "g r": "editor::FindAllReferences",
+
+      // Find all files
+      "space f i": "pane::DeploySearch",
+
+      // Find buffer symbols
+      "space f b": "outline::Toggle",
+
+      // Toggle code actions menu
+      "space c a": "editor::ToggleCodeActions"
+    }
+  },
+  {
+    "context": "Editor && VimControl && vim_mode == normal && multibuffer",
+    "bindings": {
+      "enter": "editor::OpenExcerpts",
+      "ctrl-j": "search::SelectNextMatch",
+      "ctrl-k": "search::SelectPreviousMatch"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-n": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    // Shortcuts for navigating the file tree
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      // https://github.com/zed-industries/zed/issues/4753
+      // https://github.com/zed-industries/zed/issues/4270
+      "escape": "project_panel::ToggleFocus",
+      // "enter": "project_panel::Open",
+      // Open file and focus editor
+      "enter": ["workspace::SendKeystrokes", "space ctrl-shift-e"],
+      "o": "project_panel::NewDirectory",
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "ctrl-n": "workspace::ToggleLeftDock",
+      // Directory expansion
+      "l": "project_panel::ExpandSelectedEntry",
+      "h": "project_panel::CollapseSelectedEntry",
+      // Move up and down
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious"
+    }
+  },
+  {
+    // Auto-completion shortcuts
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "shift-tab": "editor::ContextMenuPrevious",
+      "tab": "editor::ContextMenuNext",
+      "enter": "editor::ConfirmCompletion",
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious"
+    }
+  }
+]
