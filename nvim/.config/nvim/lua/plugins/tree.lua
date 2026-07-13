@@ -40,7 +40,12 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
+    ---@type nvim_tree.config
     opts = {
+        -- Used for workspaces.lua logic where we switch between sessions and
+        -- therefore working directories. Not using this flag means that
+        -- nvim-tree falls out of sync with the session cwd.
+        sync_root_with_cwd = true,
         update_focused_file = {
             enable = true,
         },
@@ -51,8 +56,16 @@ return {
             },
         },
         filters = {
-            git_ignored = false
-        }
+            git_ignored = false,
+        },
+        experimental = {
+            -- TODO: Uncomment and remove restore call in workspaces.lua
+            -- when updated to nvim 0.13.
+            --
+            -- nvim-tree buffers are not restored correctly when switching
+            -- between sessions. This is an experimental workaround for it.
+            -- session_restore_nvim = true,
+        },
     },
     config = function(_, opts)
         require("nvim-tree").setup(opts)

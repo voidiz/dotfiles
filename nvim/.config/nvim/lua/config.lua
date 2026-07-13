@@ -26,3 +26,6 @@ require("lazy").setup("plugins", {
 
 -- Autocmds
 require("autocmds")
+
+-- Workspaces
+require("workspaces")

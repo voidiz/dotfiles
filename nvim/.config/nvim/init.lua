@@ -29,7 +29,7 @@ vim.g.mapleader = " "
 
 -- Esc twice to go into terminal normal mode
 -- (once is shell vi mode, set -o vi)
-vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]])
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]])
 
 -- Project local configuration
 vim.o.exrc = true
@@ -71,6 +71,28 @@ vim.o.signcolumn = "yes:1"
 
 -- Rounded borders on floating windows
 vim.o.winborder = "rounded"
+------------------------------------------
+-- Tabs
+
+local opts = { noremap = true, silent = true }
+
+-- This will make the keymaps work in most modes, but switching tabs will
+-- automatically put us in normal mode again.
+local modes = { "n", "i", "t", "v" }
+
+-- Tab navigation
+vim.keymap.set(modes, "<M-h>", "<cmd>tabprevious<CR>", opts)
+vim.keymap.set(modes, "<M-j>", "<cmd>tabnew<CR>", opts)
+vim.keymap.set(modes, "<M-l>", "<cmd>tabnext<CR>", opts)
+
+-- Reorder tabs
+vim.keymap.set(modes, "<M-H>", "<cmd>tabmove -1<CR>", opts)
+vim.keymap.set(modes, "<M-L>", "<cmd>tabmove +1<CR>", opts)
+
+-- Go to n-th tab
+for i = 1, 9 do
+    vim.keymap.set(modes, string.format("<M-%d>", i), string.format("<cmd>tabnext %d<CR>", i), opts)
+end
 
 -- Tabline with only filename
 function _G.MinimalTabline()
