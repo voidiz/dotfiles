@@ -10,8 +10,15 @@
     // Global keymaps
     "bindings": {
       "ctrl-j": "menu::SelectNext",
-      "ctrl-k": "menu::SelectPrevious"
-    }
+      "ctrl-k": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Remove default binding to toggle bottom dock (terminal, etc.)
+      "ctrl-j": null,
+    },
   },
   {
     "context": "Workspace || Editor",
@@ -23,8 +30,8 @@
       // Open new terminal
       "ctrl-shift-odiaeresis": "workspace::NewTerminal",
       "ctrl-shift-;": "workspace::NewTerminal",
-      "ctrl-:": "workspace::NewTerminal"
-    }
+      "ctrl-:": "workspace::NewTerminal",
+    },
   },
   {
     "context": "Pane && !Editor",
@@ -34,8 +41,8 @@
       "ctrl-;": "workspace::ToggleBottomDock",
       // Next and previous terminal tab
       "alt-j": "pane::ActivateNextItem",
-      "alt-k": "pane::ActivatePreviousItem"
-    }
+      "alt-k": "pane::ActivatePreviousItem",
+    },
   },
   {
     // Normal and visual mode
@@ -57,22 +64,22 @@
       "space f b": "outline::Toggle",
 
       // Toggle code actions menu
-      "space c a": "editor::ToggleCodeActions"
-    }
+      "space c a": "editor::ToggleCodeActions",
+    },
   },
   {
     "context": "Editor && VimControl && vim_mode == normal && multibuffer",
     "bindings": {
       "enter": "editor::OpenExcerpts",
       "ctrl-j": "search::SelectNextMatch",
-      "ctrl-k": "search::SelectPreviousMatch"
-    }
+      "ctrl-k": "search::SelectPreviousMatch",
+    },
   },
   {
     "context": "Dock",
     "bindings": {
-      "ctrl-n": "workspace::ToggleLeftDock"
-    }
+      "ctrl-n": "workspace::ToggleLeftDock",
+    },
   },
   {
     // Shortcuts for navigating the file tree
@@ -97,8 +104,8 @@
       "h": "project_panel::CollapseSelectedEntry",
       // Move up and down
       "j": "menu::SelectNext",
-      "k": "menu::SelectPrevious"
-    }
+      "k": "menu::SelectPrevious",
+    },
   },
   {
     // Auto-completion shortcuts
@@ -108,7 +115,7 @@
       "tab": "editor::ContextMenuNext",
       "enter": "editor::ConfirmCompletion",
       "ctrl-j": "editor::ContextMenuNext",
-      "ctrl-k": "editor::ContextMenuPrevious"
-    }
-  }
+      "ctrl-k": "editor::ContextMenuPrevious",
+    },
+  },
 ]

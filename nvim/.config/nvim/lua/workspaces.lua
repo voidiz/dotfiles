@@ -6,8 +6,11 @@ local workspaces = {}
 -- like :term alive).
 local workspace_bufs = {}
 
--- Current buffer
+-- Current workspace
 local current = "default"
+
+-- Previous workspace (for quick switching between them)
+local previous = nil
 
 -- Directory for session files
 local session_dir = vim.fn.stdpath("data") .. "/workspaces/"
@@ -86,6 +89,7 @@ local function switch(name)
         nvimtree_session.restore()
     end
 
+    previous = current
     current = name
 end
 
@@ -160,8 +164,15 @@ end
 
 -- Keybindings
 local function register_keybindings()
-    vim.keymap.set("n", "<leader>ws", pick, { desc = "Switch Workspace" })
-    vim.keymap.set("n", "<leader>wn", function()
+    local modes = { "n", "i", "t", "v" }
+
+    vim.keymap.set(modes, "<C-S-o>", pick, { desc = "Switch Workspace" })
+    vim.keymap.set(modes, "<C-S-i>", function()
+        if previous then
+            switch(previous)
+        end
+    end, { desc = "Previous Workspace" })
+    vim.keymap.set(modes, "<C-S-n>", function()
         vim.ui.input({ prompt = "Name: " }, function(name)
             if not name then
                 return
