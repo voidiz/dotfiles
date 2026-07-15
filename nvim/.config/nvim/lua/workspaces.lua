@@ -202,4 +202,4 @@ local function main()
     register_autocmds()
 end
 
-main()
+-- main()
