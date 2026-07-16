@@ -65,6 +65,12 @@
 
       // Toggle code actions menu
       "space c a": "editor::ToggleCodeActions",
+
+      // Go to next diagnostic
+      "] g": "editor::GoToDiagnostic",
+
+      // Go to previous diagnostic
+      "[ g": "editor::GoToPreviousDiagnostic",
     },
   },
   {

@@ -8,10 +8,10 @@ Features:
 - Escape/Ctrl+C to cancel
 """
 
+from pathlib import Path
 from typing import cast
 
 import os
-from pathlib import Path
 
 from kitty.boss import Boss
 from kitty.typing_compat import KeyEventType, ScreenSize as ScreenSizeType
@@ -27,18 +27,14 @@ from kittens.tui.operations import (
     styled,
 )
 
+from shared import delete_session_file, SESSIONS_DIR
 
-SESSIONS_DIR = (
-    Path(os.getenv("XDG_DATA_HOME", str(Path.home() / ".local" / "share")))
-    / "kitty"
-    / "sessions"
-)
 
-BASE_SESSION_FILE = """\
+def base_session_content(name: str) -> str:
+    return f"""\
 new_tab
 layout tall
-cd ~
-launch
+launch ssh d.{name}1
 """
 
 
@@ -63,21 +59,8 @@ def create_session_file(name: str) -> Path:
     """
 
     filepath = SESSIONS_DIR / f"{name}.kitty-session"
-    filepath.write_text(BASE_SESSION_FILE)
+    filepath.write_text(base_session_content(name))
     return filepath
-
-
-def delete_session_file(name: str) -> bool:
-    """
-    Delete a session file. Returns True if exists and deleted.
-    """
-
-    filepath = SESSIONS_DIR / f"{name}.kitty-session"
-    if filepath.exists():
-        filepath.unlink()
-        return True
-
-    return False
 
 
 def substring_match(query: str, target: str) -> int | None:

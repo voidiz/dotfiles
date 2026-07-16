@@ -10,6 +10,8 @@ from kitty.boss import Boss
 
 import re
 
+from shared import is_ssh_session, save_session
+
 
 WindowType = Literal["window", "tab"]
 MoveDirection = Literal["forward", "backward"]
@@ -63,34 +65,6 @@ def find_next_session(boss: Boss, window: Window, base: str) -> str:
         n += 1
 
     return f"{base}{n}"
-
-
-def save_session(boss: Boss, window: Window | None):
-    boss.call_remote_control(
-        window,
-        (
-            "action",
-            "--no-response",
-            "save_as_session",
-            "--use-foreground-process",
-            "--save-only",
-            "--match=session:.",
-            ".",
-        ),
-    )
-
-
-def is_ssh_session(window: Window | None) -> tuple[bool, list[str]]:
-    """
-    Returns true if the window is an ssh session.
-
-    Second return value is the cmdline.
-    """
-
-    fg = window.child.foreground_processes[0]  # ty:ignore[unresolved-attribute]
-    cmdline: list[str] = fg["cmdline"]
-
-    return cmdline[0].endswith("ssh"), cmdline
 
 
 def handle_window_action(boss: Boss, window: Window | None, type: WindowType):
