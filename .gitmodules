@@ -7,3 +7,6 @@
 [submodule "mpv/.config/mpv/scripts/videoclip"]
 	path = mpv/.config/mpv/scripts/videoclip
 	url = git@github.com:Ajatt-Tools/videoclip.git
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm

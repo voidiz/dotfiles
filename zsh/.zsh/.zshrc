@@ -14,7 +14,6 @@ prompt pure
 alias vim="nvim"
 alias ..="cd .."
 alias ls="eza --hyperlink"
-# alias ssh="kitty +kitten ssh" # terminfo fix
 alias synk="rsync -avhP --info=progress2" # archive, verbose, human, partial
 alias dnd="dragon-drop"
 alias rg="rg --hyperlink-format=kitty"
@@ -24,12 +23,21 @@ alias ash="autossh -M 0 -q"
 
 # Use zsh with nix develop
 nix() {
-  if [[ $1 == "develop" ]]; then
-    shift
-    command nix develop -c $SHELL "$@"
-  else
-    command nix "$@"
-  fi
+    if [[ $1 == "develop" ]]; then
+        shift
+        command nix develop -c $SHELL "$@"
+    else
+        command nix "$@"
+    fi
+}
+
+# Use kitty ssh kitten if running in kitty
+ssh() {
+    if [[ -n "$KITTY_WINDOW_ID" ]]; then
+        command kitten ssh "$@"
+    else
+        command ssh "$@"
+    fi
 }
 
 # nnn configuration (use n instead of nnn)
