@@ -9,5 +9,9 @@
 // Learn more about configuration at https://docs.vicinae.com/config
 
 {
-   "pop_to_root_on_close": true
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "pop_to_root_on_close": true,
+   "keybinds": {
+      "toggle-action-panel": "control+B"
+   }
 }
