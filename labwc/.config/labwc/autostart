@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
 # Run XDG autostart programs
-dex -a
+dex -a >/dev/null 2>&1
 
 # Switch outputs automatically
-kanshi &
+pgrep -x kanshi >/dev/null || kanshi &
 
 # Desktop shell
-noctalia-shell &
+pgrep -x noctalia-shell >/dev/null || noctalia-shell &
 
 # Turn off monitors on 5 minute idle
+pgrep -x swayidle >/dev/null || \
 swayidle -w \
     timeout 300 "wlopm --off *" \
-    resume "wlopm --on *" >/dev/null 2>&1 &
+    resume "wlopm --on *" &
