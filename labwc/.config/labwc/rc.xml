@@ -98,10 +98,16 @@
     <keybind key="A-Space">
       <action name="ShowMenu" menu="client-menu" atCursor="no" />
     </keybind>
-    <keybind key="S-W-h">
+    <keybind key="A-W-h">
       <action name="MoveToOutput" direction="left" wrap="no" />
     </keybind>
-    <keybind key="S-W-l">
+    <keybind key="A-W-l">
+      <action name="MoveToOutput" direction="right" wrap="no" />
+    </keybind>
+    <keybind key="S-W-Left">
+      <action name="MoveToOutput" direction="left" wrap="no" />
+    </keybind>
+    <keybind key="S-W-Right">
       <action name="MoveToOutput" direction="right" wrap="no" />
     </keybind>
     <keybind key="C-W-h">

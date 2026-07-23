@@ -3,6 +3,9 @@
 # Run XDG autostart programs
 dex -a
 
+# Switch outputs automatically
+kanshi &
+
 # Desktop shell
 noctalia-shell &
 

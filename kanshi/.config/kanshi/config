@@ -1,29 +1,59 @@
 # get outputs using swaymsg -t get_outputs
 
 # Laptop
-output "California Institute of Technology 0x1409 Unknown" {
+output "eDP-1" {
     mode 1920x1080@60.003
     alias $LAPTOP
 }
 
 # Home left monitor
-output "Acer Technologies Acer XF270H B 0x83702E4D" {
-    mode 1920x1080@143.992
+output "GIGA-BYTE TECHNOLOGY CO., LTD. MO27Q28G 25452F000705" {
+    mode 2560x1440@119.998
     position 0,0
     alias $HOME_LEFT
 }
 
-# Home right monitor
+# Home right monitor (lower resolution due to bandwidth limitations)
 output "Dell Inc. DELL P2723DE B9QC714" {
     mode 1920x1080@60
-    position 1920,0
+    position 2560,0
     alias $HOME_RIGHT
+}
+
+# Work left monitor
+output "Dell Inc. DELL U2719DC 8Y55X13" {
+    mode 2560x1440
+    position 0,0
+    alias $WORK_LEFT
+}
+
+# Work right monitor
+output "Dell Inc. DELL U2722DE DVLX7H3" {
+    mode 2560x1440
+    position 2560,0
+    alias $WORK_RIGHT
 }
 
 profile home {
     output $HOME_LEFT enable
     output $HOME_RIGHT enable
     output $LAPTOP disable
+}
+
+profile home_single_monitor {
+    output $HOME_LEFT enable
+    output $LAPTOP disable
+}
+
+profile home_no_laptop {
+    output $HOME_LEFT enable
+    output $HOME_RIGHT enable
+}
+
+profile work {
+    output $WORK_LEFT enable
+    output $WORK_RIGHT enable
+    output $LAPTOP enable
 }
 
 profile laptop {
