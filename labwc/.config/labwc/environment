@@ -1,0 +1,2 @@
+# Will be overridden by fcitx5 if installed
+XKB_DEFAULT_LAYOUT=se

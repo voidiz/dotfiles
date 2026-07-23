@@ -383,7 +383,7 @@ binds {
     // Ctrl+Alt+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm" "start" "--always-new-process"; }
     Ctrl+Alt+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "--single-instance"; }
     Mod+D hotkey-overlay-title="Launcher: Vicinae" repeat=false { spawn "vicinae" "toggle"; }
-    Shift+Mod+D hotkey-overlay-title="Window Switcher: Vicinae" { spawn "vicinae" "vicinae://extensions/vicinae/wm/switch-windows"; }
+    Shift+Mod+D hotkey-overlay-title="Window Switcher: Vicinae" { spawn "vicinae" "vicinae://launch/wm/switch-windows"; }
     Ctrl+Shift+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: gtklock/noctalia-shell" { spawn-sh "noctalia-shell ipc call lockScreen lock || gtklock"; }
     Mod+Shift+N hotkey-overlay-title="Notification Center" { spawn-sh "noctalia-shell ipc call notifications toggleHistory || swaync-client -t -sw"; }
     Ctrl+Space hotkey-overlay-title="Dismiss Oldest Notification" { spawn "noctalia-shell" "ipc" "call" "notifications" "dismissOldest"; }

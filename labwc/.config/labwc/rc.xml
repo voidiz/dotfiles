@@ -1,0 +1,281 @@
+<labwc_config>
+
+  <core>
+    <gap>5</gap>
+  </core>
+
+  <theme>
+    <font name="SF Pro" />
+    <name>my-theme</name>
+  </theme>
+
+  <desktops>
+    <!-- Disable workspace switcher OSD -->
+    <popupTime>0</popupTime>
+    <number>9</number>
+  </desktops>
+
+  <windowSwitcher preview="yes" outlines="yes">
+    <osd show="yes" style="thumbnail" output="all" thumbnailLabelFormat="%T" />
+    <fields>
+      <field content="icon" width="5%" />
+      <field content="desktop_entry_name" width="30%" />
+      <field content="title" width="65%" />
+    </fields>
+  </windowSwitcher>
+
+  <libinput>
+    <device category="touchpad">
+      <scrollFactor>0.2</scrollFactor>
+    </device>
+    <device category="pointer">
+      <accelProfile>flat</accelProfile>
+      <pointerSpeed>0.5</pointerSpeed>
+    </device>
+  </libinput>
+
+  <keyboard>
+    <layoutScope>global</layoutScope>
+
+    <repeatRate>50</repeatRate>
+    <repeatDelay>175</repeatDelay>
+
+    <!-- Window management -->
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow" />
+    </keybind>
+    <keybind key="W-Tab">
+      <action name="NextWindow" identifier="current" />
+    </keybind>
+    <keybind key="W-S-Tab">
+      <action name="PreviousWindow" identifier="current" />
+    </keybind>
+    <keybind key="A-F4">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-S-q">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="W-f">
+      <action name="ToggleMaximize" />
+    </keybind>
+    <keybind key="W-s">
+      <action name="ToggleShowDesktop" />
+    </keybind>
+    <keybind key="W-Left">
+      <action name="SnapToEdge" direction="left" combine="yes" />
+    </keybind>
+    <keybind key="W-Right">
+      <action name="SnapToEdge" direction="right" combine="yes" />
+    </keybind>
+    <keybind key="W-Up">
+      <action name="SnapToEdge" direction="up" combine="yes" />
+    </keybind>
+    <keybind key="W-Down">
+      <action name="SnapToEdge" direction="down" combine="yes" />
+    </keybind>
+    <keybind key="W-h">
+      <action name="SnapToEdge" direction="left" combine="yes" />
+    </keybind>
+    <keybind key="W-l">
+      <action name="SnapToEdge" direction="right" combine="yes" />
+    </keybind>
+    <keybind key="W-Left">
+      <action name="SnapToEdge" direction="left" combine="yes" />
+    </keybind>
+    <keybind key="W-Right">
+      <action name="SnapToEdge" direction="right" combine="yes" />
+    </keybind>
+    <keybind key="W-Up">
+      <action name="SnapToEdge" direction="up" combine="yes" />
+    </keybind>
+    <keybind key="W-Down">
+      <action name="SnapToEdge" direction="down" combine="yes" />
+    </keybind>
+    <keybind key="A-Space">
+      <action name="ShowMenu" menu="client-menu" atCursor="no" />
+    </keybind>
+    <keybind key="S-W-h">
+      <action name="MoveToOutput" direction="left" wrap="no" />
+    </keybind>
+    <keybind key="S-W-l">
+      <action name="MoveToOutput" direction="right" wrap="no" />
+    </keybind>
+    <keybind key="C-W-h">
+      <action name="FocusOutput" direction="left" wrap="no" />
+    </keybind>
+    <keybind key="C-W-l">
+      <action name="FocusOutput" direction="right" wrap="no" />
+    </keybind>
+    <keybind key="W-c">
+      <action name="AutoPlace" policy="center" />
+    </keybind>
+    <keybind key="W-S-c">
+      <action name="AutoPlace" policy="automatic" />
+    </keybind>
+    <keybind key="W-r">
+      <action name="ResizeRelative" left="10%" right="10%" top="10%" bottom="10%" />
+    </keybind>
+    <keybind key="W-S-r">
+      <action name="ResizeRelative" left="-10%" right="-10%" top="-10%" bottom="-10%" />
+    </keybind>
+    <keybind key="W-w">
+      <action name="ResizeRelative" left="10%" right="10%" />
+    </keybind>
+    <keybind key="W-S-w">
+      <action name="ResizeRelative" left="-10%" right="-10%" />
+    </keybind>
+    <keybind key="W-e">
+      <action name="ResizeRelative" top="10%" bottom="10%" />
+    </keybind>
+    <keybind key="W-S-e">
+      <action name="ResizeRelative" top="-10%" bottom="-10%" />
+    </keybind>
+    <keybind key="W-S-Space">
+      <action name="ToggleAlwaysOnTop" />
+    </keybind>
+    <keybind key="W-S-j">
+      <action name="MoveRelative" y="10" />
+    </keybind>
+    <keybind key="W-S-k">
+      <action name="MoveRelative" y="-10" />
+    </keybind>
+    <keybind key="W-S-h">
+      <action name="MoveRelative" x="-10" />
+    </keybind>
+    <keybind key="W-S-l">
+      <action name="MoveRelative" x="10" />
+    </keybind>
+
+    <!-- Workspaces -->
+    <keybind key="W-j">
+      <action name="GoToDesktop" to="right" wrap="no" />
+    </keybind>
+    <keybind key="W-k">
+      <action name="GoToDesktop" to="left" wrap="no" />
+    </keybind>
+    <keybind key="W-1"><action name="GoToDesktop" to="1" /></keybind>
+    <keybind key="W-2"><action name="GoToDesktop" to="2" /></keybind>
+    <keybind key="W-3"><action name="GoToDesktop" to="3" /></keybind>
+    <keybind key="W-4"><action name="GoToDesktop" to="4" /></keybind>
+    <keybind key="W-5"><action name="GoToDesktop" to="5" /></keybind>
+    <keybind key="W-6"><action name="GoToDesktop" to="6" /></keybind>
+    <keybind key="W-7"><action name="GoToDesktop" to="7" /></keybind>
+    <keybind key="W-8"><action name="GoToDesktop" to="8" /></keybind>
+    <keybind key="W-9"><action name="GoToDesktop" to="9" /></keybind>
+    <keybind key="W-S-1"><action name="SendToDesktop" to="1" /></keybind>
+    <keybind key="W-S-2"><action name="SendToDesktop" to="2" /></keybind>
+    <keybind key="W-S-3"><action name="SendToDesktop" to="3" /></keybind>
+    <keybind key="W-S-4"><action name="SendToDesktop" to="4" /></keybind>
+    <keybind key="W-S-5"><action name="SendToDesktop" to="5" /></keybind>
+    <keybind key="W-S-6"><action name="SendToDesktop" to="6" /></keybind>
+    <keybind key="W-S-7"><action name="SendToDesktop" to="7" /></keybind>
+    <keybind key="W-S-8"><action name="SendToDesktop" to="8" /></keybind>
+    <keybind key="W-S-9"><action name="SendToDesktop" to="9" /></keybind>
+
+    <!-- Audio -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-" />
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+" />
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" />
+    </keybind>
+    <keybind key="XF86AudioMicMute">
+      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" />
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>
+          sh -c 'noctalia-shell ipc call media playPause || playerctl play-pause'
+        </command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>
+          sh -c 'noctalia-shell ipc call media next || playerctl next'
+        </command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>
+          sh -c 'noctalia-shell ipc call media previous || playerctl previous'
+        </command>
+      </action>
+    </keybind>
+
+    <!-- Brightness -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>
+          sh -c "noctalia-shell ipc call brightness increase || brightnessctl set 10%+"
+        </command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>
+          sh -c "noctalia-shell ipc call brightness decrease || brightnessctl set 10%-"
+        </command>
+      </action>
+    </keybind>
+
+    <!-- Reload configuration -->
+    <keybind key="W-C-r">
+      <action name="Execute" command="labwc -r" />
+    </keybind>
+
+    <!--- Programs (terminal, launcher) -->
+    <keybind key="C-A-t">
+      <action name="Execute" command="kitty --single-instance" />
+    </keybind>
+    <keybind key="W-d">
+      <action name="Execute" command="vicinae toggle" />
+    </keybind>
+    <keybind key="W-S-d">
+      <action name="Execute" command="vicinae vicinae://launch/wm/switch-windows" />
+    </keybind>
+    <keybind key="C-A-S-l">
+      <action name="Execute">
+        <command>
+          sh -c "noctalia-shell ipc call lockScreen lock || gtklock"
+        </command>
+      </action>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>
+          sh -c "grim -t ppm - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png --initial-tool crop"
+        </command>
+      </action>
+    </keybind>
+
+    <keybind key="W-S-n">
+      <action name="Execute">
+        <command>
+          sh -c 'noctalia-shell ipc call notifications toggleHistory || swaync-client -t -sw'
+        </command>
+      </action>
+    </keybind>
+    <keybind key="C-Space">
+      <action name="Execute" command="noctalia-shell ipc call notifications dismissOldest" />
+    </keybind>
+
+    <keybind key="W-C-e">
+      <action name="If">
+        <prompt message="Quit?" />
+        <then>
+          <action name="Exit" />
+        </then>
+      </action>
+    </keybind>
+  </keyboard>
+
+</labwc_config>
