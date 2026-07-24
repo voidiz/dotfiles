@@ -28,7 +28,7 @@
     <device category="touchpad">
       <scrollFactor>0.2</scrollFactor>
     </device>
-    <device category="pointer">
+    <device category="non-touch">
       <accelProfile>flat</accelProfile>
       <pointerSpeed>0.5</pointerSpeed>
     </device>
