@@ -70,6 +70,7 @@ return {
             vim.lsp.enable("nixd")
             vim.lsp.enable("tailwindcss")
             vim.lsp.enable("vtsls")
+            vim.lsp.enable("oxlint")
             vim.lsp.enable("lua_ls")
             vim.lsp.enable("ty")
             vim.lsp.enable("robotcode")
