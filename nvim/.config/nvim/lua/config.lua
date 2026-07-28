@@ -20,6 +20,12 @@ require("lazy").setup("plugins", {
     -- Disable annoying change notification
     change_detection = { notify = false },
     -- debug = true,
+    performance = {
+        rtp = {
+            -- Setup treesitter parsers on NixOS
+            paths = { vim.env.NVIM_TREESITTER_PARSERS },
+        },
+    },
 })
 ---------------------------------------
 -- Configurations

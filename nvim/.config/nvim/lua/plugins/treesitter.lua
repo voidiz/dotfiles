@@ -1,45 +1,53 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
         branch = "main",
-        event = "BufRead",
-        opts = {
-            ensure_installed = {
-                "c",
-                "cpp",
-                "dockerfile",
-                "python",
-                "go",
-                "json",
-                "javascript",
-                "gomod",
-                "html",
-                "latex",
-                "lua",
-                "luadoc",
-                "make",
-                "markdown",
-                "php",
-                "rust",
-                "scss",
-                "tsx",
-                "typescript",
-                "vim",
-                "vimdoc",
-                "yaml",
-            },
-            highlight = {
-                enable = true,
-            },
-            indent = {
-                enable = true,
-            },
-        },
-        dependencies = {
-            "JoosepAlviste/nvim-ts-context-commentstring",
-        },
+        lazy = false,
+        -- Only run :TSUpdate if not on NixOS
+        build = vim.env.NVIM_TREESITTER_PARSERS == nil and ":TSUpdate" or nil,
+        config = function()
+            local ts = require("nvim-treesitter")
+
+            -- Install grammars if not on NixOS
+            if vim.env.NVIM_TREESITTER_PARSERS == nil then
+                ts.install({
+                    "c",
+                    "cpp",
+                    "dockerfile",
+                    "python",
+                    "go",
+                    "json",
+                    "javascript",
+                    "gomod",
+                    "html",
+                    "latex",
+                    "lua",
+                    "luadoc",
+                    "make",
+                    "markdown",
+                    "php",
+                    "rust",
+                    "scss",
+                    "tsx",
+                    "typescript",
+                    "vim",
+                    "vimdoc",
+                    "yaml",
+                })
+            end
+
+            -- Feature autocommands run on all systems
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function()
+                    pcall(vim.treesitter.start)
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end,
+            })
+        end,
     },
+
+    -- Use treesitter grammar to determine comment format
+    "JoosepAlviste/nvim-ts-context-commentstring",
 
     -- Auto close and rename HTML tags
     {
