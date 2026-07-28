@@ -36,10 +36,13 @@ return {
                 })
             end
 
-            -- Feature autocommands run on all systems
             vim.api.nvim_create_autocmd("FileType", {
                 callback = function()
-                    pcall(vim.treesitter.start)
+                    -- Attempt to start treesitter if there's a grammar
+                    if not pcall(vim.treesitter.start) then
+                        return
+                    end
+
                     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
                 end,
             })
