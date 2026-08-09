@@ -1,0 +1,11 @@
+{
+  "lastChangelogVersion": "0.80.8",
+  "theme": "dark",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "deepseek-v4-flash",
+  "packages": [
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@gotgenes/pi-permission-system"
+  ],
+  "hideThinkingBlock": false
+}
