@@ -16,7 +16,7 @@ configuration {
 @theme "/dev/null"
 
 * {
-    font:   "SF Pro Text 11";
+    font:   "Noto Sans 11";
     bg0:    #1C1C1EEA;
     bg1:    #7E7E7E60;
     bg2:    #2C2C2EE6;
@@ -46,7 +46,7 @@ window {
 }
 
 inputbar {
-    font:       "SF Pro Text 13";
+    font:       "Noto Sans 13";
     padding:    15px;
     spacing:    12px;
     children:   [ icon-search, entry ];

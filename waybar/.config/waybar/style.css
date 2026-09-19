@@ -1,7 +1,7 @@
 /* Use GTK_DEBUG=interactive or waybar -l debug to find classes */
 
 * {
-  font-family: "SF Pro Text", "Font Awesome 6 Free", FontAwesome, sans-serif;
+  font-family: "Noto Sans", "Font Awesome 6 Free", FontAwesome, sans-serif;
 }
 
 window#waybar {

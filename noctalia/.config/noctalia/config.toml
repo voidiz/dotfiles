@@ -163,7 +163,7 @@ widget_order = [
 enabled = true
 
 [shell]
-font_family = "SF Pro Text"
+font_family = "Noto Sans"
 
     [shell.panel]
     control_center_placement = "floating"

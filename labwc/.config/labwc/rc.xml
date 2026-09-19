@@ -5,7 +5,7 @@
   </core>
 
   <theme>
-    <font name="SF Pro" />
+    <font name="Noto Sans" />
     <name>my-theme</name>
   </theme>
 
