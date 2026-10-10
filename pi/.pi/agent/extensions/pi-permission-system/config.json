@@ -3,12 +3,13 @@
   "permissionReviewLog": true,
   "yoloMode": false,
   "permission": {
-    "*": "allow",
+    "*": "ask",
     "path": {
       "*": "allow",
       "*.env": "deny",
       "*.env.*": "deny",
-      "*.env.example": "allow"
+      "*.env.example": "allow",
+      "*secret*": "deny"
     },
     "bash": {
       "*": "ask",

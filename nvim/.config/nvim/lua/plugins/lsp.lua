@@ -66,6 +66,7 @@ return {
                 cmd = { "clangd", "--background-index", "--clang-tidy" },
             })
 
+            vim.lsp.enable("bashls")
             vim.lsp.enable("gopls")
             vim.lsp.enable("nixd")
             vim.lsp.enable("tailwindcss")
